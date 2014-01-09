@@ -1,0 +1,182 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #E9F2F9;
+  font: 18px Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3 {font-family: Avenir, Helvetica, Helvetica Neue, Arial, sans-serif; color:#594F4F}
+p, li {font-family: Avenir, Helvetica, Helvetica Neue, Arial, sans-serif; color:#594F4F}
+
+h1 {margin: 0 0 36px 0; padding: 0; font-size:32px; font-weight:bold;}
+h2 {margin: 24px 0 12px 0; padding: 0; font-size:26px; font-weight:bold;}
+h3 {margin: 24px 0 12px 0; padding: 0; font-size:22px; font-weight:bold;}
+
+/*
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; }
+h1 { margin-bottom: 1em; }
+*/
+p { margin: 1em 0; }
+
+a         { color: #6FB7E9; text-decoration:none }
+a:hover   { color: #000; text-decoration:none} 
+/*a:visited { color: #a0a; }
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+.posts li {
+  line-height: 1.75em;
+}
+
+.posts span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
+
+.site {
+  font-size: 100%;
+  text-align: justify;
+  width: 39em;
+  margin: 2em auto 2em;
+  line-height: 1.5em;
+}
+
+.header {
+    margin-bottom: 2em;
+}
+
+.header a {
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+.header a.extra {
+  color: #aaa;
+}
+
+.header a.extra:hover {
+  color: #000;
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.title a {
+  color: #a00;
+}
+
+.title a:hover {
+  color: #000;
+}
+
+.meta {
+  color: #aaa;
+}
+
+.footer {
+  font-size: 90%;
+  color: #666;
+  /*border-top: 3px solid #eee; */
+  margin-top: 1em;
+/*  overflow: hidden; */
+}
+
+.footer .contact { /*left column */
+  float: left;
+  width: 13em;
+  /*margin-right: 4em;
+*/}
+
+.footer .links {
+  float: right;
+  width: 26em;
+}
+
+.footer .links-left {
+  float: left;
+  width: 13em;
+  /*margin-right: 4em;
+*/}
+
+.footer .links-right {
+  float: right;
+}
+
+.footer .contact a {
+  color: #8085C1;
+}
+
+.footer .contact a:hover { 
+  color: #000; 
+  text-decoration:none
+} 
+
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+/* standard */
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .4em;
+}
+
+.post ul, .post ol {
+  margin-left: 1.35em;
+}
+
+.post code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 .2em;
+}
+
+.post pre code {
+  border: none;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #FFF;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
