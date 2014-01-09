@@ -1,3 +1,7 @@
-name: Eduardo Diaz Sancha Site
-markdown: redcarpet
-pygments: true
+name: 		Eduardo Diaz Sancha Site
+markdown: 	redcarpet
+pygments: 	true
+baseurl:	/
+source:      	.
+destination: 	./_site
+
