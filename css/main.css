@@ -21,7 +21,7 @@ body {
 h1, h2, h3 {font-family: Avenir, Helvetica, Helvetica Neue, Arial, sans-serif; color:#594F4F}
 p, li {font-family: Avenir, Helvetica, Helvetica Neue, Arial, sans-serif; color:#594F4F}
 
-h1 {margin: 0 0 36px 0; padding: 0; font-size:32px; font-weight:bold;}
+h1 {margin: 0 0 24px 0; padding: 0; font-size:32px; font-weight:bold;}
 h2 {margin: 24px 0 12px 0; padding: 0; font-size:26px; font-weight:bold;}
 h3 {margin: 24px 0 12px 0; padding: 0; font-size:22px; font-weight:bold;}
 
@@ -62,16 +62,26 @@ a:hover   { color: #000; text-decoration:none}
 /*
 /*****************************************************************************/
 
+/*Default styling here*/
+
 .site {
   font-size: 100%;
-  text-align: justify;
-  width: 39em;
-  margin: 2em auto 2em;
+  text-align: left;
+  width: 80%;
+  margin: 1em auto 1em;
   line-height: 1.5em;
 }
 
+.footer {
+  font-size: 90%;
+  color: #666;
+  border-top: 1px solid #eee;
+  margin-top: 1em;
+/*  overflow: hidden; */
+}
+
 .header {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .header a {
@@ -85,6 +95,200 @@ a:hover   { color: #000; text-decoration:none}
 
 .header a.extra:hover {
   color: #000;
+}
+
+.footer .contact a {
+  color: #8085C1;
+}
+
+.footer .contact a:hover { 
+  color: #000; 
+  text-decoration:none
+} 
+
+.footer .contact {
+    margin: -12px 0 0 0;
+}
+
+
+.footer .links-left {
+    margin: -36px 0 0 0;
+}
+
+.footer .links-right {
+    margin: -36px 0 0 0;
+  }
+
+/*Small screens*/
+/*@media only screen and (max-width: 480px) {
+
+  .site {
+    width: 80%;
+    margin:  2em auto 2em;
+  }
+
+
+}*/
+
+/*Little larger screen*/
+@media only screen and (min-width: 480px) {
+
+  .site {
+    width: 400px;
+    margin:  1em auto 1em;
+  }
+
+  .header {
+    margin-bottom: 1em;
+  }
+
+}
+
+/*Pads and larger phones*/
+@media only screen and (min-width: 600px) {
+
+  .site {
+    width: 480px;
+    margin:  2em auto 2em;
+    line-height: 1.5em;
+  }
+
+  .header {
+    margin-bottom: 2em;
+  }
+
+  .footer .contact { /*left column */
+    float: left;
+    width: 480px;
+    margin: 0 0 0 0;
+  }
+
+  .footer .links {
+    float: right;
+    width: 480px;
+  }
+
+  .footer .links-left {
+    margin: 0 0 0 0;
+    float: left;
+    width: 240px;
+  }
+
+  .footer .links-right {
+    margin: 0 0 0 0;
+    float: right;
+    width: 240px;
+  }
+
+}
+
+/*Larger pads*/
+@media only screen and (min-width: 768px) {
+
+  .site {
+    width: 525px;
+    margin:  2em auto 2em;
+  }
+
+  .footer .contact { /*left column */
+    float: left;
+    width: 175px;
+  }
+
+  .footer .links {
+    float: right;
+    width: 350px;
+  }
+
+  .footer .links-left {
+    float: left;
+    width: 175px;
+  }
+
+  .footer .links-right {
+    float: right;
+    width: 175px;
+  }
+
+
+}
+
+/*Horizontal pads and laptops*/
+@media only screen and (min-width: 992px) {
+  .site {
+    width: 660px;
+    margin:  2em auto 2em;
+    line-height: 1.5em;
+  }
+
+  .footer .contact { /*left column */
+    float: left;
+    width: 220px;
+  }
+
+  .footer .links {
+    float: right;
+    width: 440px;
+  }
+
+  .footer .links-left {
+    float: left;
+    width: 220px;
+  }
+
+  .footer .links-right {
+    float: right;
+    width: 220px;
+  }
+
+}
+
+/*Really large screens*/
+@media only screen and (min-width: 1382px) {
+
+  .site {
+    width: 810px;
+    margin:  3em auto 3em;
+    line-height: 1.5em;
+  }
+
+  .footer .contact { /*left column */
+    float: left;
+    width: 270px;
+  }
+
+  .footer .links {
+    float: right;
+    width: 540px;
+  }
+
+  .footer .links-left {
+    float: left;
+    width: 270px;
+  }
+
+  .footer .links-right {
+    float: right;
+    width: 270px;
+  }
+
+}
+
+/*2X size (iPhone 4 etc)*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+       only screen and (-o-min-device-pixel-ratio: 3/2), 
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+  .site {
+    margin:  1em auto 1em;
+    line-height: 1.5em;
+    width: 80%;
+  }
+
+  h1 {margin: 0 0 24px 0; padding: 0; font-size:25px; font-weight:bold;}
+  h2 {margin: 24px 0 12px 0; padding: 0; font-size:22px; font-weight:bold;}
+  h3 {margin: 24px 0 12px 0; padding: 0; font-size:20px; font-weight:bold;}
+
 }
 
 .title {
@@ -103,44 +307,6 @@ a:hover   { color: #000; text-decoration:none}
 .meta {
   color: #aaa;
 }
-
-.footer {
-  font-size: 90%;
-  color: #666;
-  /*border-top: 3px solid #eee; */
-  margin-top: 1em;
-/*  overflow: hidden; */
-}
-
-.footer .contact { /*left column */
-  float: left;
-  width: 13em;
-  /*margin-right: 4em;
-*/}
-
-.footer .links {
-  float: right;
-  width: 26em;
-}
-
-.footer .links-left {
-  float: left;
-  width: 13em;
-  /*margin-right: 4em;
-*/}
-
-.footer .links-right {
-  float: right;
-}
-
-.footer .contact a {
-  color: #8085C1;
-}
-
-.footer .contact a:hover { 
-  color: #000; 
-  text-decoration:none
-} 
 
 
 /*****************************************************************************/
