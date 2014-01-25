@@ -64,21 +64,23 @@ a:hover   { color: #000; text-decoration:none}
   text-align: left;
   line-height: 1.5em;
   margin:  1em auto 1em;
-  width: 80%;
+  width: 90%;
   text-rendering:optimizeLegibility;
-  
+
   -webkit-font-smoothing: antialiased;
 }
 
 .footer {
   font-size: 90%;
   color: #666;
-  border-top: 1px solid #eee;
+  /*border-top: 1px solid #8085C1;*/
   margin-top: 1em;
-/*  overflow: hidden; */
+  width: 100%;
+  text-align: center;
 }
 
 .header {
+  margin-bottom: 1em;
 }
 
 .header a {
@@ -92,6 +94,15 @@ a:hover   { color: #000; text-decoration:none}
 
 .header a.extra:hover {
   color: #000;
+}
+
+.footer-menu {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.footer-menu a {
+    margin-right: 1em;
 }
 
 .footer .contact a {
@@ -118,9 +129,10 @@ a:hover   { color: #000; text-decoration:none}
 
 .footer a {
     display: inline-block;
-    padding-left: 33px;
-    /*width: 24px;*/
-    /*height: 24px;*/
+/*    padding-left: 33px; */
+    width: 34px;
+    height: 26px;
+    margin-top:  1em;
     margin-bottom: 10px;
 
     -o-transition: all .3s;
@@ -158,10 +170,6 @@ a:hover   { color: #000; text-decoration:none}
   .site {
     width: 400px;
     margin:  1em auto 1em;
-  }
-
-  .header {
-    margin-bottom: 1em;
   }
 
 }
@@ -301,7 +309,7 @@ a:hover   { color: #000; text-decoration:none}
   .site {
     margin:  1em auto 1em;
     line-height: 1.5em;
-    width: 80%;
+    width: 90%;
   }
 
   h1 {margin: 0 0 24px 0; padding: 0; font-size:25px; font-weight:bold;}
@@ -365,3 +373,71 @@ a:hover   { color: #000; text-decoration:none}
 .post pre.terminal code {
   background-color: #333;
 }
+
+
+/*****************************************************************************/
+/*
+/* Apps
+/*
+/*****************************************************************************/
+
+ul.apps {
+  margin: 1em 0 1em 0;
+  width: 100%; 
+
+}
+
+  ul.apps:before, ul.apps:after {
+    content: " ";
+    display: table; 
+  }
+  ul.apps:after {
+    clear: both; 
+  }
+
+
+  ul.apps li {
+    border-radius: 20px;
+    float: left;
+    display: block;
+    width: 25%;
+    height: 120px;
+    margin-top: 1em; 
+    margin-bottom: 1em;
+  }
+    @media all and (max-width: 660px) {
+      ul.apps li {
+        width: 50%; 
+        } 
+      }
+
+  ul.apps a {
+    display: block;
+    width: 100px;
+    height: 120px;
+    line-height: 0;
+    margin: 0 auto; 
+  }
+  ul.apps a span {
+    display: block;
+    width: 100px;
+    height: 10px;
+    font: 14px Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    line-height: 1em;
+    padding: 8px 0 0;
+    color: #888; 
+  }
+  ul.apps a:hover {
+    border: 0; 
+  }
+  ul.apps img {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    z-index: -2;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25); }
