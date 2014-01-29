@@ -58,6 +58,37 @@ a:hover   { color: #000; text-decoration:none}
 
 /*****************************************************************************/
 /*
+/* Instagram 
+/*
+/*****************************************************************************/
+
+#instafeed {
+    overflow: hidden;
+    zoom: 1;
+    max-width: 100%;
+}
+
+#instafeed a {
+    float: left
+    width:100%;
+}
+
+#instafeed img {
+    width: 25%;
+    max-width: 25%
+}
+
+@media screen and (max-width:768px) {
+    #instafeed img {
+        width: 50%;
+        max-width: 50%
+  }
+}
+
+#instafeed-meta {}
+
+/*****************************************************************************/
+/*
 /* Site
 /*
 /*****************************************************************************/
@@ -248,7 +279,7 @@ a:hover   { color: #000; text-decoration:none}
 /*Horizontal pads and laptops*/
 @media only screen and (min-width: 992px) {
   .site {
-    width: 660px;
+    width: 700px;
     margin:  2em auto 2em;
     line-height: 1.5em;
   }
@@ -279,7 +310,7 @@ a:hover   { color: #000; text-decoration:none}
 @media only screen and (min-width: 1382px) {
 
   .site {
-    width: 810px;
+    width: 900px;
     margin:  3em auto 3em;
     line-height: 1.5em;
   }
@@ -447,4 +478,6 @@ ul.apps {
     width: 100px;
     position: relative;
     z-index: -2;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25); }
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25); 
+  }
+
