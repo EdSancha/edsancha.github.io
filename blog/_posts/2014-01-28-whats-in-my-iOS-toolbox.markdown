@@ -74,6 +74,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 
 - [iOS Dev Weekly][iosdevweekly] - Great newsletter compiled and curated by [Dave Verwer][dave]
 - [NSHipster][nshipster] - A must-learn blog about Objective-C and Cocoa written by [Mattt Thompson][mattt] 
+- [NSBlog][mikeash] - A failure in the hot air department, is one of the best blogs on iOS Development.
 - [Stanford Online Course][stanford] - A classic in iOS learning, probably the first thing that comes to my mind when people ask me about free iOS Learning. ([Downloads link][stanford2]).
 - [Ray Wenderlich][ray] - Ray Wenderlich's community of iOS tutorials is a broad source of examples and tutorials.
 - [Ben Scheirmann][Essential] - He has a more detailed list of iOS tools, actually I learned from some of the tools that I use from him. Check it out.
@@ -86,7 +87,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 
 [pttrns]: http://pttrns.com
-[capptivate]: http://capptivate.com
+[capptivate]: http://capptivate.co
 [dribbble]: http://dribbble.com/search?q=ios
 [behance]: https://www.behance.net/
 [cocoacontrols]:  http://cocoacontrols.com
@@ -121,7 +122,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [flurry]: http://www.flurry.com
 
 [crash]: http://crashlytics.com
-[runscope]: htpp//www.runscope.com
+[runscope]: http://www.runscope.com
 [pulse]: http://pulse.io
 [reveal]: http://revealapp.com
 
@@ -133,7 +134,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [dave]: https://twitter.com/daveverwer
 [nshipster]: http://nshipster.com
 [mattt]: http://mattt.me
-
+[mikeash]: https://mikeash.com/pyblog/
 [stanford]: http://online.stanford.edu/course/developing-ios7-apps-fall-2013
 [stanford2]: http://www.stanford.edu/class/cs193p/cgi-bin/drupal/
 [ray]: http://www.raywenderlich.com
