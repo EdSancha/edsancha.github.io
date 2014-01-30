@@ -57,6 +57,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 
 - [Google Analytics][ga] - Google Analytics is the first choice by many but some of them don't know that it samples the data until 500k. 
 - [Flurry][flurry] - Mobile oriented analytics, it gives real data from day one and it gives you great insights of how the industry is going.
+- [Mixpanel][mixpanel] ($) - They have a free segment, but anytime that I've used it I surpased it. It's still a choice to consider.
 
 ## Debugging
 
@@ -75,8 +76,10 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [iOS Dev Weekly][iosdevweekly] - Great newsletter compiled and curated by [Dave Verwer][dave]
 - [NSHipster][nshipster] - A must-learn blog about Objective-C and Cocoa written by [Mattt Thompson][mattt] 
 - [NSBlog][mikeash] - A failure in the hot air department, is one of the best blogs on iOS Development.
+- [objc.io][objcio] - As they say: "A periodical about best practices and advanced techniques in Objective-C". Great tutorials covering a somehow big subject on every release.
 - [Stanford Online Course][stanford] - A classic in iOS learning, probably the first thing that comes to my mind when people ask me about free iOS Learning. ([Downloads link][stanford2]).
 - [Ray Wenderlich][ray] - Ray Wenderlich's community of iOS tutorials is a broad source of examples and tutorials.
+- [iOS Goodies][iosgoodies] - Weekly goodies (articles, controls, free stuff...) related to iOS. 
 - [Ben Scheirmann][Essential] - He has a more detailed list of iOS tools, actually I learned from some of the tools that I use from him. Check it out.
 - [Twitter][twitter] - I try to follow all the great developers I can and learn from them. The community is an unlimited source of information.
 - [Big Nerd Ranch][bnr] - Their books explain the basics and intermediate stuff in a great way. I'd love to go to one of their bootcamps.
@@ -120,6 +123,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 [ga]: http://www.google.com/analytics‎
 [flurry]: http://www.flurry.com
+[mixpanel]: http://www.mixpanel.com
 
 [crash]: http://crashlytics.com
 [runscope]: http://www.runscope.com
@@ -141,3 +145,5 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [Essential]: http://benscheirman.com/2013/08/the-ios-developers-toolbelt/
 [twitter]: http://twitter.com
 [bnr]: http://bignerdranch.com/
+[iosgoodies]: http://ios-goodies.tumblr.com 
+[objcio]: http://objc.io/
