@@ -177,7 +177,7 @@ a:hover   { color: #000; text-decoration:none}
     -ms-transition: all .3s;
 }
 
-.footer a.rss { background: url(../img/social-icons/rss.png) left top no-repeat;}
+.footer a.rss { background: url(/img/social-icons/rss.png) left top no-repeat;}
 .footer a.aboutme { background: url(../img/social-icons/aboutme.png) left top no-repeat; }
 .footer a.apple { background: url(../img/social-icons/apple.png) left top no-repeat; }
 .footer a.email { background: url(../img/social-icons/email.png) left top no-repeat; }
