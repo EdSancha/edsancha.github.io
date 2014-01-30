@@ -12,8 +12,8 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 ## Inspiration
 
 - [pttrns][pttrns] - I check this page often to find inspiration, it contains screenshots of latest apps released and filters by component, making easier to find design patterns.
-- [Capptivate][capptivate] - Great page that showcase Apps and their UI animations.   Í
-- [Dribbble][dribbble] - Invitation-only community of designers, it showcase beautiful current or experimental iOS designs among other platforms.
+- [Capptivate][capptivate] - Great page that showcases Apps and their UI animations. 
+- [Dribbble][dribbble] - Invitation-only community of designers, it showcases beautiful current or experimental iOS designs among other platforms.
 - [Behance][behance] - Similar in concept to Dribbble but I could say more democratic, I personally like it more.   
 - [Cocoa Controls][cocoacontrols] - List of code components and apps (most of them open-sourced) for iOS. 
 - [App store app][appstore] - I think it's important to check what is trending in the App Store and what are the most sold apps often.
