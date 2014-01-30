@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "What's in my iOS Toolbox?"
-description: In the latest 3 years I've been using some great apps, tools, technologies to create iOS apps. Some of them have already disappeared, some oft them are new some have just evolved with time. Here's a list of them. 
+description: In the latest 3 years I've been using some great apps, tools, technologies to create iOS apps. Some of them have already disappeared, some of them are new and some have just evolved with time. Here's a list of them. 
 date:   2014-01-28 23:30:00
 timeToRead: 6 minutes read
 categories: tools development me
 ---
 
-In the latest 3 years I've been using some great apps, tools, technologies to create iOS apps. Some of them have already disappeared, some oft them are new some have just evolved with time. Here's a list of them. I'm not saying they're the best nor that you should also use them, but I hope it helps someone out there. 
+In the latest 3 years I've been using some great apps, tools, technologies to create iOS apps. Some of them have already disappeared, some of them are new and some have just evolved with time. Here's a list of them. I'm not saying they're the best nor that you should also use them, but I hope it helps someone out there. 
 
 ## Inspiration
 
