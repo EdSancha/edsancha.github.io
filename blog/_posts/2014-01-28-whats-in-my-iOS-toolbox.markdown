@@ -106,6 +106,8 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [teehan]: http://www.teehanlax.com/tools/ios7/
 [sketch]: http://www.bohemiancoding.com/sketch 
 [sketchmine]: http://sketchmine.co
+[gly]: http://glyphish.com
+[xscope]: http://xscopeapp.com
 
 [xcode]: https://developer.apple.com/xcode/
 [appcode]: http://jetbrains.com/objc
