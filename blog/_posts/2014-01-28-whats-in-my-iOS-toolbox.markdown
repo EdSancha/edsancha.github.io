@@ -41,7 +41,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [OMColorSense][colorsense] - Adds a color interface to [UIColor whiteColor] calls  
 - [KSImageNamed][imagenamed] - Helps you find the right image autocompleting [UIImage imageNamed:@""]. 
 - [Maniac-Dev-Plugins][plugins] - Maniac Dev page keeps an updated list of Plugins for Xcode.
-- [Sublime][sublime] - As it says in the page title, it's the editor you'll fall in love with, it has great feauters and the interface is super-friendly. It has multi-language syntax support, including Objective-C, but I mostly use it on backend and frontend projects.
+- [Sublime][sublime] - As it says in the page title, it's the editor you'll fall in love with, it has great features and the interface is super-friendly. It has multi-language syntax support, including Objective-C, but I mostly use it on backend and frontend projects.
 - [Vim][vim] - Vim is my usual terminal editor of choice. 
 
 ## Dependency Management
