@@ -12,6 +12,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 ## Inspiration
 
 - [pttrns][pttrns] - I check this page often to find inspiration, it contains screenshots of latest apps released and filters by component, making easier to find design patterns.
+- [Mobile Patterns][mobilep] - Another curated feed with mobile design patterns by component. iOS and Android in this case. (Thanks to [@austinladen][austin])
 - [Capptivate][capptivate] - Great page that showcases Apps and their UI animations. 
 - [Dribbble][dribbble] - Invitation-only community of designers, it showcases beautiful current or experimental iOS designs among other platforms.
 - [Behance][behance] - Similar in concept to Dribbble but I could say more democratic, I personally like it more.   
@@ -91,6 +92,8 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 
 [pttrns]: http://pttrns.com
+[mobilep]: http://www.mobile-patterns.com
+[austin]: https://twitter.com/austinlouden
 [capptivate]: http://capptivate.co
 [dribbble]: http://dribbble.com/search?q=ios
 [behance]: https://www.behance.net/
