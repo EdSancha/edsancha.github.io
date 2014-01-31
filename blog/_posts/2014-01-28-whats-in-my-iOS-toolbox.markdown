@@ -62,9 +62,10 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 
 ## Debugging
 
+- [Instruments][instruments] - "Instruments is a performance, analysis, and testing tool for dynamically tracing and profiling OS X and iOS code." Essential tool and free with Xcode. So essential that I forgot it on my first draft, thanks [@chunkyguy][chunky].
 - [Crashlytics][crash] - Crashlytics provides powerful, yet light weight crash reporting for iOS and Android. I implement it in all projects from day one.
 - [Runscope][runscope] - Automated testing for APIs and backend services. Free with limited number of calls, I use it on development phases. 
-- [Pulse][pulse] - Mobile Performance Monitoring, tool in alpha but with a great future. Measure idle times, network calls times, etc
+- [Pulse.io][pulse] - Mobile Performance Monitoring, tool in alpha but with a great future. Measure idle times, network calls times, etc.
 - [Reveal][reveal] ($) - Mac OS app that allows you to inspect, modify and debug your app views and layers in a beautiful 3D interface.
 
 ## Deployment
@@ -131,6 +132,8 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [flurry]: http://www.flurry.com
 [mixpanel]: http://www.mixpanel.com
 
+[instruments]: https://developer.apple.com/library/mac/documentation/developertools/conceptual/InstrumentsUserGuide/Introduction/Introduction.html
+[chunky]: https://twitter.com/chunkyguy
 [crash]: http://crashlytics.com
 [runscope]: http://www.runscope.com
 [pulse]: http://pulse.io
