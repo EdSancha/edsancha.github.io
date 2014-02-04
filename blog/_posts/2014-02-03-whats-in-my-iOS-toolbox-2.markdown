@@ -80,7 +80,7 @@ Automated testing is always a hard choice. You need to write scripts or code to 
 ## Backend Services
 
 - [Parse][parse] - Great Backend-as-a-Servicedrop-in that works along all platforms, it has the easiest to read documentation and sample projects, so it's highly recommeneded for beginners and small projects. 
-- [Stackmob][stackmob] - Another great BaaS platform with great free plans. You can import your backend code, have 
+- [Stackmob][stackmob] - Another great BaaS platform with great free plans. You can import your backend code and it has a free stack of functionalities in their "marketplace". 
 - [Helios][helios] - Open-source framework for iOS that provides push-notifications, passbook integration, app-purchases and data synchronization.
 - [UrbanAirship][urban] - Easy to integrate push notifications, with limited usage for free.
 
