@@ -34,7 +34,7 @@ You'll probably tell me that this list is super sort, but it's intended to be li
 
 I have a love/hate relationship with [Core Data][CoreData] and I think most iOS Developers will have the same feeling. That said, it's better to have some tools to help working with it.
 
-- [Mogenerator][mo] - 
+- [Mogenerator][mo] - Command-line tool that, given an .xcdatamodel file, will generate two classes per entity, making easier to extend the user classes with your own methods.
 - [Magical Record][mr] - Wrapper around Core Data that makes simple requests in one line and keeps the power of NSFetchRequest.
 - [Liya][liya] - MySQL, PostgreSQL and SQLite3 databases free editor.  
 - [Core Data Editor][cde] ($) - Core Data Editor allows the user to read and edit Core Data schemes and create them (with Mogenerator two classes syntax).
