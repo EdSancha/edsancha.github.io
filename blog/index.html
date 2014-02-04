@@ -11,11 +11,12 @@ title: Eduardo Diaz Sancha - Blog
       <li>
         <!-- &raquo;  -->
 
+        <p class="meta">
+          <span>{{ post.date | date_to_string }}</span> 
+          <span>{{post.timeToRead}}</span>
+        </p>
+
         <p><a href="{{ post.url }}">{{ post.title }}</a></p>
-
-
-        <span>{{ post.date | date_to_string }}</span> 
-        <span>{{post.timeToRead}}</span>
 
         <p> {{ post.description}} </p>
       </li>

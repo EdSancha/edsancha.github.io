@@ -47,12 +47,12 @@ a:hover   { color: #000; text-decoration:none}
 
 .posts li {
   line-height: 1.5em;
+  border-bottom: 1px solid #6FB7E9;
 }
 
 .posts span {
   color: #aaa;
 /*  font-family: Monaco, "Courier New", monospace; */  
-  font-size: 80%;
   margin-right: 3em;
 }
 
@@ -243,6 +243,7 @@ a:hover   { color: #000; text-decoration:none}
   .site {
     width: 400px;
     margin:  1em auto 1em;
+    line-height: 1.5em;
   }
 
 }
@@ -406,8 +407,12 @@ a:hover   { color: #000; text-decoration:none}
 
 .meta {
   color: #aaa;
-  font-size: 80%;
-  margin-right: 5em;
+  font-size: 80%;   
+  margin-bottom: 12px;
+}
+
+.meta span {
+  margin-right: 3em;
 }
 
 

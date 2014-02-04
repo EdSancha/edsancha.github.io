@@ -30,6 +30,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 ## Design
 
 - [Photoshop][photoshop] ($$$) - Photoshop and Adobe Creative Suite have been the standard for many years but I'm trying and considering the switch to...
+- [Pixelmator][pixel] ($) - Powerful image editing app for the Mac that has everything you need to create and edit your images.
 - [iOS 7 Template by Teehan+Lax][teehan] - iOS 7 Template in PSD format. 
 - [Sketch][sketch] ($) - Vector-based drawing tool. Currently in learning process but it looks really good. Check also [Sketchmine][sketchmine] for samples.
 - [Glyphish][gly] ($) - The definitive Icon collection, a basic in your library.
@@ -52,13 +53,15 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 ## Testing 
 
 - [Kiwi][kiwi] - I'm currently trying Kiwi and it looks like a great platform to creat unit tests. 
-- [Nocilla][nocilla] - I've just found this library to easily stub HTTP methods
+- [Nocilla][nocilla] - I've just found this library to easily stub HTTP methods.
+- [Specta][specta] - It will be the next thing to try after Kiwi. It seems that the syntax is easier.
 
 ## Analytics
 
 - [Google Analytics][ga] - Google Analytics is the first choice by many but some of them don't know that it samples the data until 500k. 
 - [Flurry][flurry] - Mobile oriented analytics, it gives real data from day one and it gives you great insights of how the industry is going.
 - [Mixpanel][mixpanel] ($) - They have a free segment, but anytime that I've used it I surpased it. It's still a choice to consider.
+
 
 ## Debugging
 
@@ -91,6 +94,9 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 
 There are a lot of tools in the market, some of them paid, some of them free but these ones are the ones I use more commonly. Feel free to suggest them on the comments section!!! 
 
+*Update: I've written a second part to this article in [What's in my iOS Toolbox? (2)][toolbox].*
+
+[toolbox]: http://edsancha.com/blog/2014/02/03/whats-in-my-iOS-toolbox-2.html
 
 [pttrns]: http://pttrns.com
 [mobilep]: http://www.mobile-patterns.com
@@ -108,6 +114,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [tower]: http://www.git-tower.com
 
 [photoshop]: http://www.adobe.com/photoshop
+[pixel]: http://www.pixelmator.com
 [teehan]: http://www.teehanlax.com/tools/ios7/
 [sketch]: http://www.bohemiancoding.com/sketch 
 [sketchmine]: http://sketchmine.co
@@ -124,6 +131,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 [kiwi]: https://github.com/allending/Kiwi
 [nocilla]: https://github.com/luisobo/Nocilla
+[specta]: https://github.com/specta/specta
 
 [sublime]: http://www.sublimetext.com
 [vim]: http://www.vim.org
