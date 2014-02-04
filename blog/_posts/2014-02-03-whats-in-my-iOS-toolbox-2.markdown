@@ -52,17 +52,18 @@ Checkout the excellent article about different Core Data frameworks and Librarie
 
 Automated testing is always a hard choice. You need to write scripts or code to interact to your interface, making your work (or your company's) almost the double.
 
-- [UIAutomation][uia] - User interface testing tool included in Instruments. You write the scripts in JavaScript. Check also [Bwoken][bwoken], tool to run UIAutomation Tests from Terminal
+- [UIAutomation][uia] - User interface testing tool included in Instruments. You write the scripts in JavaScript. Check also [Bwoken][bwoken], tool to run UIAutomation Tests from Terminal.
 - [appium.io][appium] - Open-source and cross-platform framework to write tests in almost any language. Looks very promising.
 - [KIF][kif] - KIF, which stands for Keep It Functional, is an iOS integration test framework. It allows for easy automation of iOS apps by leveraging the accessibility attributes that the OS makes available for those with visual disabilities.
-- [Calabash][calabash] - Calabash enables you to write and execute automated acceptance tests of Android and iOS mobile apps. Test scripts have to be written mainly in [Cucumber][cucumber] and also other Ruby testing frameworks
+- [Subliminal][subliminal] - Subliminal is an framework for writing iOS integration tests. Subliminal provides a familiar OCUnit/SenTest-like interface to Apple's UIAutomation framework, with tests written entirely in Objective-C.
+- [Calabash][calabash] - Calabash enables you to write and execute automated acceptance tests of Android and iOS mobile apps. Test scripts have to be written mainly in [Cucumber][cucumber] and also other Ruby testing frameworks.
 - [Frank][frank] - Frank allows you to write structured text test/acceptance tests/requirements (using Ruby/[Cucumber][cucumber]) and have them execute against your iOS application.
-
 
 [uia]: https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html
 [bwoken]: https://github.com/bendyworks/bwoken
 [appium]: http://appium.io
 [kif]: https://github.com/kif-framework/KIF
+[subliminal]: https://github.com/inkling/Subliminal
 [calabash]: http://calaba.sh
 [frank]: http://www.testingwithfrank.com
 [cucumber]: http://cukes.info
