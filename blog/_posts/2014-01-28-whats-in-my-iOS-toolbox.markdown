@@ -163,5 +163,5 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [Essential]: http://benscheirman.com/2013/08/the-ios-developers-toolbelt/
 [twitter]: http://twitter.com
 [bnr]: http://bignerdranch.com/
-[iosgoodies]: http://ios-goodies.tumblr.com 
+[iosgoodies]: http://ios-goodies.com 
 [objcio]: http://objc.io/
