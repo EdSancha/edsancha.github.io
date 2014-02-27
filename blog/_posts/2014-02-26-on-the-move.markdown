@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "On the move"
-description: I'm on the move, again. Next week I'll be starting a great job in New York in an amazing company, [Thrillist](http://www.thrillist.com), located in Soho, New York. It's hard to explain how excited I am about starting over again, new city, new job, new friends but I'll try. 
+description: I'm on the move, again. Next week I'll be starting a great job in New York in an amazing company located in Soho, New York. It's hard to explain how excited I am about starting over again, new city, new job, new friends but I'll try. 
 date:   2014-02-26 22:00:00
 timeToRead: 2 minutes read
 categories: me personal
