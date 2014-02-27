@@ -15,7 +15,7 @@ _**Stagnation**: To stay the same and not grow or develop_
 
 The first part of the definition is true. I'm waiting for some legal aspects to move to the next challenge and I'm excited about it, it's going to be awesome, but the reality is that I've been waiting for some weeks already, a lot in my opinion. 
 
-So, I have a lot of free time and you'll think, "Amazing, you can do what you want!", and it's true, somehow. I already have a great job waiting for me, so working or looking for a job isn't an option right now. I can't start a personal projects as I don't know when I'll have to be again working full time. So, the normal things that everyone put in the positive balance are discarded. 
+So, I have a lot of free time and you'll think, "Amazing, you can do what you want!", and it's true, somehow. I already have a great job waiting for me, so working or looking for a job isn't an option right now. I can't start a big personal project as I don't know when I'll have to be again working full time. So, the normal things that everyone put in the positive balance are discarded. 
 
 These thoughts and the part of stagnation definition about growing and developing are the ones that are wrong. And I have a lot of points to prove it. 
 
