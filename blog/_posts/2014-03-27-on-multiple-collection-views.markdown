@@ -59,7 +59,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 {% endhighlight %}
 
-But it didn't in fact it left other collection views irresponsive after highllighting one cell. I said, well, this is strange. So I made a logical next step: log everthing in the delegate and see if everything was right. 
+But it didn't solve it. In fact this solution left the other collection views irresponsive after highlighting one cell. Here's when it started to smell strange. My next step was to log everything in the delegate and see if everything was right. 
 
 {% highlight Objective-C %}
 
@@ -76,11 +76,11 @@ collectionView:didSelectItemAtIndexPath:]
 
 {% endhighlight %}
 
-What was my surprise when I saw that the order claimed by Apple is wrong -collectionView:didUnhighlightItemAtIndexPath: is not being called the last one, it's being called right before -collectionView:shouldSelectItemAtIndexPath: 
+What was my surprise when I saw that the order in the delegate calls claimed by Apple is wrong -collectionView:didUnhighlightItemAtIndexPath: is not being called the last one, it's being called right before -collectionView:shouldSelectItemAtIndexPath: !!!
 
 My solution was to unblock the new selection on -collectionView:didUnhighlightItemAtIndexPath: method and hold a reference to "something" in case the selection is finally being made. In my case I chose to keep a reference to the collectionview where the selected cell is. 
 
 {% gist 9800975%}
 
 You can also check the [example project in github](https://github.com/EdSancha/MultipleCollectionViews-Bug). 
-Have you also found this problem while working with Collection Views? 
+This problem has been relatively easy to solve but when I searched around I didn't find any mention to the different delegate order or a solution to the bug. Have you also found this problem while working with Collection Views? 
