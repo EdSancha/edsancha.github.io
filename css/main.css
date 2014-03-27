@@ -436,7 +436,10 @@ a:hover   { color: #000; text-decoration:none}
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .2em;
+/*  padding: 0 .2em;
+*/  font-size: 85%;
+  line-height: 1em;
+
 }
 
 .post pre code {
@@ -453,7 +456,6 @@ a:hover   { color: #000; text-decoration:none}
 .post pre.terminal code {
   background-color: #333;
 }
-
 
 /*****************************************************************************/
 /*
