@@ -6,6 +6,8 @@
 	<string>Title text</string>
 	<key>Message</key>
 	<string>Message text</string>
+	<key>Active</key>
+	<true/>
 	<key>URL</key>
 	<string>https://itunes.apple.com/us/app/jackthreads-for-ipad/id640570922?mt=8&amp;uo=4</string>
 </dict>
