@@ -436,10 +436,8 @@ a:hover   { color: #000; text-decoration:none}
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
-/*  padding: 0 .2em;
-*/  font-size: 85%;
+  font-size: 75%;
   line-height: 1em;
-
 }
 
 .post pre code {
@@ -577,4 +575,10 @@ ul.apps {
     margin-right: 0;
     margin-left: .5em;
   }
+}
+
+
+.gist {
+  font-size:14px !important;
+  line-height:1.3;
 }
