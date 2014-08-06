@@ -18,6 +18,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [Behance][behance] - Similar in concept to Dribbble but I could say more democratic, I personally like it more.   
 - [Cocoa Controls][cocoacontrols] - List of code components and apps (most of them open-sourced) for iOS. 
 - [App store app][appstore] - I think it's important to check what is trending in the App Store and what are the most sold apps often.
+- [Apple Guidelines][apple] - Apple offers great documents to guide you through your app's design process. More specifically, their [iOS Human Interface Guidelines][hig] has been a must-read document for every iOS developer/designer.
 
 ## Source Control
 
@@ -35,7 +36,6 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [Sketch][sketch] ($) - Vector-based drawing tool. Currently in learning process but it looks really good. Check also [Sketchmine][sketchmine] for samples.
 - [Glyphish][gly] ($) - The definitive Icon collection, a basic in your library.
 - [xScope][xScope] ($) - Super handy tool to try to make your apps as pixel perfect as possible. Color pickers, rulers, mirroring and lots of features for a tiny app.
-
 
 ## Editors
 
@@ -106,6 +106,8 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [behance]: https://www.behance.net/
 [cocoacontrols]:  http://cocoacontrols.com
 [appstore]: http://www.apple.com/itunes/charts/free-apps/
+[apple]: https://developer.apple.com/design/
+[hig]: 
 
 [git]: http://gitscm.org
 [github]: http://github.com
