@@ -375,23 +375,6 @@ a:hover   { color: #000; text-decoration:none}
 
 }
 
-/*2X size (iPhone 4 etc)*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (-o-min-device-pixel-ratio: 3/2),
-       only screen and (min-device-pixel-ratio: 1.5) {
-
-  .site {
-    margin:  1em auto 1em;
-    line-height: 1.5em;
-    width: 90%;
-  }
-
-  h1 {margin: 0 0 24px 0; padding: 0; font-size:25px; font-weight:bold;}
-  h2 {margin: 24px 0 12px 0; padding: 0; font-size:22px; font-weight:bold;}
-  h3 {margin: 24px 0 12px 0; padding: 0; font-size:20px; font-weight:bold;}
-
-}
-
 .title {
   display: inline-block;
   margin-bottom: 2em;
