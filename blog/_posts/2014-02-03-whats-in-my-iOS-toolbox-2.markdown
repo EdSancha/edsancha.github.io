@@ -9,7 +9,7 @@ categories: tools development me
 
 *Note: This is the continuation to [What's in my iOS Toolbox?][toolbox] article.*
 
-[toolbox]: http://edsancha.com/blog/2014/01/28/whats-in-my-iOS-toolbox.html
+[toolbox]: http://edsancha.com/blog/2014/01/28/whats-in-my-iOS-toolbox
 
 After writing the previous article, I realized that there are a lot of tools that I left behind. I've used some of them eventually in projects. Some others are completely new for me but I'll try them in the future. I also think that it could be useful to write down some interesting 3rd party libraries that have a lot of future and some backend soultions for the every type of project.
 
@@ -17,9 +17,9 @@ After writing the previous article, I realized that there are a lot of tools tha
 
 This section deserves a detailed article by itself, but there're some libraries that need to be considered in most projects and others that are changing paradigms in the industry.
 
-- [AFNetworking][af] - A great networking framework, with some interesting tools too, AFRocketClient to subscribe to server updates, AFIncrementalStore and OAuth 1 & 2 Clients, among others. 
+- [AFNetworking][af] - A great networking framework, with some interesting tools too, AFRocketClient to subscribe to server updates, AFIncrementalStore and OAuth 1 & 2 Clients, among others.
 - [ReactiveCocoa][rac] - Objective-C framework for [Functional Reactive Programming][frc]. It provides APIs for composing and transforming streams of values. I'm following with great interest [ReactiveCocoaLayout][racl], AutoLayout in a reactive way.
-- [Typhoon][ty] - There are a lot of Dependency Injection Frameworks for iOS, but Typhoon stands out with great features (I love the way it focus in Obj-C at the same time that supporting XML). 
+- [Typhoon][ty] - There are a lot of Dependency Injection Frameworks for iOS, but Typhoon stands out with great features (I love the way it focus in Obj-C at the same time that supporting XML).
 
 You'll probably tell me that this list is super sort, but it's intended to be like that. There're other libraries included in other categories and a ton of smaller ones that are worth to be here. These ones are either basic (AFN) or paradigm changers (RAC and Typhoon). Be sure to subscribe to [Cocoa Controls][cocoacontrols] newsletter to get the latest ones.
 
@@ -27,7 +27,7 @@ You'll probably tell me that this list is super sort, but it's intended to be li
 [rac]: https://github.com/ReactiveCocoa
 [frc]: http://en.wikipedia.org/wiki/Functional_reactive_programming
 [racl]: https://github.com/ReactiveCocoa/ReactiveCocoaLayout
-[ty]: http://www.typhoonframework.org 
+[ty]: http://www.typhoonframework.org
 [cocoacontrols]:  http://cocoacontrols.com
 
 ## Core Data
@@ -79,8 +79,8 @@ Automated testing is always a hard choice. You need to write scripts or code to 
 
 ## Backend Services
 
-- [Parse][parse] - Great Backend-as-a-Servicedrop-in that works along all platforms, it has the easiest to read documentation and sample projects, so it's highly recommeneded for beginners and small projects. 
-- [Stackmob][stackmob] - Another great BaaS platform with great free plans. You can import your backend code and it has a free stack of functionalities in their "marketplace". 
+- [Parse][parse] - Great Backend-as-a-Servicedrop-in that works along all platforms, it has the easiest to read documentation and sample projects, so it's highly recommeneded for beginners and small projects.
+- [Stackmob][stackmob] - Another great BaaS platform with great free plans. You can import your backend code and it has a free stack of functionalities in their "marketplace".
 - [Helios][helios] - Open-source framework for iOS that provides push-notifications, passbook integration, app-purchases and data synchronization.
 - [UrbanAirship][urban] - Easy to integrate push notifications, with limited usage for free.
 
@@ -97,7 +97,7 @@ There are another BaaS options that offer similar services like: [Windows Azure]
 
 ## Analytics
 
-- [Appsee][appsee] - Appsee enables you to put yourself in the users’ shoes and visually understand exactly how your users interact with your app with user recordings, touch heatmaps and other functionalities. The free segment is a bit short but it's still a tool to consider. 
+- [Appsee][appsee] - Appsee enables you to put yourself in the users’ shoes and visually understand exactly how your users interact with your app with user recordings, touch heatmaps and other functionalities. The free segment is a bit short but it's still a tool to consider.
 - [Segment.io][segment] - The idea behind is to have one pipeline for all your data. Send data to any analytics or marketing tool with a single integration. I think it's ideal if you don't know which analytics tool to use in the beginning.
 - [Testflight SDK][testflight] - Testfligh offers analytics and crash reports in its SDK too.
 
@@ -111,10 +111,10 @@ Other solutions worth naming are: [Localytics][local], [MobileAppTracking][mat],
 [keen]: https://keen.io
 [gekko]: http://www.gekkoboard.com
 
-## App Sales Reports 
+## App Sales Reports
 
 - [AppAnnie][annie] - It gives you free data about the stats of your app. If you create an account fot analytics in your developer portal and connect it you'll also get sales reports.
-- [Appfigures][appfigures] - It combines sales & download numbers, world-wide reviews & ranks and it has public API's and other nice features. Track up to 5 apps for free. 
+- [Appfigures][appfigures] - It combines sales & download numbers, world-wide reviews & ranks and it has public API's and other nice features. Track up to 5 apps for free.
 
 [annie]: http://www.appannie.com
 [appfigures]: http://appfigures.com
