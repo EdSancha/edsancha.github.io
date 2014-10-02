@@ -69,7 +69,7 @@ a:hover   { color: #000; text-decoration:none}
 }
 
 #instafeed a {
-    float: left
+    float: left;
     width:100%;
 }
 
