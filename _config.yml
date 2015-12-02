@@ -1,6 +1,6 @@
 name: 			Eduardo Diaz Sancha Page & Blog
 markdown: 		redcarpet
-highlighter:  rouge
+highlighter:  pygments
 baseurl:		/
 source:      	.
 destination: 	./_site
