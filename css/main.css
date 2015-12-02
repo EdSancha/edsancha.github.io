@@ -490,61 +490,6 @@ ul.apps {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
   }
 
-/* Ads
--------------------------------------------------- */
-
-#fusionads {
-  position: static;
-  width: auto;
-  height: 100px;
-  margin-top:1em;
-  padding: 1em;
-  border: #ccc 1px solid;
-  font-size: 14px;
-  line-height: 1.3;
-}
-
-.fusion-img {
-		float: left;
-		margin-right: 1em;
-    margin-bottom: .5em;
-}
-
-.fusion-text {
-  padding-top:.5em;
-  color: #999;
-}
-.fusion-text:hover {
-  color: #2d692d;
-  text-decoration: none;
-}
-
-
-.fusion-poweredby {
-  display: block;
-  margin-top: .5em;
-}
-
-@media (min-width: 1080px) {
-  #fusionads {
-    position: fixed;
-    right: .5em;
-    top: .5em;
-    width: 140px;
-    height:190px;
-    margin: 0;
-    margin-top:0;
-    border:none;
-    text-align: right;
-  }
-  .fusion-img {
-    display: block;
-    margin-right: 0;
-    margin-left: .5em;
-  }
-}
-
-
 .gist {
   font-size:14px !important;
   line-height:1.3;
