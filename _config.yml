@@ -1,6 +1,6 @@
 name: 			Eduardo Diaz Sancha Page & Blog
 markdown: 		kramdown
-highlighter:  pygments
+highlighter:  rouge
 baseurl:		/
 source:      	.
 destination: 	./_site
