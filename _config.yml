@@ -5,5 +5,5 @@ baseurl:		/
 source:      	.
 destination: 	./_site
 url: 			http://edsancha.com
-gems:
+plugins:
   - jekyll-gist
