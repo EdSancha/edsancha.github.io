@@ -494,3 +494,19 @@ ul.apps {
   font-size:14px !important;
   line-height:1.3;
 }
+
+.strava-holder {
+  overflow: hidden;
+  padding-top: 68.65%;
+  position: relative;
+}
+
+.strava-holder iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+   max-width: 590px
+}
