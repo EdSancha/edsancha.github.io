@@ -1,0 +1,80 @@
+I"�"<p><em>Note: This is the continuation to <a href="http://edsancha.com/blog/2014/01/28/whats-in-my-iOS-toolbox">What’s in my iOS Toolbox?</a> article.</em></p>
+
+<p>After writing the previous article, I realized that there are a lot of tools that I left behind. I’ve used some of them eventually in projects. Some others are completely new for me but I’ll try them in the future. I also think that it could be useful to write down some interesting 3rd party libraries that have a lot of future and some backend soultions for the every type of project.</p>
+
+<h2 id="3rd-party-libraries-and-frameworks">3rd party libraries and frameworks</h2>
+
+<p>This section deserves a detailed article by itself, but there’re some libraries that need to be considered in most projects and others that are changing paradigms in the industry.</p>
+
+<ul>
+  <li><a href="http://github.com/AFNetworking">AFNetworking</a> - A great networking framework, with some interesting tools too, AFRocketClient to subscribe to server updates, AFIncrementalStore and OAuth 1 &amp; 2 Clients, among others.</li>
+  <li><a href="https://github.com/ReactiveCocoa">ReactiveCocoa</a> - Objective-C framework for <a href="http://en.wikipedia.org/wiki/Functional_reactive_programming">Functional Reactive Programming</a>. It provides APIs for composing and transforming streams of values. I’m following with great interest <a href="https://github.com/ReactiveCocoa/ReactiveCocoaLayout">ReactiveCocoaLayout</a>, AutoLayout in a reactive way.</li>
+  <li><a href="http://www.typhoonframework.org">Typhoon</a> - There are a lot of Dependency Injection Frameworks for iOS, but Typhoon stands out with great features (I love the way it focus in Obj-C at the same time that supporting XML).</li>
+</ul>
+
+<p>You’ll probably tell me that this list is super sort, but it’s intended to be like that. There’re other libraries included in other categories and a ton of smaller ones that are worth to be here. These ones are either basic (AFN) or paradigm changers (RAC and Typhoon). Be sure to subscribe to <a href="http://cocoacontrols.com">Cocoa Controls</a> newsletter to get the latest ones.</p>
+
+<h2 id="core-data">Core Data</h2>
+
+<p>I have a love/hate relationship with <a href="https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CoreData/cdProgrammingGuide.html">Core Data</a> and I think most iOS Developers will have the same feeling. That said, it’s better to have some tools to help working with it.</p>
+
+<ul>
+  <li><a href="http://rentzsch.github.io/mogenerator/">Mogenerator</a> - Command-line tool that, given an .xcdatamodel file, will generate two classes per entity, making easier to extend the user classes with your own methods.</li>
+  <li><a href="https://github.com/magicalpanda/MagicalRecord">Magical Record</a> - Wrapper around Core Data that makes simple requests in one line and keeps the power of NSFetchRequest.</li>
+  <li><a href="https://cutedgesystems.com/software/Liya/">Liya</a> - MySQL, PostgreSQL and SQLite3 databases free editor.</li>
+  <li><a href="http://thermal-core.com/CoreDataEditor/">Core Data Editor</a> ($) - Core Data Editor allows the user to read and edit Core Data schemes and create them (with Mogenerator two classes syntax).</li>
+</ul>
+
+<p>Checkout the excellent article about different Core Data frameworks and Libraries in <a href="http://nshipster.com/core-data-libraries-and-utilities/">NSHipster</a>.</p>
+
+<h2 id="automated-testing">Automated testing</h2>
+
+<p>Automated testing is always a hard choice. You need to write scripts or code to interact to your interface, making your work (or your company’s) almost the double.</p>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html">UIAutomation</a> - User interface testing tool included in Instruments. You write the scripts in JavaScript. Check also <a href="https://github.com/bendyworks/bwoken">Bwoken</a>, tool to run UIAutomation Tests from Terminal.</li>
+  <li><a href="http://appium.io">appium.io</a> - Open-source and cross-platform framework to write tests in almost any language. Looks very promising.</li>
+  <li><a href="https://github.com/kif-framework/KIF">KIF</a> - KIF, which stands for Keep It Functional, is an iOS integration test framework. It allows for easy automation of iOS apps by leveraging the accessibility attributes that the OS makes available for those with visual disabilities.</li>
+  <li><a href="https://github.com/inkling/Subliminal">Subliminal</a> - Subliminal is an framework for writing iOS integration tests. Subliminal provides a familiar OCUnit/SenTest-like interface to Apple’s UIAutomation framework, with tests written entirely in Objective-C.</li>
+  <li><a href="http://calaba.sh">Calabash</a> - Calabash enables you to write and execute automated acceptance tests of Android and iOS mobile apps. Test scripts have to be written mainly in <a href="http://cukes.info">Cucumber</a> and also other Ruby testing frameworks.</li>
+  <li><a href="http://www.testingwithfrank.com">Frank</a> - Frank allows you to write structured text test/acceptance tests/requirements (using Ruby/<a href="http://cukes.info">Cucumber</a>) and have them execute against your iOS application.</li>
+</ul>
+
+<h2 id="documentation">Documentation</h2>
+
+<ul>
+  <li><a href="http://gentlebytes.com/appledoc/">Appledoc</a> - Appledoc generates official docsets and HTML web sites like Apple’s or even better!.</li>
+  <li><a href="http://kapeli.com/dash">Dash</a> ($) - This tool has become super important in my set up with time. Checking API’s super fast and been able to handle the code snippets in the cloud is great.</li>
+</ul>
+
+<h2 id="backend-services">Backend Services</h2>
+
+<ul>
+  <li><a href="https://www.parse.com">Parse</a> - Great Backend-as-a-Servicedrop-in that works along all platforms, it has the easiest to read documentation and sample projects, so it’s highly recommeneded for beginners and small projects.</li>
+  <li><a href="https://www.stackmob.com">Stackmob</a> - Another great BaaS platform with great free plans. You can import your backend code and it has a free stack of functionalities in their “marketplace”.</li>
+  <li><a href="http://helios.io">Helios</a> - Open-source framework for iOS that provides push-notifications, passbook integration, app-purchases and data synchronization.</li>
+  <li><a href="http://urbanairship.com">UrbanAirship</a> - Easy to integrate push notifications, with limited usage for free.</li>
+</ul>
+
+<p>There are another BaaS options that offer similar services like: <a href="http://www.windowsazure.com/">Windows Azure</a>, <a href="http://www.kinvey.com">Kinvey</a>, <a href="https://backendless.com/">Backendless</a>, <a href="http://api.shephertz.com">Shephertz</a> …</p>
+
+<h2 id="analytics">Analytics</h2>
+
+<ul>
+  <li><a href="http://www.appsee.com">Appsee</a> - Appsee enables you to put yourself in the users’ shoes and visually understand exactly how your users interact with your app with user recordings, touch heatmaps and other functionalities. The free segment is a bit short but it’s still a tool to consider.</li>
+  <li><a href="https://segment.io">Segment.io</a> - The idea behind is to have one pipeline for all your data. Send data to any analytics or marketing tool with a single integration. I think it’s ideal if you don’t know which analytics tool to use in the beginning.</li>
+  <li><a href="http://testflight.com/">Testflight SDK</a> - Testfligh offers analytics and crash reports in its SDK too.</li>
+</ul>
+
+<p>Other solutions worth naming are: <a href="http://www.localytics.com">Localytics</a>, <a href="http://mobileapptracking.com">MobileAppTracking</a>, <a href="https://keen.io">keen.io</a>, <a href="http://www.gekkoboard.com">Gekkoboard</a> …</p>
+
+<h2 id="app-sales-reports">App Sales Reports</h2>
+
+<ul>
+  <li><a href="http://www.appannie.com">AppAnnie</a> - It gives you free data about the stats of your app. If you create an account fot analytics in your developer portal and connect it you’ll also get sales reports.</li>
+  <li><a href="http://appfigures.com">Appfigures</a> - It combines sales &amp; download numbers, world-wide reviews &amp; ranks and it has public API’s and other nice features. Track up to 5 apps for free.</li>
+</ul>
+
+<p>The article is getting long enough, but it should be a good continuation to the previous post. I still have some sections to fill: iOS books, logging, debugging, reverse engineering (although limited), applications to help marketing the app… But I think it’s better to leave it for an upcoming article. As always, I love your suggestions in the comments section and <a href="https://twitter.com/edsancha">twitter</a>. Thanks!!!</p>
+
+:ET

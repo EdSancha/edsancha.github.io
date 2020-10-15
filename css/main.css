@@ -63,52 +63,6 @@ blockquote p {color:#797979;}
 
 /*****************************************************************************/
 /*
-/* Instagram
-/*
-/*****************************************************************************/
-
-#instafeed {
-    overflow: hidden;
-    zoom: 1;
-    max-width: 100%;
-}
-
-#instafeed a {
-    float: left;
-    width: 25%;
-}
-
-#instafeed img {
-    width: 96%;
-    max-width: 96%
-}
-
-@media screen and (max-width:768px) {
-    #instafeed a {
-        width: 50%;
-        max-width: 50%
-
-  }
-}
-
-
-.ig-b- { display: inline-block; }
-
-.ig-b- img { visibility: hidden; }
-
-.ig-b-:hover { background-position: 0 -60px; }
-
-.ig-b-:active { background-position: 0 -120px; }
-
-.ig-b-16 {
-  width: 16px;
-  height: 16px;
-  background: url(//badges.instagram.com/static/images/ig-badge-sprite-16.png) no-repeat 0 0;
-}
-
-
-/*****************************************************************************/
-/*
 /* Site
 /*
 /*****************************************************************************/

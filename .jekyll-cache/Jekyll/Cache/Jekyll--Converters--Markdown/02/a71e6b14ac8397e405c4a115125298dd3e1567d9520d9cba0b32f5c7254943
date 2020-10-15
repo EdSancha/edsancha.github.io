@@ -1,0 +1,111 @@
+I")<p>In the latest 3 years I’ve been using some great apps, tools, technologies to create iOS apps. Some of them have already disappeared, some of them are new and some have just evolved with time. Here’s a list of them. I’m not saying they’re the best nor that you should also use them, but I hope it helps someone out there.</p>
+
+<h2 id="inspiration">Inspiration</h2>
+
+<ul>
+  <li><a href="http://pttrns.com">pttrns</a> - I check this page often to find inspiration, it contains screenshots of latest apps released and filters by component, making easier to find design patterns.</li>
+  <li><a href="http://www.mobile-patterns.com">Mobile Patterns</a> - Another curated feed with mobile design patterns by component. iOS and Android in this case. (Thanks to <a href="https://twitter.com/austinlouden">@austinladen</a>)</li>
+  <li><a href="http://capptivate.co">Capptivate</a> - Great page that showcases Apps and their UI animations.</li>
+  <li><a href="http://dribbble.com/search?q=ios">Dribbble</a> - Invitation-only community of designers, it showcases beautiful current or experimental iOS designs among other platforms.</li>
+  <li><a href="https://www.behance.net/">Behance</a> - Similar in concept to Dribbble but I could say more democratic, I personally like it more.</li>
+  <li><a href="http://cocoacontrols.com">Cocoa Controls</a> - List of code components and apps (most of them open-sourced) for iOS.</li>
+  <li><a href="http://www.apple.com/itunes/charts/free-apps/">App store app</a> - I think it’s important to check what is trending in the App Store and what are the most sold apps often.</li>
+  <li><a href="https://developer.apple.com/design/">Apple Guidelines</a> - Apple offers great documents to guide you through your app’s design process. More specifically, their [iOS Human Interface Guidelines][hig] has been a must-read document for every iOS developer/designer.</li>
+</ul>
+
+<h2 id="source-control">Source Control</h2>
+
+<ul>
+  <li><a href="http://gitscm.org">Git</a> - Git has become the standard in Source Control and you should know how to use it.</li>
+  <li><a href="http://github.com">Github</a> - If Git is the Source Control standard, Github is the place to work, store and collaborate in your projects. If you want to work in private projects you have to pay, which leads me to…</li>
+  <li><a href="http://bitbucket.org">Bitbucket</a> - Unlimited private code repositories (up to 5 users).</li>
+  <li><a href="http://www.sourcetreeapp.com">SourceTree</a> - Free Git client, you’ll have to go to terminal some times but it helps a lot when you have to make big commits or when you want to commit part of your work separately.</li>
+  <li><a href="http://www.git-tower.com">Tower</a> ($) - Beautiful Git client, but a bit expensive in my opinion.</li>
+</ul>
+
+<h2 id="design">Design</h2>
+
+<ul>
+  <li><a href="http://www.adobe.com/photoshop">Photoshop</a> ($$$) - Photoshop and Adobe Creative Suite have been the standard for many years but I’m trying and considering the switch to…</li>
+  <li><a href="http://www.pixelmator.com">Pixelmator</a> ($) - Powerful image editing app for the Mac that has everything you need to create and edit your images.</li>
+  <li><a href="http://www.teehanlax.com/tools/ios7/">iOS 7 Template by Teehan+Lax</a> - iOS 7 Template in PSD format.</li>
+  <li><a href="http://www.bohemiancoding.com/sketch">Sketch</a> ($) - Vector-based drawing tool. Currently in learning process but it looks really good. Check also <a href="http://sketchmine.co">Sketchmine</a> for samples.</li>
+  <li><a href="http://glyphish.com">Glyphish</a> ($) - The definitive Icon collection, a basic in your library.</li>
+  <li><a href="http://xscopeapp.com">xScope</a> ($) - Super handy tool to try to make your apps as pixel perfect as possible. Color pickers, rulers, mirroring and lots of features for a tiny app.</li>
+</ul>
+
+<h2 id="editors">Editors</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/xcode/">XCode</a> - Basic tool for every iOS Developer. There are some alternatives, like <a href="http://jetbrains.com/objc">AppCode</a>, but XCode has been my companion since the beginning. It has some great plugins, that help you with simple tasks. Some of them are:</li>
+  <li><a href="https://github.com/omz/ColorSense-for-Xcode">OMColorSense</a> - Adds a color interface to [UIColor whiteColor] calls</li>
+  <li><a href="https://github.com/ksuther/KSImageNamed-Xcode">KSImageNamed</a> - Helps you find the right image autocompleting [UIImage imageNamed:@””].</li>
+  <li><a href="http://maniacdev.com/xcode-plugins">Maniac-Dev-Plugins</a> - Maniac Dev page keeps an updated list of Plugins for Xcode.</li>
+  <li><a href="http://www.sublimetext.com">Sublime</a> - As it says in the page title, it’s the editor you’ll fall in love with, it has great features and the interface is super-friendly. It has multi-language syntax support, including Objective-C, but I mostly use it on backend and frontend projects.</li>
+  <li><a href="http://www.vim.org">Vim</a> - Vim is my usual terminal editor of choice.</li>
+</ul>
+
+<h2 id="dependency-management">Dependency Management</h2>
+
+<ul>
+  <li><a href="http://cocoapods.org">CocoaPods</a> - It’s the only one and it’s completely essential in the toolbox of any Objective-C Developer. It has thousands of libraries listed.</li>
+</ul>
+
+<h2 id="testing">Testing</h2>
+
+<ul>
+  <li><a href="https://github.com/allending/Kiwi">Kiwi</a> - I’m currently trying Kiwi and it looks like a great platform to creat unit tests.</li>
+  <li><a href="https://github.com/luisobo/Nocilla">Nocilla</a> - I’ve just found this library to easily stub HTTP methods.</li>
+  <li><a href="https://github.com/specta/specta">Specta</a> - It will be the next thing to try after Kiwi. It seems that the syntax is easier.</li>
+</ul>
+
+<h2 id="analytics">Analytics</h2>
+
+<ul>
+  <li><a href="http://www.google.com/analytics‎">Google Analytics</a> - Google Analytics is the first choice by many but some of them don’t know that it samples the data until 500k.</li>
+  <li><a href="http://www.flurry.com">Flurry</a> - Mobile oriented analytics, it gives real data from day one and it gives you great insights of how the industry is going.</li>
+  <li><a href="http://www.mixpanel.com">Mixpanel</a> ($) - They have a free segment, but anytime that I’ve used it I surpased it. It’s still a choice to consider.</li>
+</ul>
+
+<h2 id="debugging">Debugging</h2>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/mac/documentation/developertools/conceptual/InstrumentsUserGuide/Introduction/Introduction">Instruments</a> - “Instruments is a performance, analysis, and testing tool for dynamically tracing and profiling OS X and iOS code.” Essential tool and free with Xcode. So essential that I forgot it on my first draft, thanks <a href="https://twitter.com/chunkyguy">@chunkyguy</a>.</li>
+  <li><a href="http://crashlytics.com">Crashlytics</a> - Crashlytics provides powerful, yet light weight crash reporting for iOS and Android. I implement it in all projects from day one.</li>
+  <li><a href="http://www.runscope.com">Runscope</a> - Automated testing for APIs and backend services. Free with limited number of calls, I use it on development phases.</li>
+  <li><a href="http://pulse.io">Pulse.io</a> - Mobile Performance Monitoring, tool in alpha but with a great future. Measure idle times, network calls times, etc.</li>
+  <li><a href="http://revealapp.com">Reveal</a> ($) - Mac OS app that allows you to inspect, modify and debug your app views and layers in a beautiful 3D interface.</li>
+</ul>
+
+<h2 id="deployment">Deployment</h2>
+
+<ul>
+  <li><a href="http://testflight.com/">Testflight</a> - A service that helps managing the distribution of your internal builds and over the air installs.</li>
+  <li><a href="https://github.com/nomad/cupertino">Cupertino</a> - Part of <a href="http://nomad-cli.com">Nomad CLI</a> tools. Command line access to managing devices &amp; profiles in the Apple Provisioning Portal.</li>
+</ul>
+
+<h2 id="blogs-and-continous-learning">Blogs and Continous Learning</h2>
+
+<ul>
+  <li><a href="http://iosdevweekly.com">iOS Dev Weekly</a> - Great newsletter compiled and curated by <a href="https://twitter.com/daveverwer">Dave Verwer</a></li>
+  <li><a href="http://nshipster.com">NSHipster</a> - A must-learn blog about Objective-C and Cocoa written by <a href="http://mattt.me">Mattt Thompson</a></li>
+  <li><a href="https://mikeash.com/pyblog/">NSBlog</a> - A failure in the hot air department, is one of the best blogs on iOS Development.</li>
+  <li><a href="http://objc.io/">objc.io</a> - As they say: “A periodical about best practices and advanced techniques in Objective-C”. Great tutorials covering a somehow big subject on every release.</li>
+  <li><a href="http://ashfurrow.com/blog/">Ash Furrow</a> - Ash Furrow blog, great iOS posts among other things.</li>
+  <li><a href="http://online.stanford.edu/course/developing-ios7-apps-fall-2013">Stanford Online Course</a> - A classic in iOS learning, probably the first thing that comes to my mind when people ask me about free iOS Learning. (<a href="http://www.stanford.edu/class/cs193p/cgi-bin/drupal/">Downloads link</a>).</li>
+  <li><a href="http://www.raywenderlich.com">Ray Wenderlich</a> - Ray Wenderlich’s community of iOS tutorials is a broad source of examples and tutorials.</li>
+  <li><a href="http://ios-goodies.com">iOS Goodies</a> - Weekly goodies (articles, controls, free stuff…) related to iOS.</li>
+  <li><a href="http://benscheirman.com/2013/08/the-ios-developers-toolbelt/">Ben Scheirmann</a> - He has a more detailed list of iOS tools, actually I learned from some of the tools that I use from him. Check it out.</li>
+  <li><a href="http://twitter.com">Twitter</a> - I try to follow all the great developers I can and learn from them. The community is an unlimited source of information.</li>
+  <li><a href="http://bignerdranch.com/">Big Nerd Ranch</a> - Their books explain the basics and intermediate stuff in a great way. I’d love to go to one of their bootcamps.</li>
+</ul>
+
+<h2 id="disclaimer">Disclaimer</h2>
+
+<p>There are a lot of tools in the market, some of them paid, some of them free but these ones are the ones I use more commonly. Feel free to suggest them on the comments section!!!</p>
+
+<p><em>Update: I’ve written a second part to this article in <a href="http://edsancha.com/blog/2014/02/03/whats-in-my-iOS-toolbox-2">What’s in my iOS Toolbox? (2)</a>.</em></p>
+
+<p>[hig]:</p>
+
+:ET
