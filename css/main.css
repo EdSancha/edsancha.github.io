@@ -13,13 +13,13 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #FFFFFF;
-  font: 18px Avenir, Helvetica, Arial, sans-serif;
+  background-color: #0C0032;
+  font: 18px Helvetica Neue, Arial, sans-serif;
   text-align: center;
 }
 
-h1, h2, h3 {font-family: Avenir, Helvetica, Helvetica Neue, Arial, sans-serif; color:#594F4F}
-p, li {font-family: Avenir, Helvetica, Helvetica Neue, Arial, sans-serif; color:#594F4F}
+h1, h2, h3 {font-family: Helvetica Neue, Arial, sans-serif; color:#EEEEEE}
+p, li {font-family: Helvetica Neue, Arial, sans-serif; color:#EEEEEE}
 
 h1 {margin: 0 0 24px 0; padding: 0; font-size:32px; font-weight:bold;}
 h2 {margin: 24px 0 12px 0; padding: 0; font-size:26px; font-weight:bold;}
@@ -27,14 +27,12 @@ h3 {margin: 24px 0 12px 0; padding: 0; font-size:22px; font-weight:bold;}
 
 p { margin: 1em 0; }
 
-a         { color: #6FB7E9; text-decoration:none }
-a:hover   { color: #000; text-decoration:none}
+a         { color: #3500D3; text-decoration:none }
+a:hover   { color: #282828; text-decoration:none}
 
 blockquote { border-left: 2px solid #c5c5c5; padding-left: 20px; margin-left: 30px; margin-right: 20px;color:#797979; }
 
 blockquote p {color:#797979;}
-
-/*a:visited { color: #a0a; }
 
 /*****************************************************************************/
 /*
@@ -52,7 +50,7 @@ blockquote p {color:#797979;}
 
 .posts li {
   line-height: 1.5em;
-  border-bottom: 1px solid #6FB7E9;
+  border-bottom: 1px solid #3500D3;
 }
 
 .posts span {
@@ -82,8 +80,7 @@ blockquote p {color:#797979;}
 
 .footer {
   font-size: 90%;
-  color: #666;
-  /*border-top: 1px solid #8085C1;*/
+  color: #282828;
   margin-top: 1em;
   width: 100%;
   text-align: center;
@@ -99,11 +96,11 @@ blockquote p {color:#797979;}
 }
 
 .header a.extra {
-  color: #aaa;
+  color: #EEEEEE;
 }
 
 .header a.extra:hover {
-  color: #000;
+  color: #282828;
 }
 
 .footer-menu {
@@ -116,11 +113,11 @@ blockquote p {color:#797979;}
 }
 
 .footer .contact a {
-  color: #8085C1;
+  color: #3500D3;
 }
 
 .footer .contact a:hover {
-  color: #000;
+  color: #282828;
   text-decoration:none
 }
 
@@ -323,7 +320,7 @@ blockquote p {color:#797979;}
 }
 
 .title a:hover {
-  color: #000;
+  color: #282828;
 }
 
 .meta {
@@ -367,7 +364,7 @@ blockquote p {color:#797979;}
 
 /* terminal */
 .post pre.terminal {
-  border: 1px solid #000;
+  border: 1px solid #282828;
   background-color: #333;
   color: #FFF;
 }
