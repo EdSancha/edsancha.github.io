@@ -5,7 +5,7 @@ title: Eduardo Diaz Sancha - My Reading List
 
 # My Reading List
 
-This is a collection of software engineering, leadership books that I have read and would recommend to others. I'll add some fiction ones from time to time, although I have really limited time lately for reading and I try to focus on professional development at the moment.
+This is a living collection of software engineering, leadership books that I have read and would recommend to others. I'll add some fiction ones from time to time, although I have really limited time lately for reading and I try to focus on professional development at the moment.
 
 ## Currently Reading
 
@@ -34,7 +34,7 @@ There are books I recommend reading, both as an engineer or as an engineering ma
 * [Accelerate](https://www.amazon.com/gp/product/1942788339/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1942788339&linkId=0e85a11985f8a162a75ff18a79ba5215). Accelerate is the book every software engineer leader should read. Based on intensive research trying to find the traits of highly effective software engineering teams, it provides specific tools to improve team productivity.
 * [The Manager's Path](https://www.amazon.com/gp/product/1491973897/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1491973897&linkId=e43b23c25c9fa8352492a96904f4338e) - from Camille Fournier. This is a great guide to managers, from tech lead up to CTO level. I like how many actionable items you get from the book.
 * [The Making of a Manager](https://www.amazon.com/gp/product/B079WNPRL2/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B079WNPRL2&linkId=d87597bee37c8be8da115ad54067e78a) - by Julie Zhuo. Another great guide to managers but this one from a more personal perspective. I think it complements The Manager's Path perfectly.
-* [97 Things Every Engineering Manager Should Know: Collective Wisdom from the Experts](https://www.amazon.com/gp/product/1492050903/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1492050903&linkId=7b38507906f543b28fff0df5868e93a2) - Compilated by Camille Fournier. Interesting set of articles on Engineering Management.
+* [97 Things Every Engineering Manager Should Know: Collective Wisdom from the Experts](https://www.amazon.com/gp/product/1492050903/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1492050903&linkId=7b38507906f543b28fff0df5868e93a2) - by Camille Fournier. Interesting set of articles on Engineering Management.
 
 ### Engineering Books
 
@@ -46,7 +46,7 @@ There are books I recommend reading, both as an engineer or as an engineering ma
 * [Cracking the Coding Interview](https://www.amazon.com/gp/product/0984782850/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0984782850&linkId=faf0cdae7d3087d13fa3b5c73e59f3bb)
 * [System Design Interview](https://www.amazon.com/gp/product/B08CMF2CQF/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B08CMF2CQF&linkId=56205b55c951ea9b0f3047609d342039)  
 
-### Other proffesionally related
+### Other "work" related
 
 * [The Design of Everyday Things](https://www.amazon.com/gp/product/B00E257T6C/ref=as_li_tl?ie=UTF8&tag=eds02a-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B00E257T6C&linkId=38e26f9ab918542fc4268a6f5a426c71) - written by Donald A. Norman, I've bought this book 3 times already. As customer-facing engineers and managers, we often need to give input and make decisions on user-facing designs. This guide to human-centered design shows that usability is just as (or more) important than aesthetics.
 
