@@ -1,7 +1,7 @@
 ---
 layout: last-week-read
-title:  "Last Week Reads"
-description:  Last Week Reads - April 13 - April 20.
+title:  "Last Week Reads - April 13th - April 20th"
+description:  Trends in tech, tasks vs user-stories, DE&I, management and mosquitoes.
 date:   2021-04-21 23:30:00
 timeToRead: 2 minutes read
 categories: reading management 

@@ -1,13 +1,13 @@
 ---
 layout: last-week-read
-title:  "Last Week Reads"
-description:  Last Week Reads - April 21 - April 28.
+title:  "Last Week Reads - April 21st - April 28th"
+description:  Communication architecture, bias on few seconds of speech, gender bias in leadership, management tips and Basecamp controversy. 
 date:   2021-04-28 23:30:00
 timeToRead: 2 minutes read
 categories: reading management 
 ---
 
-* A strong emphasis on learning - including blameless post-mortems, experimentation and short cycle feedback loops- can embed the sharing of knowledge and surfacing of relevant insights to aid in real time adaptation to changing conditions [Designing & Managing for Resilience](https://www.infoq.com/articles/series-enhancing-resilience-4/)
+* A strong emphasis on learning - including blameless post-mortems, experimentation and short cycle feedback loops- can embed the sharing of knowledge and surfacing of relevant insights to aid in real time adaptation to changing conditions [Designing & Managing for Resilience](https://www.infoq.com/articles/series-enhancing-resilience-4/).
 * Great article about how about efficient communication architecture and culture, starting by using principles like "Written over verbal" and "Async over Sync" and ending about using tools and frameworks like the [RACI Matrix](https://en.wikipedia.org/wiki/Responsibility_assignment_matrix). Highly recommended. [How to Design a Communication Architecture](https://refactoring.fm/p/how-to-design-a-communication-architecture).
 * On this article it shows how just a few seconds give hiring managers time to bias against people from a different socioeconomic status: [Yale study shows class bias in hiring based on few seconds of speech](https://news.yale.edu/2019/10/21/yale-study-shows-class-bias-hiring-based-few-seconds-speech).
 * Old study I stumbled upon from 2019, demonstrating known gender bias, "By not fully recognizing leadership potential in female candidates, organizations are inhibiting the prospects of half of their talent. This inhibition ironically means organizations may be less likely to achieve their own full potential." [Overlooked Leadership Potential: The Preference for Leadership Potential in Job Candidates Who Are Men vs. Women](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.00755/full).

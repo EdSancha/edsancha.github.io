@@ -1,8 +1,8 @@
 ---
 layout: last-week-read
-title:  "Last Week Reads"
-description:  Last Week Reads - April 21 - April 28.
-date:   2021-04-28 23:30:00
+title:  "Last Week Reads - April 28th - May 5th"
+description:  "Transitioning, ad-privacy, app startup growing pains, and diversity."
+date:   2021-05-05 23:30:00
 timeToRead: 2 minutes read
 categories: reading management 
 ---
