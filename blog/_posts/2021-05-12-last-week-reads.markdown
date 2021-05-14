@@ -1,8 +1,8 @@
 ---
 layout: last-week-read
-title:  "Last Week Reads - April 28th - May 5th"
-description:  "Bridge week, ad-privacy, app startup growing pains, and diversity."
-date:   2021-05-12 14:30:00
+title:  "Last Week Reads - May 5th - May 12th"
+description:  "Bridge week, humility, workplace wellbeing, and privacy in ad industry."
+date:   2021-05-13 22:00:00
 timeToRead: 2 minutes read
 categories: reading management 
 ---
