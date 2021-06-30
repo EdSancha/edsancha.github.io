@@ -1,7 +1,7 @@
 ---
 layout: last-week-read
 title:  "Last Week Reads - May 20th - May 30th"
-description:  "Accessibility, transitioning to existing teams, surviving a stroke, and balancing work, life and training for triathletes."
+description:  "Accessibility, transitioning to existing teams, and relationship between PMs, EMs and stakeholders ."
 date:   2021-05-30 23:00:00
 timeToRead: 2 minutes read
 categories: reading management 
