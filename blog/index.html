@@ -25,4 +25,32 @@ title: Eduardo Diaz Sancha - Blog
 
    {% pagination %}
 
+   <!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="nav.pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+  {% else %}
+    <span>&larr; Previous</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <a>{{ page }}</a>
+    {% elsif page == 1 %}
+      <a href="{{ site.paginate_path | relative_url | replace: ':num', '' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}">Next &rarr;</a>
+  {% else %}
+    <span>Next &rarr;</span>
+  {% endif %}
 </div>
+{% endif %}
+
+</div>
+
