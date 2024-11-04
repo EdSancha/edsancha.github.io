@@ -7,7 +7,7 @@ title: Eduardo Diaz Sancha - Blog
   <h1>Blog</h1>
 
   <ul class="posts">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
       <li>
         <!-- &raquo;  -->
 
@@ -22,5 +22,7 @@ title: Eduardo Diaz Sancha - Blog
       </li>
     {% endfor %}
   </ul>
+
+   {% pagination %}
 
 </div>
