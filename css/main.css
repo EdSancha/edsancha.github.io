@@ -6,9 +6,34 @@
 
 /* Variables */ 
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+
 :root {
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --link-foreground: #3500D3;
+  --font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-weight: normal;
+  --bold-font-weight: bold; 
+
+  --title-font-family: var(--font-family);
+  --title-font-weight: bold;
+  
+  --body-foreground: #0d0032;
+  --body-background: #eee;
+  --link-foreground: #3500d3;
+  --blockquote-foreground: #797979;
+  --blockquote-border: #c5c5c5;
+
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-foreground: #eee;
+    --body-background: #111;
+    --link-foreground: #64c1f8;
+    --blockquote-foreground: #797979;
+    --blockquote-border: #c5c5c5;
+  }
 }
 
 /* Global Reset */
@@ -20,27 +45,58 @@
 html, body { height: 100%; }
 
 body {
-  background-color: #EEEEEE;
+  background: var(--body-background);
+  color: var(--body-foreground);  
   font-family: var(--font-family);
   font-size: 18px;
   line-height: 1.5em;
 }
 
-h1, h2, h3 {font-family: Helvetica Neue, Arial, sans-serif; color:#0C0032}
-p, li {font-family: Helvetica Neue, Arial, sans-serif; color:#0C0032}
+h1, h2, h3 {
+  font-family: var(--title-font-family); 
+  color:var(--body-foreground)
+}
 
-h1 {margin: 0 0 24px 0; padding: 0; font-size:32px; font-weight:bold;}
-h2 {margin: 24px 0 12px 0; padding: 0; font-size:26px; font-weight:bold;}
-h3 {margin: 24px 0 12px 0; padding: 0; font-size:22px; font-weight:bold;}
+p, li {
+  font-family: var(--font-family); 
+  color:var(--body-foreground)
+}
 
-p { margin: 1em 0; }
+h1 {
+  margin-bottom: 0.5em; 
+  line-height: 1.2em;
+  font-size:2.4em; 
+  font-weight:var(--title-font-weight);
+}
 
-a         { color: var(--link-foreground); text-decoration:none}
-a:hover   { color: #282828; text-decoration:none}
+h2 {
+  font-size:1.4em; 
+  font-weight:var(--title-font-weight);
+  margin-bottom: 0.3em; 
+}
 
-blockquote { border-left: 2px solid #c5c5c5; padding-left: 20px; margin-left: 30px; margin-right: 20px; margin-top: 10px; margin-bottom: 20px; color:#797979; }
+h3 {
+  font-size:1.2em; 
+  font-weight:var(--title-font-weight);
+}
 
-blockquote p {color:#797979;}
+p { margin: 0 0 1em; }
+
+a         { 
+  color: var(--link-foreground); 
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover   { 
+  transition-property: border;
+  transition-duration: 0.2s;
+  border-bottom: 1px solid;
+}
+
+blockquote { border-left: 0.2em solid var(--blockquote-border); padding-left: 1em; margin-left: 2em; margin-top: 1em; margin-bottom: 1em; color:var(--blockquote-foreground); }
+
+blockquote p {color:var(--blockquote-foreground);}
 
 #progress-bar {
   background: linear-gradient(to right, red var(--progress), transparent 0);
@@ -61,65 +117,63 @@ blockquote p {color:#797979;}
 }
 
 .posts a {
-  font-size:26px;
+  font-size:1.4em;
   font-weight:bold;
 }
 
 .posts li {
-  line-height: 1.5em;
+  line-height: 1.4em;
   border-bottom: 1px solid var(--link-foreground);
 }
 
-.posts span {
-  color: #aaa;
-/*  font-family: Monaco, "Courier New", monospace; */
-  margin-right: 3em;
-}
-
-nav.pagination {
+.pagination {
   text-align: center;
-  margin-bottom: 2em;
+  margin-top: 2em;
 }
 
-nav.pagination a {
+.pagination a {
   padding: 2px 6px;
   margin-right: 0.2em;
   text-decoration: none;
   border: 0;
 }
 
-nav.pagination a:hover {
+.pagination a:hover {
   text-decoration: underline;
+  text-align: center;
 }
 
-nav.pagination a[rel=next]:hover, nav.pagination a[rel=prev]:hover {
+.pagination a[rel=next]:hover, nav.pagination a[rel=prev]:hover {
   background: none;
   text-decoration: underline;
+  text-align: center;
   color: var(--link-foreground);
 }
 
-nav.pagination span {
+.pagination span {
   padding: 2px 6px;
-  margin-right: 0.2em;
+  margin-right: 0.5em;
 }
 
-nav.pagination span.gap {
+.pagination span.gap {
   padding: 2px;
   color: var(--link-foreground);
 }
 
-nav.pagination span.disabled {
+.pagination span.disabled {
   color: #aaa;
 }
 
-nav.pagination em {
+.pagination em {
   padding: 4px 8px;
+  margin-top: 2em;
 }
 
 @media all and (max-width: 660px) {
-  nav.pagination a, nav.pagination span.gap {
+  .pagination a, .pagination span.gap {
     display: none;
-    margin: 0
+    margin: 0;
+    color: #aaa;
   }
 
   nav.pagination a.prev, nav.pagination a.next {
@@ -147,7 +201,7 @@ nav.pagination em {
 }
 
 .footer {
-  font-size: 90%;
+  font-size: 0.9em;
   color: #282828;
   margin-top: 1em;
   width: 100%;
@@ -164,7 +218,7 @@ nav.pagination em {
 }
 
 .header a.extra {
-  color: #0C0032;
+  color: var(--body-foreground);
 }
 
 .header a.extra:hover {
@@ -399,6 +453,7 @@ nav.pagination em {
   color: #aaa;
   font-size: 80%;
   margin-bottom: 12px;
+  margin-top:1.4em;
 }
 
 .meta span {
@@ -492,7 +547,7 @@ ul.apps {
     display: block;
     width: 100px;
     height: 10px;
-    font: 14px Avenir, Helvetica, Arial, sans-serif;
+    font: 14px var(--font-family);
     text-align: center;
     line-height: 1em;
     padding: 8px 0 0;
