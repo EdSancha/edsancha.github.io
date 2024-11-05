@@ -209,6 +209,10 @@ nav.pagination em {
     height: 26px;
     margin-top:  1em;
     margin-bottom: 10px;
+    
+    /* CSS filter generator to convert from black to target hex color (#3500D3) https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: brightness(0) saturate(100%) invert(15%) sepia(96%) saturate(6688%) hue-rotate(260deg) brightness(74%) contrast(134%);
+
 
     -o-transition: all .3s;
     -moz-transition: all .3s;
