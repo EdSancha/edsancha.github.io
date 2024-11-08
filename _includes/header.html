@@ -22,15 +22,46 @@
     </script>
 
 </head>
+
 <body>
 
-<div id="progress-bar"></div>
+    <div class="site">
 
-<div class="site">
+            <div class="progressPanel">
+                <span class="progress"></span>
+            </div>
 
     <div class="header">
         <a {% if page.url == "/index.html" %}class="extra" href="/">Home {% else %} href="/"> Home {% endif %} </a>
         <a {% if page.url == "/work/index.html" %}class="extra" {% endif %} href="/work/">Work</a>
         <a {% if page.url == "/blog/index.html" or page.layout == 'post' %} class="extra" {% endif %} href="/blog/">Blog</a>
         <a {% if page.url == "/my-reading-list/index.html" or page.layout == 'post' %} class="extra" {% endif %} href="/my-reading-list/">Reading List</a>
+
     </div>
+
+    <script>
+
+        const progressPanel = document.querySelector('.progressPanel')
+        const progressBar = document.querySelector('.progress')
+
+        const handleProgressBar = (_) => {
+            
+            var docElem = document.documentElement;
+            var docBody = document.body;
+            var scrollTop = (docBody.scrollTop || docElem.scrollTop);
+            var scrollTop = docElem.scrollTop;
+
+            var height = docElem.scrollHeight - docElem.clientHeight;
+        
+            readPercent = scrollTop / height * 100;
+            progressBar.style.transform = `translate3d(${ readPercent - 100 }%, 0, 0)`
+
+        }
+
+        const loop = () => {
+            handleProgressBar(document.querySelector('header'))
+            window.requestAnimationFrame(loop)
+        }
+
+        loop()
+    </script>   

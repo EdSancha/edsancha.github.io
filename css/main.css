@@ -98,12 +98,28 @@ blockquote { border-left: 0.2em solid var(--blockquote-border); padding-left: 1e
 
 blockquote p {color:var(--blockquote-foreground);}
 
-#progress-bar {
-  background: linear-gradient(to right, red var(--progress), transparent 0);
-  position: sticky;
-  overflow: hidden;
-  width: 100%;
-  height: 3px;
+.progressPanel {
+	z-index: 1;
+  text-align: center;
+  background-color: var(--body-background);
+	height: 2px;
+	position: fixed;
+  top: 0;
+	right: 0;
+	left: 0;
+}
+
+.progress {
+	display: block;
+	background-color: var(--body-foreground);
+	height: 2px;
+	transform: translate3d(-100%, 0, 0);
+	position: fixed;
+  top: 0;
+	right: 0;
+	left: 0;
+	z-index:1;
+}
   z-index: 1;
 }
 
@@ -196,7 +212,6 @@ blockquote p {color:var(--blockquote-foreground);}
   margin:  1em auto 1em;
   width: 90%;
   text-rendering:optimizeLegibility;
-
   -webkit-font-smoothing: antialiased;
 }
 
