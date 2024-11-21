@@ -57,16 +57,27 @@ h1, h2, h3 {
   color:var(--body-foreground)
 }
 
-p, li {
+p {
   font-family: var(--font-family); 
-  color:var(--body-foreground)
+  color:var(--body-foreground);
+  margin: 0 0 1em;
+}
+
+ul {
+  margin-bottom: 1em;
+}
+
+li {
+  font-family: var(--font-family); 
+  color:var(--body-foreground);
+  margin-bottom: 0.2em;
 }
 
 h1 {
-  margin-bottom: 0.5em; 
   line-height: 1.2em;
   font-size:2.4em; 
   font-weight:var(--title-font-weight);
+  margin-bottom: 0.5em; 
 }
 
 h2 {
@@ -78,11 +89,10 @@ h2 {
 h3 {
   font-size:1.2em; 
   font-weight:var(--title-font-weight);
+  margin-bottom: 0.3em; 
 }
 
-p { margin: 0 0 1em; }
-
-a         { 
+a { 
   color: var(--link-foreground); 
   text-decoration: none;
   border-bottom: 1px solid transparent;
