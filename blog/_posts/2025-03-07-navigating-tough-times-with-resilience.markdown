@@ -4,7 +4,7 @@ title: "Navigating Tough Times with Resilience"
 date: 2025-03-07
 author: "Eduardo Diaz Sancha"
 timeToRead: 3 minutes read
-description: "From Substack: "Discover how resilience and endurance can empower leaders to navigate tough times, drawing parallels between leadership and endurance sports.""
+description: "From Substack: Discover how resilience and endurance can empower leaders to navigate tough times, drawing parallels between leadership and endurance sports."
 categories: "leadership management"
 ---
 
