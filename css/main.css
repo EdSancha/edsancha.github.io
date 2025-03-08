@@ -73,6 +73,13 @@ li {
   margin-bottom: 0.2em;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--body-foreground);
+  margin: 2em 0;
+}
+
 h1 {
   line-height: 1.2em;
   font-size:2.4em; 
