@@ -4,11 +4,12 @@ title: "Slow Productivity for Engineering Leaders"
 date: 2025-03-20
 author: "Eduardo Diaz Sancha"
 timeToRead: 4 minutes read
-description: "From Substack: Explore how engineering leaders can enhance productivity and reduce burnout by embracing a thoughtful, deliberate approach to work, inspired by Cal Newport's Slow Productivity principles."
+description: "Explore how engineering leaders can enhance productivity and reduce burnout by embracing a thoughtful, deliberate approach to work, inspired by Cal Newport's Slow Productivity principles."
 categories: "leadership management wellbeing"
+source_name: "Substack"
+source_url: "https://leadershipendurance.substack.com"
+source_date: "20th March, 2025"
 ---
-
-__(This article was published originally on my [Substack](https://leadershipendurance.substack.com) on the 20th March, 2025)__
 
 _Hello, this is [Eduardo](https://www.linkedin.com/in/edsancha) and I'm an Engineering Leader and Certified Running coach. This is the second article in the Leadership Endurance newsletter, a source for leadership, endurance sports, performance, and growth best practices in the confluence of these worlds._
 
