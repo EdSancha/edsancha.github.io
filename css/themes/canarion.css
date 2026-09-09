@@ -71,26 +71,23 @@
   --site-width-lg: 610px;
   --site-width-xl: 690px;
   --site-width-xxl: 820px;
+
+  /* Dark values (warm near-black ground, and canary finally gets to be the accent). main.css decides when they become live. */
+  --body-foreground-dark: #F2EFDC;
+  --body-background-dark: #14130A;
+  --link-foreground-dark: #FFEF00;
+  --link-hover-foreground-dark: #FFF799;
+  --muted-foreground-dark: #B0AA84;
+  --rule-color-dark: #332F0E;
+  --blockquote-foreground-dark: #B0AA84;
+  --blockquote-border-dark: #4A441A;
+
+  --code-background-dark: #1F1D10;
+  --code-border-dark: #4A441A;
+  --terminal-background-dark: #0C0B06;
+  --terminal-border-dark: #332F0E;
+  --terminal-foreground-dark: #F2EFDC;
+
+  --chip-border-color-dark: #4A441A;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark: warm near-black ground, and canary finally gets to be the accent */
-    --body-foreground: #F2EFDC;
-    --body-background: #14130A;
-    --link-foreground: #FFEF00;
-    --link-hover-foreground: #FFF799;
-    --muted-foreground: #B0AA84;
-    --rule-color: #332F0E;
-    --blockquote-foreground: #B0AA84;
-    --blockquote-border: #4A441A;
-
-    --code-background: #1F1D10;
-    --code-border: #4A441A;
-    --terminal-background: #0C0B06;
-    --terminal-border: #332F0E;
-    --terminal-foreground: #F2EFDC;
-
-    --chip-border-color: #4A441A;
-  }
-}

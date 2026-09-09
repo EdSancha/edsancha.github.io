@@ -17,14 +17,16 @@
 
     {%- comment -%}
       Theme token overrides, loaded after main.css. site_theme is what a
-      first-time visitor gets; the script below swaps in their stored choice
-      before first paint, so the page never flashes the wrong theme.
+      first-time visitor gets; the script below swaps in their stored theme
+      and appearance before first paint, so the page never flashes the wrong
+      one.
     {%- endcomment -%}
     {%- assign active_theme = site.site_theme | default: 'atlanta' -%}
     <link id="theme-css" rel="stylesheet" href="{{ '/css/themes/' | append: active_theme | append: '.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
     <script>
       window.__themeBase = "{{ '/css/themes/' | relative_url }}";
       window.__activeTheme = {{ active_theme | jsonify }};
+      window.__activeAppearance = 'system';
       (function () {
         var link = document.getElementById('theme-css');
         // Only names the site actually ships. A value left over from a renamed
@@ -36,9 +38,25 @@
           window.__activeTheme = name;
           try { localStorage.setItem('theme', name); } catch (e) {}
         };
+
+        // "system" means no attribute at all, so the prefers-color-scheme
+        // query in main.css decides. The other two override it both ways.
+        window.__setAppearance = function (name) {
+          if (['system', 'light', 'dark'].indexOf(name) < 0) { return; }
+          if (name === 'system') {
+            document.documentElement.removeAttribute('data-appearance');
+          } else {
+            document.documentElement.setAttribute('data-appearance', name);
+          }
+          window.__activeAppearance = name;
+          try { localStorage.setItem('appearance', name); } catch (e) {}
+        };
+
         try {
-          var saved = localStorage.getItem('theme');
-          if (saved && saved !== window.__activeTheme) { window.__setTheme(saved); }
+          var savedTheme = localStorage.getItem('theme');
+          if (savedTheme && savedTheme !== window.__activeTheme) { window.__setTheme(savedTheme); }
+          var savedAppearance = localStorage.getItem('appearance');
+          if (savedAppearance) { window.__setAppearance(savedAppearance); }
         } catch (e) {}
       })();
     </script>
@@ -91,7 +109,7 @@
         <a {% if page.url == "/work/" %}class="extra" {% endif %}href="{{ '/work/' | relative_url }}">Work</a>
         <a {% if page.url contains "/blog/" or is_post %}class="extra" {% endif %}href="{{ '/blog/' | relative_url }}">Writing</a>
         <a {% if page.url == "/my-reading-list/" %}class="extra" {% endif %}href="{{ '/my-reading-list/' | relative_url }}">Reading List</a>
-        {% include theme-switcher.html %}
+        {% include settings-menu.html %}
     </nav>
 
     <script>

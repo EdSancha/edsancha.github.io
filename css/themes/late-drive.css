@@ -59,26 +59,24 @@
   --site-width-lg: 640px;
   --site-width-xl: 720px;
   --site-width-xxl: 860px;
+
+  /* Dark values. main.css decides when these become live. */
+  /* Omarchy themes/tokyo-night/colors.toml */
+  --body-foreground-dark: #c0caf5;   /* bright_foreground */
+  --body-background-dark: #1a1b26;   /* background */
+  --link-foreground-dark: #7aa2f7;   /* accent / blue */
+  --link-hover-foreground-dark: #7da6ff; /* bright_blue */
+  --muted-foreground-dark: #a9b1d6;  /* foreground */
+  --rule-color-dark: #292e42;        /* selection */
+  --blockquote-foreground-dark: #a9b1d6;
+  --blockquote-border-dark: #565f89; /* dark_foreground */
+
+  --code-background-dark: #24283b;   /* lighter_background */
+  --code-border-dark: #414868;       /* muted */
+  --terminal-background-dark: #13141c; /* dark_background */
+  --terminal-border-dark: #292e42;
+  --terminal-foreground-dark: #c0caf5;
+
+  --chip-border-color-dark: #565f89;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Omarchy themes/tokyo-night/colors.toml */
-    --body-foreground: #c0caf5;   /* bright_foreground */
-    --body-background: #1a1b26;   /* background */
-    --link-foreground: #7aa2f7;   /* accent / blue */
-    --link-hover-foreground: #7da6ff; /* bright_blue */
-    --muted-foreground: #a9b1d6;  /* foreground */
-    --rule-color: #292e42;        /* selection */
-    --blockquote-foreground: #a9b1d6;
-    --blockquote-border: #565f89; /* dark_foreground */
-
-    --code-background: #24283b;   /* lighter_background */
-    --code-border: #414868;       /* muted */
-    --terminal-background: #13141c; /* dark_background */
-    --terminal-border: #292e42;
-    --terminal-foreground: #c0caf5;
-
-    --chip-border-color: #565f89;
-  }
-}

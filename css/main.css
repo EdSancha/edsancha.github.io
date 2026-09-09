@@ -10,14 +10,18 @@
  * css/themes/ that redefine these values and nothing else; header.html loads
  * the chosen one after this file.
  *
- * A theme MUST define both its light values (on :root) and its dark values
- * (inside its own prefers-color-scheme block). This file's dark block comes
- * earlier in source order, so a theme that only sets light values would leak
- * them into dark mode.
+ * Themeable colours come in pairs: --x is the light value, --x-dark its dark
+ * counterpart. A theme declares either or both and never writes a media query
+ * — the two switch blocks below this list are the only places that choose,
+ * and a theme that omits a --*-dark value simply inherits the one here.
  * ------------------------------------------------------------------------ */
 
 
 :root {
+  /* Form controls and scrollbars follow the live palette. Overridden by the
+     two switch blocks below. */
+  color-scheme: light;
+
   /* Type */
   --font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
@@ -36,35 +40,59 @@
   --h2-font-size: 1.4em;
   --h3-font-size: 1.2em;
 
-  /* Colour */
+  /* Colour. Every themeable colour is a pair: the light value and its
+     --*-dark counterpart. The two switch blocks below are the only places
+     that choose between them, so a theme declares values and never writes a
+     media query — and a theme that defines only light values inherits these
+     dark ones instead of leaking light ones into dark mode. */
   --body-foreground: #0d0032;
+  --body-foreground-dark: #eee;
   --body-background: #eee;
+  --body-background-dark: #111;
   --link-foreground: #3500d3;
+  --link-foreground-dark: #64c1f8;
   --link-hover-foreground: #282828;
-  --accent: var(--link-foreground);
+  --link-hover-foreground-dark: #9ad8fb;
   --muted-foreground: #767676;
-  --rule-color: var(--body-foreground);
+  --muted-foreground-dark: #9a9a9a;
   --blockquote-foreground: #797979;
+  --blockquote-foreground-dark: #979797;
   --blockquote-border: #c5c5c5;
+  --blockquote-border-dark: #454545;
+  --rule-color: var(--body-foreground);
+  --rule-color-dark: var(--body-foreground-dark);
 
   --code-background: #eef;
+  --code-background-dark: #1c1c28;
   --code-border: #ddd;
+  --code-border-dark: #33333f;
   --terminal-background: #333;
+  --terminal-background-dark: #333;
   --terminal-border: #282828;
+  --terminal-border-dark: #282828;
   --terminal-foreground: #fff;
+  --terminal-foreground-dark: #fff;
 
-  /* Raised surfaces (the theme picker panel). The background follows the
-     page, so a theme that repaints --body-background repaints the panel with
-     it, in both light and dark, with no per-theme work. */
+  /* Derived, so they follow whichever set is live with no pair of their own. */
+  --accent: var(--link-foreground);
+
+  /* Raised surfaces (the settings panel). The background follows the page, so
+     a theme that repaints --body-background repaints the panel with it. The
+     shadow keeps one geometry and varies only its colour, since a black
+     shadow is invisible on a dark ground. */
   --surface-background: var(--body-background);
   --surface-border-color: var(--blockquote-border);
-  --surface-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  --surface-shadow: 0 6px 20px var(--surface-shadow-color);
+  --surface-shadow-color: rgba(0, 0, 0, 0.18);
+  --surface-shadow-color-dark: rgba(0, 0, 0, 0.6);
   --surface-hover-background: rgba(0, 0, 0, 0.06);
+  --surface-hover-background-dark: rgba(255, 255, 255, 0.09);
 
   /* Shape */
   --post-divider-color: var(--link-foreground);
   --chip-radius: 1em;
   --chip-border-color: var(--blockquote-border);
+  --chip-border-color-dark: var(--blockquote-border-dark);
 
   /* Measure, per breakpoint */
   --site-width-sm: 400px;
@@ -74,24 +102,59 @@
   --site-width-xxl: 900px;
 }
 
+/* ---------------------------------------------------------------------------
+ * Light and dark: the only two places that choose.
+ *
+ * Both blocks carry the identical list, so the dark values themselves live in
+ * exactly one place — the --*-dark pairs above, or a theme's override of them.
+ * data-appearance is set on <html> by the settings menu: absent means "follow
+ * the OS", which is the default.
+ * ------------------------------------------------------------------------ */
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --body-foreground: #eee;
-    --body-background: #111;
-    --link-foreground: #64c1f8;
-    --link-hover-foreground: #9ad8fb;
-    --muted-foreground: #9a9a9a;
-    --blockquote-foreground: #979797;
-    --blockquote-border: #454545;
+  :root:not([data-appearance="light"]) {
+    color-scheme: dark;
+    --body-foreground: var(--body-foreground-dark);
+    --body-background: var(--body-background-dark);
+    --link-foreground: var(--link-foreground-dark);
+    --link-hover-foreground: var(--link-hover-foreground-dark);
+    --muted-foreground: var(--muted-foreground-dark);
+    --blockquote-foreground: var(--blockquote-foreground-dark);
+    --blockquote-border: var(--blockquote-border-dark);
+    --rule-color: var(--rule-color-dark);
 
-    --code-background: #1c1c28;
-    --code-border: #33333f;
+    --code-background: var(--code-background-dark);
+    --code-border: var(--code-border-dark);
+    --terminal-background: var(--terminal-background-dark);
+    --terminal-border: var(--terminal-border-dark);
+    --terminal-foreground: var(--terminal-foreground-dark);
 
-    /* A black shadow is invisible on a dark ground; deepen it, and lift the
-       hover overlay to white so it reads on a dark panel. */
-    --surface-shadow: 0 8px 26px rgba(0, 0, 0, 0.6);
-    --surface-hover-background: rgba(255, 255, 255, 0.09);
+    --chip-border-color: var(--chip-border-color-dark);
+    --surface-shadow-color: var(--surface-shadow-color-dark);
+    --surface-hover-background: var(--surface-hover-background-dark);
   }
+}
+
+:root[data-appearance="dark"] {
+  color-scheme: dark;
+    --body-foreground: var(--body-foreground-dark);
+    --body-background: var(--body-background-dark);
+    --link-foreground: var(--link-foreground-dark);
+    --link-hover-foreground: var(--link-hover-foreground-dark);
+    --muted-foreground: var(--muted-foreground-dark);
+    --blockquote-foreground: var(--blockquote-foreground-dark);
+    --blockquote-border: var(--blockquote-border-dark);
+    --rule-color: var(--rule-color-dark);
+
+    --code-background: var(--code-background-dark);
+    --code-border: var(--code-border-dark);
+    --terminal-background: var(--terminal-background-dark);
+    --terminal-border: var(--terminal-border-dark);
+    --terminal-foreground: var(--terminal-foreground-dark);
+
+    --chip-border-color: var(--chip-border-color-dark);
+    --surface-shadow-color: var(--surface-shadow-color-dark);
+    --surface-hover-background: var(--surface-hover-background-dark);
 }
 
 /* Global Reset */
@@ -306,16 +369,32 @@ blockquote p {color:var(--blockquote-foreground);}
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  /* column-gap rather than a margin on each link: the margin also applied
+     after the last one, wasting the width that pushed the settings button
+     onto a second row on a phone. row-gap so that if it ever does wrap, the
+     rows are separated instead of colliding with each other and the title. */
+  column-gap: 1em;
+  row-gap: 0.5em;
   margin-bottom: 1em;
 }
 
 .header a {
-  margin-right: 1em;
   text-decoration: none;
 }
 
+/* Below 480px .site is 90% of the viewport — about 338px on a 375px phone —
+   and the four links plus the settings button need more than that at full
+   size. Tightening both buys ~60px, which puts the nav back on one line down
+   to about 360px. Narrower than that it wraps, now cleanly. */
+@media only screen and (max-width: 479px) {
+  .header {
+    column-gap: 0.55em;
+    font-size: 0.9em;
+  }
+}
+
 /* Pushed to the right end of the nav; it is a preference, not a destination. */
-.header .theme-picker {
+.header .settings-menu {
   margin-left: auto;
 }
 
@@ -906,88 +985,79 @@ ul.apps {
 
 /*****************************************************************************/
 /*
-/* Theme picker
+/* Settings menu
 /*
-/* A palette button in the nav that swaps the theme stylesheet. Every name is
-/* set in that theme's own face, which a native <select> cannot do: font-family
-/* on <option> is ignored by Firefox and Safari, and mobile draws the list in
-/* the OS. The five faces the list needs but the page does not are fetched by
-/* css/theme-fonts.css, injected the first time the list opens.
+/* One button in the nav opens one panel holding every site preference: theme
+/* today, appearance today, language when there is something to translate.
+/* Four nav links plus three separate controls cannot share a 337px line on a
+/* phone, which is why they share a menu instead.
+/*
+/* The trigger is icon-only: it once showed the theme's name, and "Technical
+/* minimal" is what pushed the nav onto a second row on a phone.
 /*
 /* Hidden until the script reveals it, so a visitor without JavaScript is not
 /* shown a control that cannot work.
 /*
 /*****************************************************************************/
 
-.theme-picker {
+.settings-menu {
   position: relative;
   display: none;
   text-align: left;
 }
 
-.theme-picker.is-ready {
+.settings-menu.is-ready {
   display: inline-block;
 }
 
-.theme-picker__trigger {
+.settings-menu__trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.35em;
+  justify-content: center;
+  /* A comfortable touch target, which 24px icon buttons are not. */
+  width: 2.2em;
+  height: 2.2em;
+  min-width: 40px;
+  min-height: 40px;
   margin: 0;
-  padding: 0.15em 0.5em;
+  padding: 0;
   font: inherit;
-  font-size: 0.85em;
-  line-height: 1.6;
   color: var(--muted-foreground);
   background: none;
   border: 1px solid var(--surface-border-color);
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-.theme-picker__trigger:hover,
-.theme-picker__trigger[aria-expanded="true"] {
+.settings-menu__trigger:hover,
+.settings-menu__trigger[aria-expanded="true"] {
   color: var(--body-foreground);
   background: var(--surface-hover-background);
 }
 
-.theme-picker__icon {
+.settings-menu__icon {
   width: 1.15em;
   height: 1.15em;
   flex: none;
-}
-
-/* The palette outline follows the text colour; the paint keeps its own hues so
-   the icon still reads as a palette at this size, on any theme. */
-.theme-picker__icon .palette-body {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.6;
+  stroke-width: 1.7;
+  stroke-linecap: round;
 }
 
-.theme-picker__caret {
-  width: 0.55em;
-  height: 0.55em;
-  flex: none;
-  fill: currentColor;
-  opacity: 0.7;
-}
-
-.theme-picker__trigger[aria-expanded="true"] .theme-picker__caret {
-  transform: rotate(180deg);
-}
-
-.theme-picker__list {
+.settings-menu__panel {
   position: absolute;
   z-index: 20;
   top: calc(100% + 0.4em);
-  /* Anchored to the picker's right edge, which is the right edge of the nav,
+  /* Anchored to the button's right edge, which is the right edge of the nav,
      so the panel never overflows the viewport on a narrow screen. */
   right: 0;
-  min-width: 12em;
-  margin: 0;
-  padding: 0.25em 0;
-  list-style: none;
+  min-width: 13em;
+  /* Nine rows and two headings must not run off a short phone. */
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.35em 0;
   color: var(--body-foreground);
   background: var(--surface-background);
   border: 1px solid var(--surface-border-color);
@@ -995,11 +1065,27 @@ ul.apps {
   box-shadow: var(--surface-shadow);
 }
 
-.theme-picker__list[hidden] {
+.settings-menu__panel[hidden] {
   display: none;
 }
 
-.theme-picker__option {
+.settings-menu__group + .settings-menu__group {
+  margin-top: 0.35em;
+  padding-top: 0.35em;
+  border-top: 1px solid var(--surface-border-color);
+}
+
+.settings-menu__heading {
+  padding: 0.2em 0.9em 0.35em;
+  font-family: var(--meta-font-family);
+  font-size: 0.7em;
+  font-weight: var(--bold-font-weight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.settings-menu__option {
   display: flex;
   align-items: baseline;
   gap: 0.5em;
@@ -1009,19 +1095,19 @@ ul.apps {
   cursor: pointer;
 }
 
-.theme-picker__option:hover,
-.theme-picker__option:focus {
+.settings-menu__option:hover,
+.settings-menu__option:focus {
   background: var(--surface-hover-background);
   outline: none;
 }
 
-.theme-picker__option[aria-selected="true"] {
+.settings-menu__option[aria-checked="true"] {
   font-weight: var(--bold-font-weight);
 }
 
-/* A tick that shows only on the current theme, holding its space either way so
-   the names stay aligned. */
-.theme-picker__option::before {
+/* A tick that shows only on the current choice, holding its space either way
+   so the names stay aligned. */
+.settings-menu__option::before {
   content: "\2713";
   width: 1em;
   flex: none;
@@ -1030,6 +1116,6 @@ ul.apps {
   visibility: hidden;
 }
 
-.theme-picker__option[aria-selected="true"]::before {
+.settings-menu__option[aria-checked="true"]::before {
   visibility: visible;
 }
