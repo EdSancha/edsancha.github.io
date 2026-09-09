@@ -43,6 +43,7 @@ exclude:
   - vendor/
   - node_modules/
 
-# Which file in css/themes/ supplies the design tokens. "default" means the
-# values already in css/main.css. Preview builds let you switch at runtime.
-site_theme: default
+# Which file in css/themes/ supplies the design tokens, and so what a
+# first-time visitor sees. The nav's theme picker lets them choose another;
+# "legacy" is the values already in css/main.css, the site's original look.
+site_theme: atlanta

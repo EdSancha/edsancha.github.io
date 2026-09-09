@@ -1,0 +1,10 @@
+/* Legacy theme — the site's original look.
+ *
+ * The token values in css/main.css are this theme, so this file overrides no
+ * tokens. It carries only the Poppins @import: Poppins is this theme's face,
+ * not the site's base face, so pages on any other theme must not fetch it.
+ * main.css still names Poppins first in --font-family, which is harmless when
+ * the webfont is absent — the rest of that stack takes over.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
