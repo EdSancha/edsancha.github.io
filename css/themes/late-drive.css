@@ -1,0 +1,74 @@
+/* Late drive
+ *
+ * Tokyo Night, as shipped by Omarchy. Dark is the intended mode: the deep
+ * indigo ground and blue-violet accent of the editor scheme, with monospace
+ * metadata. The light mode uses the Tokyo Night Day values so the theme still
+ * respects a light preference.
+ *
+ * Palette follows the canonical Tokyo Night values (enkia), which Omarchy's
+ * theme derives from: #1a1b26 ground, #c0caf5 text, #7aa2f7 blue accent,
+ * #24283b raised surfaces, #3b4261 borders, #737aa2 muted.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --meta-font-family: var(--mono-font-family);
+  --title-font-weight: 700;
+  --title-letter-spacing: -0.02em;
+
+  --body-font-size: 17px;
+  --body-line-height: 1.68em;
+  --h1-font-size: 2.4em;
+  --h1-line-height: 1.12em;
+  --h2-font-size: 1.45em;
+  --h3-font-size: 1.15em;
+
+  /* Tokyo Night Day */
+  --body-foreground: #232433;
+  --body-background: #e1e2e7;
+  --link-foreground: #2e7de9;
+  --link-hover-foreground: #1c5fc4;
+  --muted-foreground: #5a6194;
+  --rule-color: #c4c8da;
+  --blockquote-foreground: #5a6194;
+  --blockquote-border: #c4c8da;
+
+  --code-background: #d7d9e6;
+  --code-border: #c4c8da;
+  --terminal-background: #1a1b26;
+  --terminal-border: #292e42;
+  --terminal-foreground: #c0caf5;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.25em;
+  --chip-border-color: #c4c8da;
+
+  --site-width-lg: 620px;
+  --site-width-xl: 700px;
+  --site-width-xxl: 820px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Tokyo Night */
+    --body-foreground: #c0caf5;
+    --body-background: #1a1b26;
+    --link-foreground: #7aa2f7;
+    --link-hover-foreground: #a9c2fa;
+    --muted-foreground: #737aa2;
+    --rule-color: #292e42;
+    --blockquote-foreground: #9aa5ce;
+    --blockquote-border: #3b4261;
+
+    --code-background: #24283b;
+    --code-border: #3b4261;
+    --terminal-background: #16161e;
+    --terminal-border: #292e42;
+    --terminal-foreground: #c0caf5;
+
+    --chip-border-color: #3b4261;
+  }
+}
