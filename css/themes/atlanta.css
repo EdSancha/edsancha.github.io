@@ -13,24 +13,24 @@
  * lighter blue so they stay legible against it. Every text pairing clears
  * WCAG AA — the tightest is muted text in light mode at 4.7:1.
  *
- * Type is Montserrat, the geometric sans the reference screenshots use, at a
- * slightly reduced size with extra leading so a wide face still reads well in
- * long posts.
+ * Type is Jost, a geometric sans in the Futura line. Its x-height is smaller
+ * than most UI sans faces, so the body size is set up rather than down to keep
+ * it comfortable, with the measure pulled in to match the narrower forms.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
 :root {
-  --font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-family: "Jost", "Futura", "Century Gothic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   --meta-font-family: var(--font-family);
   --title-font-family: var(--font-family);
   --title-font-weight: 700;
-  --title-letter-spacing: -0.02em;
+  --title-letter-spacing: -0.01em;
 
-  --body-font-size: 16.5px;
-  --body-line-height: 1.72em;
-  --h1-font-size: 2.25em;
+  --body-font-size: 17.5px;
+  --body-line-height: 1.7em;
+  --h1-font-size: 2.35em;
   --h1-line-height: 1.18em;
   --h2-font-size: 1.4em;
   --h3-font-size: 1.12em;
@@ -55,9 +55,9 @@
   --chip-radius: 0.3em;
   --chip-border-color: #A7B4C6;
 
-  --site-width-lg: 610px;
-  --site-width-xl: 700px;
-  --site-width-xxl: 840px;
+  --site-width-lg: 600px;
+  --site-width-xl: 680px;
+  --site-width-xxl: 800px;
 }
 
 @media (prefers-color-scheme: dark) {
