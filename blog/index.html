@@ -26,7 +26,9 @@ description: Essays on engineering leadership, AI-assisted software development 
         {% assign post_categories = post.categories | where_exp: "c", "c != 'blog'" %}
         {% if post_categories.size > 0 %}
         <p class="categories">
-          {% for category in post_categories %}<a href="/blog/categories/#{{ category | slugify }}">{{ category }}</a>{% endfor %}
+          {% for category in post_categories %}
+  <a href="/blog/categories/#{{ category | slugify }}">{{ category }}</a>
+  {% endfor %}
         </p>
         {% endif %}
       </li>

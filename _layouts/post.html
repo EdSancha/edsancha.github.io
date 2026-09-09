@@ -16,7 +16,9 @@ layout: default
 {% assign post_categories = page.categories | where_exp: "c", "c != 'blog'" %}
 {% if post_categories.size > 0 %}
 <p class="categories">
-  {% for category in post_categories %}<a href="/blog/categories/#{{ category | slugify }}">{{ category }}</a>{% endfor %}
+  {% for category in post_categories %}
+  <a href="/blog/categories/#{{ category | slugify }}">{{ category }}</a>
+  {% endfor %}
 </p>
 {% endif %}
 
