@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Eduardo Diaz Sancha - My Reading List
+title: Reading List
 ---
 
 # My Reading List

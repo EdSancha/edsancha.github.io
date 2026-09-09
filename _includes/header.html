@@ -3,20 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {%- assign page_title = page.title | default: site.title -%}
-    {%- assign page_description = page.description | default: site.description | strip_newlines -%}
-    {%- assign canonical = page.canonical_url | default: page.url | absolute_url -%}
-    <title>{{ page_title }}</title>
-    <meta name="description" content="{{ page_description | xml_escape }}">
-    <link rel="canonical" href="{{ canonical }}">
-    <meta property="og:site_name" content="{{ site.title | xml_escape }}">
-    <meta property="og:title" content="{{ page_title | xml_escape }}">
-    <meta property="og:description" content="{{ page_description | xml_escape }}">
-    <meta property="og:type" content="{% if page.layout == 'post' or page.layout == 'last-week-read' %}article{% else %}website{% endif %}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    {%- if page.image %}
-    <meta property="og:image" content="{{ page.image }}">
-    {%- endif %}
+    {% seo %}
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | xml_escape }}" href="{{ '/feed.xml' | absolute_url }}">
 
     <!-- syntax highlighting CSS -->
