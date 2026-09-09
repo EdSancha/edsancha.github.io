@@ -1,0 +1,12 @@
+# Overlay used only for theme preview builds under /preview/<name>/.
+# Applied on top of a theme branch's _config.yml by
+# .github/scripts/build-previews.sh:
+#   jekyll build --config <branch>/_config.yml,_config.preview.yml
+#
+# Previews sit on the production host, so they must never advertise themselves.
+# This key is what the templates and the build script check: header.html emits
+# robots noindex and skips analytics when it is set, and build-previews.sh
+# deletes the generated sitemap.xml, robots.txt and CNAME from each preview
+# (jekyll-sitemap writes a sitemap regardless, so removing it is what counts).
+
+preview: true

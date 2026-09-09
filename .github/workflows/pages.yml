@@ -1,0 +1,59 @@
+name: Deploy site
+
+# Publishes production from master at the root, plus one unlisted preview per
+# theme/* branch under /preview/<name>/, in a single Pages deployment.
+#
+# Requires: Settings -> Pages -> Build and deployment -> Source = GitHub Actions.
+
+on:
+  push:
+    branches:
+      - master
+      - "theme/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Pages allows one deployment at a time; queue rather than cancel so a theme
+# push never drops a production deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build site and previews
+    runs-on: ubuntu-latest
+    steps:
+      # Always build production from master, whichever branch triggered the run,
+      # so pushing a theme branch can never publish theme content at the root.
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - uses: actions/configure-pages@v5
+      - name: Build production site
+        run: make build
+      - name: Build theme previews
+        run: .github/scripts/build-previews.sh
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

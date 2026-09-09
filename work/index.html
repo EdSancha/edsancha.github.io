@@ -19,7 +19,7 @@ description: Director of Engineering with 20+ years in software. Current role, p
 </ul>
 
 <p>
-  Outside work I'm the founder of <a href="https://www.salitre.co" rel="external nofollow" target="_blank">Salitre Coaching</a>, a UESCA-certified running coach, and an Ironman and marathon finisher. I'm open to Director / Head of Engineering roles and to advising teams on mobile, platform and AI-assisted engineering. <a href="mailto:edsancha@gmail.com?subject=%5BWEB%5D%20Advisory%20Inquiry">Email me</a>, find me on <a href="https://www.linkedin.com/in/edsancha" rel="external nofollow" target="_blank">LinkedIn</a>, or <a href="/assets/eduardo-diaz-sancha-resume.pdf">download my resume (PDF)</a>.
+  Outside work I'm the founder of <a href="https://www.salitre.co" rel="external nofollow" target="_blank">Salitre Coaching</a>, a UESCA-certified running coach, and an Ironman and marathon finisher. I'm open to Director / Head of Engineering roles and to advising teams on mobile, platform and AI-assisted engineering. <a href="mailto:edsancha@gmail.com?subject=%5BWEB%5D%20Advisory%20Inquiry">Email me</a>, find me on <a href="https://www.linkedin.com/in/edsancha" rel="external nofollow" target="_blank">LinkedIn</a>, or <a href="{{ '/assets/eduardo-diaz-sancha-resume.pdf' | relative_url }}">download my resume (PDF)</a>.
 </p>
 
 <h2>Previously</h2>
@@ -56,7 +56,7 @@ description: Director of Engineering with 20+ years in software. Current role, p
   {% for app in site.data.apps %}
   <li>
     <a href="{{ app.url }}" rel="external nofollow" title="{{ app.title | default: app.name }}">
-      <img src="/img/apps/{{ app.image }}" alt="{{ app.alt | default: app.name }}" loading="lazy" width="100" height="100">
+      <img src="{{ '/img/apps/' | relative_url }}{{ app.image }}" alt="{{ app.alt | default: app.name }}" loading="lazy" width="100" height="100">
       <span>{{ app.name }}</span>
     </a>
   </li>

@@ -21,7 +21,7 @@ description: All posts on edsancha.com grouped by category.
 <ul class="category-posts">
   {% for post in category[1] %}
   <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     <span class="meta">{{ post.date | date_to_string }}</span>
   </li>
   {% endfor %}
