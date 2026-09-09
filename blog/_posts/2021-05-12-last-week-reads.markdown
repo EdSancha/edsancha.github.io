@@ -1,5 +1,6 @@
 ---
-layout: last-week-read
+layout: post
+intro: last-week-reads
 title:  "Last Week Reads - May 5th - May 12th"
 description:  "Bridge week, humility, workplace wellbeing, and privacy in ad industry."
 date:   2021-05-13 22:00:00

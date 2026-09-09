@@ -720,3 +720,81 @@ ul.apps {
   margin: 0;
   filter: none;
 }
+
+/*****************************************************************************/
+/*
+/* Categories and post navigation
+/*
+/*****************************************************************************/
+
+.categories {
+  margin: 0 0 1em;
+  font-size: 0.85em;
+}
+
+.posts .categories a {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.categories a,
+.category-index a {
+  display: inline-block;
+  margin: 0 0.4em 0.4em 0;
+  padding: 0.1em 0.6em;
+  border: 1px solid var(--link-foreground);
+  border-radius: 1em;
+  line-height: 1.5em;
+}
+
+.categories a:hover,
+.category-index a:hover {
+  border-bottom: 1px solid var(--link-foreground);
+  background: var(--link-foreground);
+  color: var(--body-background);
+}
+
+.category-index {
+  margin-bottom: 2em;
+}
+
+.category-index .count {
+  opacity: 0.7;
+  margin-left: 0.3em;
+}
+
+.category-posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+.category-posts li .meta {
+  display: inline;
+  margin-left: 0.6em;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin: 2em 0 1em;
+  padding-top: 1em;
+  border-top: 1px solid var(--blockquote-border);
+}
+
+.post-nav a {
+  flex: 1;
+  font-weight: bold;
+}
+
+.post-nav a span {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+  color: #888;
+}
+
+.post-nav .newer {
+  text-align: right;
+  margin-left: auto;
+}

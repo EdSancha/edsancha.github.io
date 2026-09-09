@@ -33,7 +33,7 @@
             </div>
 
     {%- assign is_post = false -%}
-    {%- if page.layout == 'post' or page.layout == 'last-week-read' -%}{%- assign is_post = true -%}{%- endif -%}
+    {%- if page.layout == 'post' -%}{%- assign is_post = true -%}{%- endif -%}
     <nav class="header" aria-label="Main">
         <a {% if page.url == "/" %}class="extra" {% endif %}href="/">Home</a>
         <a {% if page.url == "/work/" %}class="extra" {% endif %}href="/work/">Work</a>

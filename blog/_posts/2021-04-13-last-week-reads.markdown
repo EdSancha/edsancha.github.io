@@ -1,5 +1,6 @@
 ---
-layout: last-week-read
+layout: post
+intro: last-week-reads
 title:  "Last Week Reads - April 5th - April 12th"
 description:  Tech leads & EMs, improving the daily standup, better devops, hire for weakness, another big tech company harassment story.
 date:   2021-04-13 23:30:00

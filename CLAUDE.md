@@ -28,9 +28,10 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `work/index.html` | Work history, recognition, app grid |
 | `blog/index.html` | Writing index (paginated, 5 per page, `/blog/:num`) |
 | `blog/_posts/` | Posts, `YYYY-MM-DD-slug.markdown` |
+| `blog/categories/index.html` | All posts grouped by category; post and index category links point at its anchors |
 | `my-reading-list/index.markdown` | Book list with Amazon affiliate links |
 | `disclosure/index.markdown` | Affiliate-link disclosure |
-| `_layouts/` | `default` (chrome), `post` (articles), `last-week-read` (weekly link roundups) |
+| `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups) |
 | `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `footer.html` (social links), `helpers/strava.html` |
 | `css/main.css` | All styling. Uses CSS custom properties; light and dark via `prefers-color-scheme` |
 | `img/` | Images. `img/apps/` are the Work page tiles, `img/social-icons/` the footer icons |

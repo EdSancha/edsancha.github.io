@@ -1,5 +1,6 @@
 ---
-layout: last-week-read
+layout: post
+intro: last-week-reads
 title:  "Last Week Reads - May 12th - May 20th"
 description:  "1-on-1s, seniority, surviving a stroke, and balancing work, life and training for triathletes."
 date:   2021-05-20 23:00:00
