@@ -729,29 +729,33 @@ ul.apps {
 
 .categories {
   margin: 0 0 1em;
-  font-size: 0.85em;
 }
 
 .posts .categories a {
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: normal;
 }
 
 .categories a,
 .category-index a {
   display: inline-block;
-  margin: 0 0.4em 0.4em 0;
-  padding: 0.1em 0.6em;
-  border: 1px solid var(--link-foreground);
+  margin: 0 0.5em 0.5em 0;
+  padding: 0.15em 0.7em;
+  border: 1px solid var(--blockquote-border);
   border-radius: 1em;
-  line-height: 1.5em;
+  font-size: 0.75em;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.6em;
+  color: var(--body-foreground);
+  opacity: 0.85;
 }
 
 .categories a:hover,
 .category-index a:hover {
-  border-bottom: 1px solid var(--link-foreground);
-  background: var(--link-foreground);
-  color: var(--body-background);
+  border: 1px solid var(--link-foreground);
+  color: var(--link-foreground);
+  opacity: 1;
 }
 
 .category-index {

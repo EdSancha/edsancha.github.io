@@ -9,7 +9,9 @@ description: All posts on edsancha.com grouped by category.
 {%- comment -%} "blog" is implicit from the blog/_posts directory, not a real category. {%- endcomment -%}
 {% assign categories = site.categories | sort %}
 <p class="category-index">
-  {% for category in categories %}{% assign name = category[0] %}{% if name == "blog" %}{% continue %}{% endif %}<a href="#{{ name | slugify }}">{{ name }} <span class="count">{{ category[1].size }}</span></a>{% endfor %}
+  {% for category in categories %}{% assign name = category[0] %}{% if name == "blog" %}{% continue %}{% endif %}
+  <a href="#{{ name | slugify }}">{{ name }} <span class="count">{{ category[1].size }}</span></a>
+  {% endfor %}
 </p>
 
 {% for category in categories %}
