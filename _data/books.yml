@@ -1,0 +1,93 @@
+# Reading List, in page order. Sections render as headings (level 2 or 3),
+# books as links built from the ASIN with the eds02a-20 affiliate tag.
+# To add a book: title, asin (10 characters from the Amazon URL), optional note.
+# The note is rendered verbatim right after the link, so start it with the separator you want (". " or " - ").
+
+- title: "Currently Reading"
+  level: 2
+  intro: >-
+    I tend to have several books on my side table. I like to pick up chapters from non-fiction books and jump from one to another. Fiction, on the other side, I like to read them with less interruptions.
+  books:
+    - title: "Scaling Teams"
+      asin: "149195227X"
+    - title: "An Elegant Puzzle: Systems of Engineering Management"
+      asin: "1732265186"
+
+- title: "On the queue"
+  level: 2
+  books:
+    - title: "The Five Dysfunctions of a Team"
+      asin: "0787960756"
+    - title: "Radical Candor"
+      asin: "1250235375"
+    - title: "Empowered"
+      asin: "111969129X"
+    - title: "Staff Engineer"
+      asin: "1736417916"
+    - title: "The Pragmatic Programmer: Your Journey To Mastery"
+      asin: "0135957052"
+    - title: "The Effective Manager"
+      asin: "1119244609"
+    - title: "Become an Effective Software Engineering Manager: How to Be the Leader Your Development Team Needs"
+      asin: "1680507249"
+    - title: "Extreme Ownership"
+      asin: "1250183863"
+
+- title: "Already read and recommended"
+  level: 2
+  intro: >-
+    There are books I recommend reading, both as an engineer or as an engineering manager.
+
+- title: "Management Books"
+  level: 3
+  books:
+    - title: "Accelerate"
+      asin: "1942788339"
+      note: ". Accelerate is the book every software engineer leader should read. Based on intensive research trying to find the traits of highly effective software engineering teams, it provides specific tools to improve team productivity."
+    - title: "The Manager's Path"
+      asin: "1491973897"
+      note: " - from Camille Fournier. This is a great guide to managers, from tech lead up to CTO level. I like how many actionable items you get from the book."
+    - title: "The Making of a Manager"
+      asin: "B079WNPRL2"
+      note: " - by Julie Zhuo. Another great guide to managers but this one from a more personal perspective. I think it complements The Manager's Path perfectly."
+    - title: "97 Things Every Engineering Manager Should Know: Collective Wisdom from the Experts"
+      asin: "1492050903"
+      note: " - by Camille Fournier. Interesting set of articles on Engineering Management."
+
+- title: "Engineering Books"
+  level: 3
+  books:
+    - title: "Refactoring: Improving the Design of Existing Code"
+      asin: "0134757599"
+    - title: "Clean Code"
+      asin: "0132350882"
+
+- title: "Interview Preparation"
+  level: 3
+  books:
+    - title: "Cracking the Coding Interview"
+      asin: "0984782850"
+    - title: "System Design Interview"
+      asin: "B08CMF2CQF"
+
+- title: "Other \"work\" related"
+  level: 3
+  books:
+    - title: "The Design of Everyday Things"
+      asin: "B00E257T6C"
+      note: " - written by Donald A. Norman, I've bought this book 3 times already. As customer-facing engineers and managers, we often need to give input and make decisions on user-facing designs. This guide to human-centered design shows that usability is just as (or more) important than aesthetics."
+
+- title: "Exercise, fitness & sports"
+  level: 3
+  books:
+    - title: "Peak: The New Science of Athletic Performance That is Revolutionizing Sports"
+      asin: "1603588094"
+      note: " - written by Dr. Marc Bubbs. PEAK is the missing manual to navigate health, nutrition, training, recovery and mindset. Even though it's oriented for high-level fitness fans, it has ideas and lessons everyone could apply to enhance their well-being."
+    - title: "The Big Book of Endurance Training and Racing"
+      asin: "B004UI6ECQ"
+      note: " - written by Dr. Phil Maffetone. Sometimes called the yellow bible of endurance training, Phil Maffetone writes an extensive guide to endurance training and wellness through exercise and nutrition. Speed up by slowing down or the anti \"Work hard play hard\" mantra."
+    - title: "Endure: Mind, Body, and the Curiously Elastic Limits of Human Performance"
+      asin: "006249998X"
+      note: " - written by Alex Hutchinson, one of my favorite sport writers and a collaborator of Outside Magazine, he dives into how the mind can overcome and produce endurance feats. It's an excellent resource for anyone seeking to understand how our minds influence our sports performances."
+
+# A Fiction section will go here eventually.
