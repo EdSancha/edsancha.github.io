@@ -35,6 +35,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `css/main.css` | All styling. Uses CSS custom properties; light and dark via `prefers-color-scheme` |
 | `img/` | Images. `img/apps/` are the Work page tiles, `img/social-icons/` the footer icons |
 | `feed.xml` | RSS, last 10 posts |
+| `assets/` | Downloadable files. `eduardo-diaz-sancha-resume.pdf` is linked from Home and Work; replace it in place to update the resume, keep the file name |
 
 ## Conventions
 

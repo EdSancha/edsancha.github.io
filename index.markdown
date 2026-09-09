@@ -16,7 +16,7 @@ I'm interested in technology, leadership, fitness and endurance training, parent
 - **Open to:** Director / Head of Engineering roles and advisory work with teams adopting AI in their software lifecycle.
 - **Outside work:** I coach endurance athletes at [Salitre Coaching](https://www.salitre.co){:rel="external nofollow" target="_blank"} and race marathons and Ironman triathlons.
 
-[Full history](/work/) · [LinkedIn](https://www.linkedin.com/in/edsancha){:rel="external nofollow" target="_blank"} · [Email me](mailto:edsancha@gmail.com?subject=%5BWEB%5D%20Contact)
+[Full history](/work/) · [Resume (PDF)](/assets/eduardo-diaz-sancha-resume.pdf) · [LinkedIn](https://www.linkedin.com/in/edsancha){:rel="external nofollow" target="_blank"} · [Email me](mailto:edsancha@gmail.com?subject=%5BWEB%5D%20Contact)
 
 ## Recent writing
 
