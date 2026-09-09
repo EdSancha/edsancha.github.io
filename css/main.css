@@ -16,18 +16,18 @@
  * them into dark mode.
  * ------------------------------------------------------------------------ */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   /* Type */
   --font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --meta-font-family: var(--font-family);
-  --font-weight: normal;
-  --bold-font-weight: bold;
+  --font-weight: 400;
+  --bold-font-weight: 700;
 
   --title-font-family: var(--font-family);
-  --title-font-weight: bold;
+  --title-font-weight: 700;
   --title-letter-spacing: normal;
 
   --body-font-size: 18px;
@@ -94,6 +94,7 @@ body {
   background: var(--body-background);
   color: var(--body-foreground);  
   font-family: var(--font-family);
+  font-weight: var(--font-weight);
   font-size: var(--body-font-size);
   line-height: var(--body-line-height);
 }
@@ -117,6 +118,10 @@ li {
   font-family: var(--font-family); 
   color:var(--body-foreground);
   margin-bottom: 0.2em;
+}
+
+strong, b {
+  font-weight: var(--bold-font-weight);
 }
 
 hr {
@@ -196,7 +201,7 @@ blockquote p {color:var(--blockquote-foreground);}
 
 .posts a {
   font-size:1.4em;
-  font-weight:bold;
+  font-weight: var(--bold-font-weight);
 }
 
 .posts li {
@@ -714,7 +719,7 @@ ul.apps {
 }
 
 .recent-posts li a {
-  font-weight: bold;
+  font-weight: var(--bold-font-weight);
 }
 
 .recent-posts li .meta {
@@ -862,7 +867,7 @@ ul.apps {
 
 .post-nav a {
   flex: 1;
-  font-weight: bold;
+  font-weight: var(--bold-font-weight);
 }
 
 .post-nav a span {
