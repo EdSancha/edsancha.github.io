@@ -13,6 +13,11 @@
 
 set -uo pipefail
 
+# The github-pages gem's default theme SCSS needs a UTF-8 locale to compile,
+# same workaround as the Makefile.
+export LC_ALL="${LC_ALL:-C.UTF-8}"
+export LANG="${LANG:-C.UTF-8}"
+
 MASTER_DIR="$PWD"
 PREVIEW_ROOT="$MASTER_DIR/_site/preview"
 PREVIEW_CONFIG="$MASTER_DIR/_config.preview.yml"
@@ -54,6 +59,11 @@ for branch in $branches; do
         --baseurl "/preview/$name" \
         --config "$worktree/_config.yml,$PREVIEW_CONFIG" \
         --strict_front_matter; then
+    # Files that only make sense at the site root, or that would advertise a
+    # preview: the custom domain marker, the crawler directives and the sitemap.
+    rm -f "$PREVIEW_ROOT/$name/CNAME" \
+          "$PREVIEW_ROOT/$name/robots.txt" \
+          "$PREVIEW_ROOT/$name/sitemap.xml"
     built+=("$name|$branch")
     echo "built /preview/$name/"
   else
