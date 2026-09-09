@@ -1,0 +1,37 @@
+# The themes offered by the preview-only theme picker, in the order they are
+# listed. Adding a theme means a file in css/themes/ *and* an entry here.
+#
+#   name   file in css/themes/ (without .css), and the value stored in localStorage
+#   label  what the picker shows
+#   font   the face the label itself is set in, so the list previews the type
+#   google the family to add to the picker's shared Google Fonts request, or
+#          omitted when the face is self-hosted (see css/theme-switcher.css)
+
+- name: default
+  label: Default
+  font: '"Poppins", sans-serif'
+  google: 'Poppins:wght@400'
+
+- name: atlanta
+  label: Atlanta
+  font: '"Jost", sans-serif'
+  google: 'Jost:wght@400'
+
+- name: canarion
+  label: Canarion
+  font: '"Canarina", sans-serif'
+
+- name: editorial-serif
+  label: Editorial serif
+  font: '"Source Serif 4", Georgia, serif'
+  google: 'Source+Serif+4:opsz,wght@8..60,600'
+
+- name: late-drive
+  label: Late drive
+  font: '"JetBrains Mono", monospace'
+  google: 'JetBrains+Mono:wght@400'
+
+- name: technical-minimal
+  label: Technical minimal
+  font: '"IBM Plex Mono", monospace'
+  google: 'IBM+Plex+Mono:wght@400'

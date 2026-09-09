@@ -24,6 +24,7 @@
     <link id="theme-css" rel="stylesheet" href="{{ '/css/themes/' | append: active_theme | append: '.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
     {%- endif %}
 {%- if site.preview %}
+    <link rel="stylesheet" href="{{ '/css/theme-switcher.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
     <script>
       // Apply the previewer's last choice before first paint, and expose the
       // setter the switcher control calls.
@@ -68,17 +69,6 @@
         font-size: 0.8em; line-height: 1.5em; text-align: center;
       }
       .preview-bar a { color: #fff; text-decoration: underline; }
-      .preview-theme { display: inline-block; }
-      .preview-theme select {
-        margin-left: 0.3em;
-        font: inherit;
-        color: #fff;
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 3px;
-        padding: 0 0.2em;
-      }
-      .preview-theme select option { color: #000; background: #fff; }
     </style>
     <div class="preview-bar">
       Preview build{% if site.preview_name %} &middot; {{ site.preview_name }}{% endif %} &middot;
