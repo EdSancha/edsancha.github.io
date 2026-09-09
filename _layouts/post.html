@@ -17,7 +17,7 @@ layout: default
 {% if post_categories.size > 0 %}
 <p class="categories">
   {% for category in post_categories %}
-  <a href="/blog/categories/#{{ category | slugify }}">{{ category }}</a>
+  <a href="{{ '/blog/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
   {% endfor %}
 </p>
 {% endif %}
@@ -33,9 +33,9 @@ layout: default
 
 <nav class="post-nav" aria-label="More writing">
   {% if page.previous %}
-  <a class="older" href="{{ page.previous.url }}" rel="prev"><span>Older</span>{{ page.previous.title }}</a>
+  <a class="older" href="{{ page.previous.url | relative_url }}" rel="prev"><span>Older</span>{{ page.previous.title }}</a>
   {% endif %}
   {% if page.next %}
-  <a class="newer" href="{{ page.next.url }}" rel="next"><span>Newer</span>{{ page.next.title }}</a>
+  <a class="newer" href="{{ page.next.url | relative_url }}" rel="next"><span>Newer</span>{{ page.next.title }}</a>
   {% endif %}
 </nav>

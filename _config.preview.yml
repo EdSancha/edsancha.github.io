@@ -1,0 +1,11 @@
+# Overlay used only for theme preview builds under /preview/<name>/.
+# Applied on top of _config.yml by .github/scripts/build-previews.sh:
+#   jekyll build --config <branch>/_config.yml,_config.preview.yml
+# It marks pages noindex, drops analytics and keeps previews out of the sitemap.
+
+preview: true
+
+# Previews are served from the same host, so keep url in sync with production
+# but never advertise these pages: header.html emits robots noindex when
+# site.preview is set, and jekyll-sitemap is disabled below.
+sitemap: false

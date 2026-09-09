@@ -5,7 +5,8 @@ Plain Jekyll, no theme, no JavaScript framework. Hosted on GitHub Pages.
 
 ## How it is built and deployed
 
-- GitHub Pages builds the `master` branch with the `github-pages` gem. **Every push to `master` goes live** at https://edsancha.com. Work on a branch and open a PR.
+- `.github/workflows/pages.yml` builds and deploys the site: production comes from `master` and lands at the root of https://edsancha.com. **Every push to `master` goes live.** Work on a branch and open a PR. (Pages source is set to "GitHub Actions", not "branch".)
+- The same deployment publishes one unlisted preview per `theme/*` branch at `/preview/<name>/`, listed at `/preview/`. Previews are built with `_config.preview.yml` overlaid, so they are `noindex`, carry no analytics, show a preview bar and stay out of the sitemap. Push a `theme/*` branch to get a preview; delete the branch to remove it. A theme branch that fails to build is skipped and never blocks a production deploy.
 - The `Gemfile` pins `github-pages`, so a local build matches production. Only plugins on the GitHub Pages allowlist work (`jekyll-paginate` and `jekyll-gist` are in use).
 - `CNAME`, `url`, `baseurl` and the Google Analytics tag in `_includes/header.html` are production settings. Do not change them unless asked.
 
@@ -38,13 +39,16 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `css/main.css` | All styling. Uses CSS custom properties; light and dark via `prefers-color-scheme` |
 | `img/` | Images. `img/apps/` are the Work page tiles, `img/social-icons/` the footer icons |
 | `feed.xml` | RSS, last 10 posts |
+| `_config.preview.yml` | Overlay applied to theme previews only (noindex, no analytics, no sitemap) |
+| `.github/workflows/pages.yml` | Builds production plus every `theme/*` preview and deploys them together |
+| `.github/scripts/build-previews.sh` | Builds each `theme/*` branch into `_site/preview/<name>/` |
 | `assets/` | Downloadable files. `eduardo-diaz-sancha-resume.pdf` is linked from Home and Work; replace it in place to update the resume, keep the file name |
 
 ## Conventions
 
 - **Posts**: follow `.claude/skills/new-post/SKILL.md` (file name, front matter, reading time, republished-article fields). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
 - **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
-- **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Internal links are root-relative (`/feed.xml`, not `../feed.xml`) so they work on paginated pages.
+- **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Every internal link and asset path must go through `relative_url` (`{{ '/feed.xml' | relative_url }}`, `{{ post.url | relative_url }}`) — never a bare `/path`, which would break the preview builds that run under a `/preview/<name>/` baseurl.
 - **Styling**: add rules to `css/main.css` using the existing custom properties (`--body-foreground`, `--link-foreground`, ...). Any new color must work in both light and dark mode. No CSS frameworks, no build step.
 - **Affiliate links**: book links are generated from the ASIN in `_data/books.yml` as `https://www.amazon.com/dp/<asin>?tag=eds02a-20` with `rel="external nofollow sponsored"`; the disclosure lives at `/disclosure/` and is linked from the footer. Keep it that way.
 - **HTML**: 2-space indentation (`.editorconfig`). Keep the site dependency-free: no npm, no bundlers.
