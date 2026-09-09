@@ -25,11 +25,13 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | Path | What it is |
 |---|---|
 | `index.markdown` | Home page: intro, Now section, recent writing |
-| `work/index.html` | Work history, recognition, app grid |
+| `work/index.html` | Work history, recognition, app grid (rendered from `_data/apps.yml`) |
 | `blog/index.html` | Writing index (paginated, 5 per page, `/blog/:num`) |
 | `blog/_posts/` | Posts, `YYYY-MM-DD-slug.markdown` |
 | `blog/categories/index.html` | All posts grouped by category; post and index category links point at its anchors |
-| `my-reading-list/index.markdown` | Book list with Amazon affiliate links |
+| `my-reading-list/index.markdown` | Reading List page: intro prose plus a loop over `_data/books.yml` |
+| `_data/books.yml` | The books, in page order: sections (`title`, `level`, optional `intro`) with `books` (`title`, `asin`, optional `note`). Add a book here, not in the page |
+| `_data/apps.yml` | The Work page app tiles (`name`, `url`, `image`, optional `alt`/`title`). Add an app here, not in the page |
 | `disclosure/index.markdown` | Affiliate-link disclosure |
 | `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups) |
 | `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `footer.html` (social links), `helpers/strava.html` |
@@ -44,7 +46,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 - **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
 - **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Internal links are root-relative (`/feed.xml`, not `../feed.xml`) so they work on paginated pages.
 - **Styling**: add rules to `css/main.css` using the existing custom properties (`--body-foreground`, `--link-foreground`, ...). Any new color must work in both light and dark mode. No CSS frameworks, no build step.
-- **Affiliate links**: Amazon links carry the `eds02a-20` tag; the disclosure lives at `/disclosure/` and is linked from the footer. Keep it that way.
+- **Affiliate links**: book links are generated from the ASIN in `_data/books.yml` as `https://www.amazon.com/dp/<asin>?tag=eds02a-20` with `rel="external nofollow sponsored"`; the disclosure lives at `/disclosure/` and is linked from the footer. Keep it that way.
 - **HTML**: 2-space indentation (`.editorconfig`). Keep the site dependency-free: no npm, no bundlers.
 
 ## Guardrails for agents
