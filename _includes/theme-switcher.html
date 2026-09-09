@@ -1,20 +1,108 @@
 {%- comment -%}
   Preview-only theme picker. Rendered from header.html when site.preview is
-  set, so it never reaches production. Themes are discovered from the files in
-  css/themes/, so adding a theme file is enough to list it here.
+  set, so it never reaches production. The themes come from _data/themes.yml,
+  and each label is set in that theme's own face (loaded by
+  css/theme-switcher.css) so the list previews the type as well as naming it.
+
+  A native <select> cannot do that: font-family on <option> is ignored by
+  Firefox and Safari, and on mobile the list is drawn by the OS. Hence the
+  listbox below.
 {%- endcomment -%}
-{%- assign theme_files = site.static_files | where_exp: "f", "f.path contains '/css/themes/'" | sort: "name" -%}
-<label class="preview-theme">
-  theme
-  <select onchange="window.__setPreviewTheme(this.value)">
-    {%- for f in theme_files %}
-    <option value="{{ f.basename }}">{{ f.basename }}</option>
+{%- assign current = site.site_theme | default: 'default' -%}
+{%- assign current_theme = site.data.themes | where: "name", current | first -%}
+<div class="theme-picker">
+  <button type="button" class="theme-picker__trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Theme">
+    <svg class="theme-picker__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path class="palette-body" d="M12 3a9 9 0 0 0 0 18c1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2a1.7 1.7 0 0 1 1.2-2.9H16a5 5 0 0 0 5-5c0-4-4-7.3-9-7.3z" stroke-linejoin="round"/>
+      <circle cx="7.4" cy="12" r="1.25" fill="#e5484d"/>
+      <circle cx="9.6" cy="7.9" r="1.25" fill="#f5b800"/>
+      <circle cx="14.3" cy="7.4" r="1.25" fill="#30a46c"/>
+      <circle cx="17.4" cy="10.4" r="1.25" fill="#3e63dd"/>
+    </svg>
+    <span class="theme-picker__label" style='font-family: {{ current_theme.font }}'>{{ current_theme.label }}</span>
+    <svg class="theme-picker__caret" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M0 0h10L5 6z"/></svg>
+  </button>
+  <ul class="theme-picker__list" role="listbox" aria-label="Theme" tabindex="-1" hidden>
+    {%- for t in site.data.themes %}
+    <li class="theme-picker__option" role="option" id="theme-option-{{ t.name }}" data-theme="{{ t.name }}" data-font='{{ t.font }}' style='font-family: {{ t.font }}' aria-selected="{% if t.name == current %}true{% else %}false{% endif %}">{{ t.label }}</li>
     {%- endfor %}
-  </select>
-</label>
+  </ul>
+</div>
 <script>
   (function () {
-    var select = document.currentScript.previousElementSibling.querySelector('select');
-    select.value = window.__previewTheme || '{{ site.site_theme | default: "default" }}';
+    var picker = document.currentScript.previousElementSibling;
+    var trigger = picker.querySelector('.theme-picker__trigger');
+    var label = picker.querySelector('.theme-picker__label');
+    var list = picker.querySelector('.theme-picker__list');
+    var options = Array.prototype.slice.call(list.querySelectorAll('[role="option"]'));
+
+    function select(option) {
+      options.forEach(function (o) { o.setAttribute('aria-selected', String(o === option)); });
+      label.textContent = option.textContent;
+      label.style.fontFamily = option.getAttribute('data-font');
+      trigger.setAttribute('aria-activedescendant', option.id);
+      window.__setPreviewTheme(option.getAttribute('data-theme'));
+    }
+
+    function open() {
+      list.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      var selected = list.querySelector('[aria-selected="true"]') || options[0];
+      if (selected) { focusOption(options.indexOf(selected)); }
+      document.addEventListener('click', onDocumentClick, true);
+    }
+
+    function close(refocus) {
+      list.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('click', onDocumentClick, true);
+      if (refocus) { trigger.focus(); }
+    }
+
+    function focusOption(index) {
+      var option = options[(index + options.length) % options.length];
+      option.tabIndex = -1;
+      option.focus();
+    }
+
+    function onDocumentClick(event) {
+      if (!picker.contains(event.target)) { close(false); }
+    }
+
+    trigger.addEventListener('click', function () {
+      if (list.hidden) { open(); } else { close(false); }
+    });
+
+    list.addEventListener('click', function (event) {
+      var option = event.target.closest('[role="option"]');
+      if (option) { select(option); close(true); }
+    });
+
+    picker.addEventListener('keydown', function (event) {
+      var focused = options.indexOf(document.activeElement);
+      if (event.key === 'Escape') {
+        if (!list.hidden) { event.preventDefault(); close(true); }
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (list.hidden) { open(); }
+        else if (focused > -1) { focusOption(focused + (event.key === 'ArrowDown' ? 1 : -1)); }
+      } else if ((event.key === 'Enter' || event.key === ' ') && focused > -1) {
+        event.preventDefault();
+        select(options[focused]);
+        close(true);
+      }
+    });
+
+    // The stylesheet may already have been swapped before first paint by the
+    // restore script in header.html; reflect that in the control.
+    var saved = window.__previewTheme;
+    if (saved) {
+      var match = options.filter(function (o) { return o.getAttribute('data-theme') === saved; })[0];
+      if (match) {
+        options.forEach(function (o) { o.setAttribute('aria-selected', String(o === match)); });
+        label.textContent = match.textContent;
+        label.style.fontFamily = match.getAttribute('data-font');
+      }
+    }
   })();
 </script>
