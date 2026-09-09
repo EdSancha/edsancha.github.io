@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Eduardo Diaz Sancha - Disclosure
+title: Disclosure
 description: Affiliate-link disclosure for edsancha.com.
 ---
 

@@ -1,4 +1,6 @@
 title: Eduardo Diaz Sancha
+# Short tagline used by jekyll-seo-tag in the home page <title>.
+tagline: Director of Engineering
 description: >-
   Director of Engineering writing about engineering leadership, AI-assisted
   software development, and endurance training.
@@ -11,9 +13,20 @@ markdown: kramdown
 highlighter: rouge
 paginate: 5
 paginate_path: "/blog/:num"
+lang: en
 plugins:
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Used by jekyll-seo-tag for the JSON-LD person/profile block.
+social:
+  name: Eduardo Diaz Sancha
+  links:
+    - https://www.linkedin.com/in/edsancha
+    - https://github.com/edsancha
+    - https://www.instagram.com/edsancha
 
 # Keep tooling and docs out of the generated site.
 exclude:

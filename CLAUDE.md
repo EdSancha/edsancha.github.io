@@ -31,7 +31,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `my-reading-list/index.markdown` | Book list with Amazon affiliate links |
 | `disclosure/index.markdown` | Affiliate-link disclosure |
 | `_layouts/` | `default` (chrome), `post` (articles), `last-week-read` (weekly link roundups) |
-| `_includes/` | `header.html` (head, nav, progress bar), `footer.html` (social links), `helpers/strava.html` |
+| `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `footer.html` (social links), `helpers/strava.html` |
 | `css/main.css` | All styling. Uses CSS custom properties; light and dark via `prefers-color-scheme` |
 | `img/` | Images. `img/apps/` are the Work page tiles, `img/social-icons/` the footer icons |
 | `feed.xml` | RSS, last 10 posts |
@@ -40,6 +40,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 ## Conventions
 
 - **Posts**: follow `.claude/skills/new-post/SKILL.md` (file name, front matter, reading time, republished-article fields). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
+- **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
 - **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Internal links are root-relative (`/feed.xml`, not `../feed.xml`) so they work on paginated pages.
 - **Styling**: add rules to `css/main.css` using the existing custom properties (`--body-foreground`, `--link-foreground`, ...). Any new color must work in both light and dark mode. No CSS frameworks, no build step.
 - **Affiliate links**: Amazon links carry the `eds02a-20` tag; the disclosure lives at `/disclosure/` and is linked from the footer. Keep it that way.
