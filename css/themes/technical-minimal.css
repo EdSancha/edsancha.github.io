@@ -1,0 +1,66 @@
+/* Technical minimal
+ *
+ * High contrast, one electric accent, monospace for every piece of metadata
+ * (dates, reading time, categories, tenure, captions) and near-square chips.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono-font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --meta-font-family: var(--mono-font-family);
+  --title-font-weight: 700;
+  --title-letter-spacing: -0.03em;
+
+  --body-font-size: 17px;
+  --body-line-height: 1.6em;
+  --h1-font-size: 2.3em;
+  --h1-line-height: 1.1em;
+  --h2-font-size: 1.35em;
+  --h3-font-size: 1.1em;
+
+  --body-foreground: #101010;
+  --body-background: #ffffff;
+  --link-foreground: #0040dd;
+  --link-hover-foreground: #002ea0;
+  --muted-foreground: #6a6a6a;
+  --rule-color: #e2e2e2;
+  --blockquote-foreground: #545454;
+  --blockquote-border: #d2d2d2;
+
+  --code-background: #f4f4f5;
+  --code-border: #e2e2e2;
+  --terminal-background: #101010;
+  --terminal-border: #2a2a2a;
+  --terminal-foreground: #f4f4f5;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.125em;
+  --chip-border-color: #d2d2d2;
+
+  --site-width-lg: 600px;
+  --site-width-xl: 680px;
+  --site-width-xxl: 780px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-foreground: #f2f2f2;
+    --body-background: #0b0b0b;
+    --link-foreground: #6f9dff;
+    --link-hover-foreground: #a2c0ff;
+    --muted-foreground: #949494;
+    --rule-color: #262626;
+    --blockquote-foreground: #adadad;
+    --blockquote-border: #303030;
+
+    --code-background: #161616;
+    --code-border: #303030;
+    --terminal-background: #161616;
+    --terminal-border: #303030;
+    --terminal-foreground: #f2f2f2;
+
+    --chip-border-color: #303030;
+  }
+}

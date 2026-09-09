@@ -1,0 +1,24 @@
+name: Theme branch check
+
+# Pushing a theme/* branch cannot deploy Pages directly: GitHub only accepts
+# deployments to the github-pages environment from master. So this workflow
+# validates the theme branch, and its completion is what triggers the deploy
+# workflow, which runs in the master context and is therefore allowed to
+# deploy. See the workflow_run trigger in pages.yml.
+
+on:
+  push:
+    branches:
+      - "theme/**"
+
+jobs:
+  check:
+    name: Build and check the theme branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: make check

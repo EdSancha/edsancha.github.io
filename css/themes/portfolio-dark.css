@@ -1,0 +1,66 @@
+/* Portfolio dark
+ *
+ * Deep navy ground, a slate text ramp and one bright teal accent, with
+ * monospace for small metadata. Dark is the intended mode; the light values
+ * keep the same accent family at a contrast that works on a pale ground.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono-font-family: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Consolas, monospace;
+  --meta-font-family: var(--mono-font-family);
+  --title-font-weight: 700;
+  --title-letter-spacing: -0.02em;
+
+  --body-font-size: 17px;
+  --body-line-height: 1.65em;
+  --h1-font-size: 2.6em;
+  --h1-line-height: 1.1em;
+  --h2-font-size: 1.5em;
+  --h3-font-size: 1.15em;
+
+  --body-foreground: #253449;
+  --body-background: #f3f6fb;
+  --link-foreground: #0d7d74;
+  --link-hover-foreground: #0a5d57;
+  --muted-foreground: #5b6b83;
+  --rule-color: #cdd8e6;
+  --blockquote-foreground: #5b6b83;
+  --blockquote-border: #b9c7da;
+
+  --code-background: #e6ecf5;
+  --code-border: #cdd8e6;
+  --terminal-background: #0a192f;
+  --terminal-border: #233554;
+  --terminal-foreground: #ccd6f6;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.25em;
+  --chip-border-color: #b9c7da;
+
+  --site-width-xl: 720px;
+  --site-width-xxl: 860px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-foreground: #ccd6f6;
+    --body-background: #0a192f;
+    --link-foreground: #64ffda;
+    --link-hover-foreground: #9dffe9;
+    --muted-foreground: #8892b0;
+    --rule-color: #233554;
+    --blockquote-foreground: #8892b0;
+    --blockquote-border: #233554;
+
+    --code-background: #112240;
+    --code-border: #233554;
+    --terminal-background: #112240;
+    --terminal-border: #233554;
+    --terminal-foreground: #ccd6f6;
+
+    --chip-border-color: #233554;
+  }
+}

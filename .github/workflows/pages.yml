@@ -9,7 +9,14 @@ on:
   push:
     branches:
       - master
-      - "theme/**"
+  # A theme/* push cannot deploy: Pages only accepts deployments to the
+  # github-pages environment from master. "Theme branch check" runs on those
+  # pushes instead, and a workflow_run trigger re-enters here in the master
+  # context, which is allowed to deploy. Fires whatever that check concluded,
+  # because build-previews.sh already skips a branch that fails to build.
+  workflow_run:
+    workflows: ["Theme branch check"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:

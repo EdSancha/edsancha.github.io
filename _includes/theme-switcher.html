@@ -1,0 +1,20 @@
+{%- comment -%}
+  Preview-only theme picker. Rendered from header.html when site.preview is
+  set, so it never reaches production. Themes are discovered from the files in
+  css/themes/, so adding a theme file is enough to list it here.
+{%- endcomment -%}
+{%- assign theme_files = site.static_files | where_exp: "f", "f.path contains '/css/themes/'" | sort: "name" -%}
+<label class="preview-theme">
+  theme
+  <select onchange="window.__setPreviewTheme(this.value)">
+    {%- for f in theme_files %}
+    <option value="{{ f.basename }}">{{ f.basename }}</option>
+    {%- endfor %}
+  </select>
+</label>
+<script>
+  (function () {
+    var select = document.currentScript.previousElementSibling.querySelector('select');
+    select.value = window.__previewTheme || '{{ site.site_theme | default: "default" }}';
+  })();
+</script>

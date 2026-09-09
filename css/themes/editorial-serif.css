@@ -1,0 +1,67 @@
+/* Editorial serif
+ *
+ * Serif headings on warm paper, sans body, generous line height. Built for
+ * reading long posts rather than scanning a portfolio.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap");
+
+:root {
+  --font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono-font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --meta-font-family: var(--font-family);
+  --title-font-family: "Source Serif 4", Charter, Georgia, "Times New Roman", serif;
+  --title-font-weight: 600;
+  --title-letter-spacing: -0.01em;
+
+  --body-font-size: 19px;
+  --body-line-height: 1.72em;
+  --h1-font-size: 2.5em;
+  --h1-line-height: 1.15em;
+  --h2-font-size: 1.55em;
+  --h3-font-size: 1.2em;
+
+  --body-foreground: #23201b;
+  --body-background: #faf7f2;
+  --link-foreground: #9c4221;
+  --link-hover-foreground: #7b3419;
+  --muted-foreground: #787064;
+  --rule-color: #ded5c6;
+  --blockquote-foreground: #6d665b;
+  --blockquote-border: #d6cbb8;
+
+  --code-background: #f2ece1;
+  --code-border: #ded5c6;
+  --terminal-background: #2c2822;
+  --terminal-border: #443e34;
+  --terminal-foreground: #f2ece1;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.2em;
+  --chip-border-color: #d6cbb8;
+
+  --site-width-lg: 620px;
+  --site-width-xl: 680px;
+  --site-width-xxl: 720px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-foreground: #ece5d9;
+    --body-background: #17150f;
+    --link-foreground: #e0a06d;
+    --link-hover-foreground: #efbe95;
+    --muted-foreground: #a29a8b;
+    --rule-color: #3a352c;
+    --blockquote-foreground: #a29a8b;
+    --blockquote-border: #3a352c;
+
+    --code-background: #221f18;
+    --code-border: #3a352c;
+    --terminal-background: #221f18;
+    --terminal-border: #3a352c;
+    --terminal-foreground: #ece5d9;
+
+    --chip-border-color: #3a352c;
+  }
+}

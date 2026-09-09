@@ -15,6 +15,34 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
 
+    {%- comment -%}
+      Theme token overrides. Only emitted when a non-default theme is selected,
+      or in preview builds where the switcher needs something to retarget.
+    {%- endcomment -%}
+    {%- assign active_theme = site.site_theme | default: 'default' -%}
+    {%- if active_theme != 'default' or site.preview %}
+    <link id="theme-css" rel="stylesheet" href="{{ '/css/themes/' | append: active_theme | append: '.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+    {%- endif %}
+{%- if site.preview %}
+    <script>
+      // Apply the previewer's last choice before first paint, and expose the
+      // setter the switcher control calls.
+      window.__themeBase = "{{ '/css/themes/' | relative_url }}";
+      (function () {
+        var link = document.getElementById('theme-css');
+        window.__setPreviewTheme = function (name) {
+          link.href = window.__themeBase + name + '.css';
+          window.__previewTheme = name;
+          try { localStorage.setItem('previewTheme', name); } catch (e) {}
+        };
+        try {
+          var saved = localStorage.getItem('previewTheme');
+          if (saved) { window.__previewTheme = saved; link.href = window.__themeBase + saved + '.css'; }
+        } catch (e) {}
+      })();
+    </script>
+{%- endif %}
+
 {%- unless site.preview %}
 
     <!-- Google tag (gtag.js) -->
@@ -40,13 +68,27 @@
         font-size: 0.8em; line-height: 1.5em; text-align: center;
       }
       .preview-bar a { color: #fff; text-decoration: underline; }
+      .preview-theme { display: inline-block; }
+      .preview-theme select {
+        margin-left: 0.3em;
+        font: inherit;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 3px;
+        padding: 0 0.2em;
+      }
+      .preview-theme select option { color: #000; background: #fff; }
     </style>
     <div class="preview-bar">
       Preview build{% if site.preview_name %} &middot; {{ site.preview_name }}{% endif %} &middot;
       not indexed, no analytics &middot;
       <a href="{{ site.url }}">go to the live site</a>
+      &middot; {% include theme-switcher.html %}
     </div>
 {%- endif %}
+
+    <a class="skip-link" href="#content">Skip to content</a>
 
     <div class="site">
 

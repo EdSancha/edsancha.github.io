@@ -1,0 +1,6 @@
+/* Default theme.
+ *
+ * The token values in css/main.css are this theme, so this file deliberately
+ * overrides nothing. It exists so the preview switcher can select "default"
+ * and so every theme is addressable by the same /css/themes/<name>.css path.
+ */

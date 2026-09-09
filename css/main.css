@@ -4,35 +4,81 @@
 /*
 /*****************************************************************************/
 
-/* Variables */ 
+/* Design tokens ------------------------------------------------------------
+ *
+ * Everything a theme is allowed to change lives here. Themes are files in
+ * css/themes/ that redefine these values and nothing else; header.html loads
+ * the chosen one after this file.
+ *
+ * A theme MUST define both its light values (on :root) and its dark values
+ * (inside its own prefers-color-scheme block). This file's dark block comes
+ * earlier in source order, so a theme that only sets light values would leak
+ * them into dark mode.
+ * ------------------------------------------------------------------------ */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 
-
 :root {
+  /* Type */
   --font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --meta-font-family: var(--font-family);
   --font-weight: normal;
-  --bold-font-weight: bold; 
+  --bold-font-weight: bold;
 
   --title-font-family: var(--font-family);
   --title-font-weight: bold;
-  
+  --title-letter-spacing: normal;
+
+  --body-font-size: 18px;
+  --body-line-height: 1.5em;
+  --h1-font-size: 2.4em;
+  --h1-line-height: 1.2em;
+  --h2-font-size: 1.4em;
+  --h3-font-size: 1.2em;
+
+  /* Colour */
   --body-foreground: #0d0032;
   --body-background: #eee;
   --link-foreground: #3500d3;
+  --link-hover-foreground: #282828;
+  --accent: var(--link-foreground);
+  --muted-foreground: #767676;
+  --rule-color: var(--body-foreground);
   --blockquote-foreground: #797979;
   --blockquote-border: #c5c5c5;
 
-}
+  --code-background: #eef;
+  --code-border: #ddd;
+  --terminal-background: #333;
+  --terminal-border: #282828;
+  --terminal-foreground: #fff;
 
+  /* Shape */
+  --post-divider-color: var(--link-foreground);
+  --chip-radius: 1em;
+  --chip-border-color: var(--blockquote-border);
+
+  /* Measure, per breakpoint */
+  --site-width-sm: 400px;
+  --site-width-md: 480px;
+  --site-width-lg: 585px;
+  --site-width-xl: 700px;
+  --site-width-xxl: 900px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
     --body-foreground: #eee;
     --body-background: #111;
     --link-foreground: #64c1f8;
-    --blockquote-foreground: #797979;
-    --blockquote-border: #c5c5c5;
+    --link-hover-foreground: #9ad8fb;
+    --muted-foreground: #9a9a9a;
+    --blockquote-foreground: #979797;
+    --blockquote-border: #454545;
+
+    --code-background: #1c1c28;
+    --code-border: #33333f;
   }
 }
 
@@ -48,8 +94,8 @@ body {
   background: var(--body-background);
   color: var(--body-foreground);  
   font-family: var(--font-family);
-  font-size: 18px;
-  line-height: 1.5em;
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
 }
 
 h1, h2, h3 {
@@ -76,25 +122,26 @@ li {
 hr {
   border: 0;
   height: 1px;
-  background: var(--body-foreground);
+  background: var(--rule-color);
   margin: 2em 0;
 }
 
 h1 {
-  line-height: 1.2em;
-  font-size:2.4em; 
+  line-height: var(--h1-line-height);
+  font-size: var(--h1-font-size);
+  letter-spacing: var(--title-letter-spacing);
   font-weight:var(--title-font-weight);
   margin-bottom: 0.5em; 
 }
 
 h2 {
-  font-size:1.4em; 
+  font-size: var(--h2-font-size);
   font-weight:var(--title-font-weight);
   margin-bottom: 0.3em; 
 }
 
 h3 {
-  font-size:1.2em; 
+  font-size: var(--h3-font-size);
   font-weight:var(--title-font-weight);
   margin-bottom: 0.3em; 
 }
@@ -154,7 +201,7 @@ blockquote p {color:var(--blockquote-foreground);}
 
 .posts li {
   line-height: 1.4em;
-  border-bottom: 1px solid var(--link-foreground);
+  border-bottom: 1px solid var(--post-divider-color);
 }
 
 .pagination {
@@ -192,7 +239,7 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .pagination span.disabled {
-  color: #aaa;
+  color: var(--muted-foreground);
 }
 
 .pagination em {
@@ -204,7 +251,7 @@ blockquote p {color:var(--blockquote-foreground);}
   .pagination a, .pagination span.gap {
     display: none;
     margin: 0;
-    color: #aaa;
+    color: var(--muted-foreground);
   }
 
   nav.pagination a.prev, nav.pagination a.next {
@@ -232,7 +279,7 @@ blockquote p {color:var(--blockquote-foreground);}
 
 .footer {
   font-size: 0.9em;
-  color: #282828;
+  color: var(--muted-foreground);
   margin-top: 1em;
   width: 100%;
   text-align: center;
@@ -252,7 +299,7 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .header a.extra:hover {
-  color: #282828;
+  color: var(--link-hover-foreground);
 }
 
 .footer-menu {
@@ -269,7 +316,7 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .footer .contact a:hover {
-  color: #282828;
+  color: var(--link-hover-foreground);
   text-decoration:none
 }
 
@@ -286,36 +333,59 @@ blockquote p {color:var(--blockquote-foreground);}
     margin: -36px 0 0 0;
   }
 
-.footer a {
-    display: inline-block;
-/*    padding-left: 33px; */
-    width: 34px;
-    height: 26px;
-    margin-top:  1em;
-    margin-bottom: 10px;
-    
-    /* CSS filter generator to convert from black to target hex color (#3500D3) https://codepen.io/sosuke/pen/Pjoqqp */
-    filter: brightness(0) saturate(100%) invert(15%) sepia(96%) saturate(6688%) hue-rotate(260deg) brightness(74%) contrast(134%);
-
-
-    -o-transition: all .3s;
-    -moz-transition: all .3s;
-    -webkit-transition: all .3s;
-    -ms-transition: all .3s;
+/* Social icons: inline SVG using currentColor, so they follow the theme
+   instead of the old PNG sprites tinted with a hard-coded CSS filter. */
+.footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 1.4em;
+  margin: 1em 0 0.6em;
 }
 
-.footer a.rss { background: url(../img/social-icons/rss.png) left top no-repeat;}
-.footer a.aboutme { background: url(../img/social-icons/aboutme.png) left top no-repeat; }
-.footer a.apple { background: url(../img/social-icons/apple.png) left top no-repeat; }
-.footer a.email { background: url(../img/social-icons/email.png) left top no-repeat; }
-.footer a.github { background: url(../img/social-icons/github-alt.png) left top no-repeat; }
-.footer a.instagram { background: url(../img/social-icons/instagram.png) left top no-repeat; }
-.footer a.location { background: url(../img/social-icons/location.png) left top no-repeat; }
-.footer a.linkedin { background: url(../img/social-icons/linkedin-alt.png) left top no-repeat; }
-.footer a.pinterest { background: url(../img/social-icons/pinterest.png) left top no-repeat; }
-.footer a.twitter { background: url(../img/social-icons/twitter.png) left top no-repeat; }
+.footer .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--link-foreground);
+  border-bottom: 0;
+  transition: color 0.2s;
+}
 
-.footer a:hover { background-position: left -34px; }
+.footer .social a:hover {
+  color: var(--link-hover-foreground);
+  border-bottom: 0;
+}
+
+.footer .social svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* Keyboard focus must stay visible on every interactive element. */
+a:focus-visible,
+select:focus-visible,
+.skip-link:focus {
+  outline: 2px solid var(--link-foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5em 1em;
+  background: var(--body-background);
+  color: var(--link-foreground);
+  z-index: 20;
+}
+
+.skip-link:focus {
+  left: 0;
+}
 
 /*Small screens*/
 /*@media only screen and (max-width: 480px) {
@@ -332,7 +402,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 480px) {
 
   .site {
-    width: 400px;
+    width: var(--site-width-sm);
     margin:  1em auto 1em;
     line-height: 1.5em;
   }
@@ -343,7 +413,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 600px) {
 
   .site {
-    width: 480px;
+    width: var(--site-width-md);
     margin:  1em auto 1em;
     line-height: 1.5em;
   }
@@ -377,7 +447,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 768px) {
 
   .site {
-    width: 585px;
+    width: var(--site-width-lg);
     margin:  1em auto 1em;
     line-height: 1.5em;
   }
@@ -408,7 +478,7 @@ blockquote p {color:var(--blockquote-foreground);}
 /*Horizontal pads and laptops*/
 @media only screen and (min-width: 992px) {
   .site {
-    width: 700px;
+    width: var(--site-width-xl);
     margin:  2em auto 2em;
     line-height: 1.5em;
   }
@@ -439,7 +509,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 1382px) {
 
   .site {
-    width: 900px;
+    width: var(--site-width-xxl);
     margin:  3em auto 3em;
     line-height: 1.5em;
   }
@@ -472,15 +542,16 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .title a {
-  color: #a00;
+  color: var(--accent);
 }
 
 .title a:hover {
-  color: #282828;
+  color: var(--link-hover-foreground);
 }
 
 .meta {
-  color: #aaa;
+  color: var(--muted-foreground);
+  font-family: var(--meta-font-family);
   font-size: 80%;
   margin-bottom: 12px;
   margin-top:1.4em;
@@ -499,8 +570,8 @@ blockquote p {color:var(--blockquote-foreground);}
 
 /* standard */
 .post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
+  border: 1px solid var(--code-border);
+  background-color: var(--code-background);
   padding: 0 .4em;
 }
 
@@ -509,8 +580,9 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
+  border: 1px solid var(--code-border);
+  background-color: var(--code-background);
+  font-family: var(--mono-font-family);
   font-size: 75%;
   line-height: 1em;
 }
@@ -521,13 +593,13 @@ blockquote p {color:var(--blockquote-foreground);}
 
 /* terminal */
 .post pre.terminal {
-  border: 1px solid #282828;
-  background-color: #333;
-  color: #FFF;
+  border: 1px solid var(--terminal-border);
+  background-color: var(--terminal-background);
+  color: var(--terminal-foreground);
 }
 
 .post pre.terminal code {
-  background-color: #333;
+  background-color: var(--terminal-background);
 }
 
 .post img {
@@ -589,7 +661,7 @@ ul.apps {
     text-align: center;
     line-height: 1em;
     padding: 8px 0 0;
-    color: #888;
+    color: var(--muted-foreground);
   }
   ul.apps a:hover {
     border: 0;
@@ -675,7 +747,8 @@ ul.apps {
   width: 6.5em;
   margin-right: 0.5em;
   text-indent: 0;
-  color: #888;
+  color: var(--muted-foreground);
+  font-family: var(--meta-font-family);
   font-size: 0.85em;
   white-space: nowrap;
 }
@@ -708,7 +781,7 @@ ul.apps {
 }
 
 .footer .disclosure {
-  color: #888;
+  color: var(--muted-foreground);
   font-size: 0.8em;
   margin: 1.5em 0 0;
 }
@@ -738,11 +811,12 @@ ul.apps {
 
 .categories a,
 .category-index a {
+  font-family: var(--meta-font-family);
   display: inline-block;
   margin: 0 0.5em 0.5em 0;
   padding: 0.15em 0.7em;
-  border: 1px solid var(--blockquote-border);
-  border-radius: 1em;
+  border: 1px solid var(--chip-border-color);
+  border-radius: var(--chip-radius);
   font-size: 0.75em;
   font-weight: normal;
   letter-spacing: 0.02em;
@@ -795,7 +869,8 @@ ul.apps {
   display: block;
   font-size: 0.8em;
   font-weight: normal;
-  color: #888;
+  color: var(--muted-foreground);
+  font-family: var(--meta-font-family);
 }
 
 .post-nav .newer {

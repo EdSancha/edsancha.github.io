@@ -42,3 +42,7 @@ exclude:
   - .editorconfig
   - vendor/
   - node_modules/
+
+# Which file in css/themes/ supplies the design tokens. "default" means the
+# values already in css/main.css. Preview builds let you switch at runtime.
+site_theme: default
