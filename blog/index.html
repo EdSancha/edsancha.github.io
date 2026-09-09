@@ -34,7 +34,7 @@ title: Eduardo Diaz Sancha - Blog
 
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-      <a>{{ page }}</a>
+      <span class="current" aria-current="page">{{ page }}</span>
     {% elsif page == 1 %}
       <a href="{{ site.paginate_path | relative_url | replace: ':num', '' }}">{{ page }}</a>
     {% else %}
