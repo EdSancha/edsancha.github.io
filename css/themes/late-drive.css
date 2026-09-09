@@ -1,0 +1,84 @@
+/* Late drive
+ *
+ * Tokyo Night as Omarchy ships it, taken from basecamp/omarchy at 5ead870:
+ * themes/tokyo-night/colors.toml for the palette, config/ghostty/config for
+ * the typeface (JetBrainsMono Nerd Font — the Nerd Font build only adds icon
+ * glyphs, so plain JetBrains Mono is the same face on the web).
+ *
+ * Monospace throughout, which is what makes it read like the desktop rather
+ * than like a themed website.
+ *
+ * Omarchy's file declares mode = "dark" and carries no light palette, so the
+ * light mode here uses Tokyo Night Day, the upstream companion to the scheme.
+ *
+ * Where Omarchy's ramp needed mapping: it uses foreground #a9b1d6 for body and
+ * dark_foreground #565f89 for comments, but #565f89 on #1a1b26 is about 2.5:1,
+ * too low for dates and categories. So body takes bright_foreground and muted
+ * text takes foreground, keeping both values Omarchy's own and both legible,
+ * with dark_foreground kept for borders where contrast does not matter.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+
+:root {
+  --font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --mono-font-family: var(--font-family);
+  --meta-font-family: var(--font-family);
+  --title-font-family: var(--font-family);
+  --title-font-weight: 700;
+  --title-letter-spacing: -0.03em;
+
+  /* Monospace runs wide and dense: smaller size, more leading, wider measure. */
+  --body-font-size: 15.5px;
+  --body-line-height: 1.75em;
+  --h1-font-size: 2.1em;
+  --h1-line-height: 1.15em;
+  --h2-font-size: 1.35em;
+  --h3-font-size: 1.1em;
+
+  /* Tokyo Night Day (light) */
+  --body-foreground: #232433;
+  --body-background: #e1e2e7;
+  --link-foreground: #2e7de9;
+  --link-hover-foreground: #1c5fc4;
+  --muted-foreground: #5a6194;
+  --rule-color: #c4c8da;
+  --blockquote-foreground: #5a6194;
+  --blockquote-border: #c4c8da;
+
+  --code-background: #d7d9e6;
+  --code-border: #c4c8da;
+  --terminal-background: #1a1b26;
+  --terminal-border: #292e42;
+  --terminal-foreground: #c0caf5;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.25em;
+  --chip-border-color: #c4c8da;
+
+  --site-width-lg: 640px;
+  --site-width-xl: 720px;
+  --site-width-xxl: 860px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Omarchy themes/tokyo-night/colors.toml */
+    --body-foreground: #c0caf5;   /* bright_foreground */
+    --body-background: #1a1b26;   /* background */
+    --link-foreground: #7aa2f7;   /* accent / blue */
+    --link-hover-foreground: #7da6ff; /* bright_blue */
+    --muted-foreground: #a9b1d6;  /* foreground */
+    --rule-color: #292e42;        /* selection */
+    --blockquote-foreground: #a9b1d6;
+    --blockquote-border: #565f89; /* dark_foreground */
+
+    --code-background: #24283b;   /* lighter_background */
+    --code-border: #414868;       /* muted */
+    --terminal-background: #13141c; /* dark_background */
+    --terminal-border: #292e42;
+    --terminal-foreground: #c0caf5;
+
+    --chip-border-color: #565f89;
+  }
+}
