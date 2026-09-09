@@ -36,7 +36,8 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `disclosure/index.markdown` | Affiliate-link disclosure |
 | `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups) |
 | `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `footer.html` (social links), `helpers/strava.html` |
-| `css/main.css` | All styling. Uses CSS custom properties; light and dark via `prefers-color-scheme` |
+| `css/main.css` | All styling, plus the design tokens every theme overrides. Light and dark via `prefers-color-scheme` |
+| `css/themes/` | One file per theme, overriding tokens only. `default.css` is empty on purpose: the values in `main.css` are the default theme |
 | `img/` | Images. `img/apps/` are the Work page tiles, `img/social-icons/` the footer icons |
 | `feed.xml` | RSS, last 10 posts |
 | `_config.preview.yml` | Overlay applied to theme previews only (noindex, no analytics, no sitemap) |
@@ -49,7 +50,8 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 - **Posts**: follow `.claude/skills/new-post/SKILL.md` (file name, front matter, reading time, republished-article fields). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
 - **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
 - **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Every internal link and asset path must go through `relative_url` (`{{ '/feed.xml' | relative_url }}`, `{{ post.url | relative_url }}`) — never a bare `/path`, which would break the preview builds that run under a `/preview/<name>/` baseurl.
-- **Styling**: add rules to `css/main.css` using the existing custom properties (`--body-foreground`, `--link-foreground`, ...). Any new color must work in both light and dark mode. No CSS frameworks, no build step.
+- **Styling**: add rules to `css/main.css` using the design tokens at the top of that file (`--body-foreground`, `--link-foreground`, `--muted-foreground`, `--meta-font-family`, ...). Never hard-code a colour, font or measure in a rule: put a token on `:root` and use it, or a theme cannot change it. Any new value must work in both light and dark mode. No CSS frameworks, no build step.
+- **Themes**: `site_theme` in `_config.yml` picks a file from `css/themes/`, loaded after `main.css`. A theme overrides tokens only, never structure, and must define **both** its light values on `:root` and its dark values in its own `prefers-color-scheme: dark` block — `main.css` has a dark block earlier in source order, so a light-only theme would leak into dark mode. Preview builds add a runtime switcher; production loads exactly one theme and no script.
 - **Affiliate links**: book links are generated from the ASIN in `_data/books.yml` as `https://www.amazon.com/dp/<asin>?tag=eds02a-20` with `rel="external nofollow sponsored"`; the disclosure lives at `/disclosure/` and is linked from the footer. Keep it that way.
 - **HTML**: 2-space indentation (`.editorconfig`). Keep the site dependency-free: no npm, no bundlers.
 
