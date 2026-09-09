@@ -626,3 +626,97 @@ ul.apps {
    width: 100%;
    max-width: 590px
 }
+
+/*****************************************************************************/
+/*
+/* Home: Now section and recent writing
+/*
+/*****************************************************************************/
+
+.recent-posts {
+  list-style-type: none;
+}
+
+.recent-posts li {
+  margin-bottom: 1em;
+}
+
+.recent-posts li a {
+  font-weight: bold;
+}
+
+.recent-posts li .meta {
+  display: inline;
+  margin-left: 0.8em;
+}
+
+.recent-posts li p {
+  margin: 0.2em 0 0;
+}
+
+/*****************************************************************************/
+/*
+/* Work: timeline
+/*
+/*****************************************************************************/
+
+.timeline {
+  list-style-type: none;
+}
+
+.timeline li {
+  margin-bottom: 0.8em;
+  padding-left: 7em;
+  text-indent: -7em;
+}
+
+.timeline .when {
+  display: inline-block;
+  width: 6.5em;
+  margin-right: 0.5em;
+  text-indent: 0;
+  color: #888;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+@media all and (max-width: 600px) {
+  .timeline li {
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  .timeline .when {
+    display: block;
+    width: auto;
+    margin-bottom: 0.2em;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Writing intro, source line, footer disclosure
+/*
+/*****************************************************************************/
+
+.intro {
+  margin-bottom: 1.5em;
+}
+
+.meta.source {
+  margin-top: 0;
+}
+
+.footer .disclosure {
+  color: #888;
+  font-size: 0.8em;
+  margin: 1.5em 0 0;
+}
+
+.footer .disclosure a {
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 0;
+  filter: none;
+}

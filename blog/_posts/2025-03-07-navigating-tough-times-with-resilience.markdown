@@ -1,14 +1,15 @@
 ---
-layout: "post"
+layout: post
 title: "Navigating Tough Times with Resilience"
 date: 2025-03-07
 author: "Eduardo Diaz Sancha"
 timeToRead: 3 minutes read
-description: "From Substack: Discover how resilience and endurance can empower leaders to navigate tough times, drawing parallels between leadership and endurance sports."
+description: "Discover how resilience and endurance can empower leaders to navigate tough times, drawing parallels between leadership and endurance sports."
 categories: "leadership management"
+source_name: "Substack"
+source_url: "https://leadershipendurance.substack.com"
+source_date: "7th March, 2025"
 ---
-
-__(This article was published originally on my [Substack](https://leadershipendurance.substack.com) on the 7th March, 2025)__
 
 _Hello, this is [Eduardo](https://www.linkedin.com/in/edsancha) and I'm an Engineering Leader and Certified Running coach. This is the first article on the Leadership Endurance newsletter, a source for leadership, endurance sports, performance and growth best practices in the confluence of these worlds._
 

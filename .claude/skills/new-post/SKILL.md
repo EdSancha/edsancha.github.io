@@ -30,13 +30,15 @@ image: "https://example.com/featured.jpg"   # optional, used for previews
 source_name: "Substack"
 source_url: "https://leadershipendurance.substack.com/p/slug"
 source_date: "7th March, 2025"
+canonical_url: "https://leadershipendurance.substack.com/p/slug"   # only when source_url is the exact article
 ---
 ```
 
 - `timeToRead`: word count divided by 225, rounded, as "N minutes read".
 - `description`: shown on the index, in RSS and in meta tags. No prefix like "From Substack:".
 - `categories`: space-separated lowercase words. Existing ones: `leadership management running training 10k tools development me reading`.
-- `source_*`: the layout renders "Originally published on {source_name}, {source_date}" and sets `rel="canonical"` to `source_url`. Do not also write the note by hand in the body.
+- `source_*`: the layout renders "Originally published on {source_name}, {source_date}" linking to `source_url`. Do not also write the note by hand in the body.
+- `canonical_url`: sets `<link rel="canonical">`. Use it only when `source_url` is the exact article URL (not a newsletter home page); otherwise leave it out and the page is its own canonical.
 
 ## 3. Body
 
