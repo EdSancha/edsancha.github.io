@@ -5,7 +5,7 @@ description: Add a blog post to edsancha.com, including importing an article fir
 
 # Add a post
 
-Posts live in `blog/_posts/` and are rendered by `_layouts/post.html`. Weekly link roundups use `_layouts/last-week-read.html`.
+Posts live in `blog/_posts/` and are rendered by `_layouts/post.html`. Weekly link roundups are ordinary posts with `intro: last-week-reads` in front matter, which pulls in `_includes/intro-last-week-reads.html` above the body.
 
 ## 1. File name
 
@@ -36,7 +36,7 @@ canonical_url: "https://leadershipendurance.substack.com/p/slug"   # only when s
 
 - `timeToRead`: word count divided by 225, rounded, as "N minutes read".
 - `description`: shown on the index, in RSS and in meta tags. No prefix like "From Substack:".
-- `categories`: space-separated lowercase words. Existing ones: `leadership management running training 10k tools development me reading`.
+- `categories`: space-separated lowercase words. They appear as links on the post and the index and group posts on `/blog/categories/`, and they form part of the post URL, so never change them on a published post. Existing ones: `leadership management running training 10k tools development me reading`.
 - `source_*`: the layout renders "Originally published on {source_name}, {source_date}" linking to `source_url`. Do not also write the note by hand in the body.
 - `canonical_url`: sets `<link rel="canonical">`. Use it only when `source_url` is the exact article URL (not a newsletter home page); otherwise leave it out and the page is its own canonical.
 
