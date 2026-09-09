@@ -42,25 +42,23 @@
   --site-width-lg: 600px;
   --site-width-xl: 680px;
   --site-width-xxl: 780px;
+
+  /* Dark values. main.css decides when these become live. */
+  --body-foreground-dark: #f2f2f2;
+  --body-background-dark: #0b0b0b;
+  --link-foreground-dark: #6f9dff;
+  --link-hover-foreground-dark: #a2c0ff;
+  --muted-foreground-dark: #949494;
+  --rule-color-dark: #262626;
+  --blockquote-foreground-dark: #adadad;
+  --blockquote-border-dark: #303030;
+
+  --code-background-dark: #161616;
+  --code-border-dark: #303030;
+  --terminal-background-dark: #161616;
+  --terminal-border-dark: #303030;
+  --terminal-foreground-dark: #f2f2f2;
+
+  --chip-border-color-dark: #303030;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-foreground: #f2f2f2;
-    --body-background: #0b0b0b;
-    --link-foreground: #6f9dff;
-    --link-hover-foreground: #a2c0ff;
-    --muted-foreground: #949494;
-    --rule-color: #262626;
-    --blockquote-foreground: #adadad;
-    --blockquote-border: #303030;
-
-    --code-background: #161616;
-    --code-border: #303030;
-    --terminal-background: #161616;
-    --terminal-border: #303030;
-    --terminal-foreground: #f2f2f2;
-
-    --chip-border-color: #303030;
-  }
-}

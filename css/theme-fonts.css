@@ -4,12 +4,12 @@
 {%- assign families = site.data.themes | map: "google" | compact | sort -%}
 /*****************************************************************************/
 /*
-/* Faces for the theme picker's labels
+/* Faces for the settings menu's theme labels
 /*
 /* Each theme's name is set in that theme's own face, so the open list needs
 /* all of them at once while the page has loaded only the active theme's. This
-/* file supplies the difference, and the picker injects it the first time it is
-/* opened — so a visitor who never opens the picker fetches none of it.
+/* file supplies the difference, and the menu injects it the first time it is
+/* opened — so a visitor who never opens the menu fetches none of it.
 /*
 /* The families come from the `google` fields in _data/themes.yml, in one
 /* request. Canarina is self-hosted and repeats the canarion theme's own

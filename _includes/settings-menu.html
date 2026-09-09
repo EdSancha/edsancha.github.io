@@ -1,0 +1,160 @@
+{%- comment -%}
+  The site settings menu, rendered into the nav on every page. One button, one
+  panel, one group per preference — four nav links plus a control each for
+  theme, appearance and language cannot share a line on a phone.
+
+  Themes come from _data/themes.yml, and each label is set in that theme's own
+  face, so the list previews the type as well as naming it.
+
+  It stays hidden until the script reveals it, so a visitor without JavaScript
+  never sees a control that cannot work — they get site_theme at the
+  appearance their OS asks for.
+{%- endcomment -%}
+{%- assign fallback = site.site_theme | default: 'atlanta' -%}
+{%- capture fonts_href -%}{{ '/css/theme-fonts.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}{%- endcapture -%}
+<div class="settings-menu">
+  <button type="button" class="settings-menu__trigger" aria-haspopup="dialog" aria-expanded="false" aria-label="Site settings">
+    <svg class="settings-menu__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4 7h10M18 7h2M4 12h2M10 12h10M4 17h8M16 17h4"/>
+      <circle cx="16" cy="7" r="2"/>
+      <circle cx="8" cy="12" r="2"/>
+      <circle cx="14" cy="17" r="2"/>
+    </svg>
+  </button>
+  <div class="settings-menu__panel" role="dialog" aria-label="Site settings" hidden>
+    <div class="settings-menu__group">
+      <h2 class="settings-menu__heading" id="settings-theme-label">Theme</h2>
+      <div role="radiogroup" aria-labelledby="settings-theme-label" data-setting="theme">
+        {%- for t in site.data.themes %}
+        <div class="settings-menu__option" role="radio" data-value="{{ t.name }}" data-font='{{ t.font }}' style='font-family: {{ t.font }}' aria-checked="false" tabindex="-1">{{ t.label }}</div>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="settings-menu__group">
+      <h2 class="settings-menu__heading" id="settings-appearance-label">Appearance</h2>
+      <div role="radiogroup" aria-labelledby="settings-appearance-label" data-setting="appearance">
+        <div class="settings-menu__option" role="radio" data-value="system" aria-checked="false" tabindex="-1">System</div>
+        <div class="settings-menu__option" role="radio" data-value="light" aria-checked="false" tabindex="-1">Light</div>
+        <div class="settings-menu__option" role="radio" data-value="dark" aria-checked="false" tabindex="-1">Dark</div>
+      </div>
+    </div>
+    {%- comment -%}
+      A Language group belongs here, and the markup above is the shape it takes.
+      It is not rendered yet because nothing on the site is translated, and a
+      control that cannot change anything is worse than no control. See the
+      themes convention in CLAUDE.md for what wiring it up would involve.
+    {%- endcomment -%}
+  </div>
+</div>
+<script>
+  (function () {
+    // Queried, not walked from currentScript: the old version bound via
+    // previousElementSibling, so any wrapper element silently broke it.
+    var menu = document.querySelector('.settings-menu');
+    if (!menu) { return; }
+    var trigger = menu.querySelector('.settings-menu__trigger');
+    var panel = menu.querySelector('.settings-menu__panel');
+    var options = Array.prototype.slice.call(panel.querySelectorAll('[role="radio"]'));
+    var fontsHref = {{ fonts_href | jsonify }};
+    var fontsLoaded = false;
+
+    var apply = {
+      theme: function (v) { window.__setTheme(v); },
+      appearance: function (v) { window.__setAppearance(v); }
+    };
+
+    function groupOf(option) {
+      return option.closest('[role="radiogroup"]');
+    }
+
+    // The theme labels are set in six different faces, but the page has loaded
+    // only the active theme's. Fetch the rest the first time the panel opens,
+    // so a visitor who never opens it pays nothing for them.
+    function loadFonts() {
+      if (fontsLoaded) { return; }
+      fontsLoaded = true;
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = fontsHref;
+      document.head.appendChild(link);
+    }
+
+    function check(option) {
+      var group = groupOf(option);
+      group.querySelectorAll('[role="radio"]').forEach(function (o) {
+        o.setAttribute('aria-checked', String(o === option));
+      });
+    }
+
+    function select(option) {
+      check(option);
+      apply[groupOf(option).dataset.setting](option.dataset.value);
+    }
+
+    function open() {
+      loadFonts();
+      panel.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      var checked = panel.querySelector('[aria-checked="true"]') || options[0];
+      if (checked) { checked.focus(); }
+      document.addEventListener('click', onDocumentClick, true);
+    }
+
+    function close(refocus) {
+      panel.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      document.removeEventListener('click', onDocumentClick, true);
+      if (refocus) { trigger.focus(); }
+    }
+
+    function onDocumentClick(event) {
+      if (!menu.contains(event.target)) { close(false); }
+    }
+
+    // Arrows move within a group, the way a radio group is expected to behave;
+    // Tab still moves between the groups.
+    function move(option, step) {
+      var siblings = Array.prototype.slice.call(groupOf(option).querySelectorAll('[role="radio"]'));
+      var next = siblings[(siblings.indexOf(option) + step + siblings.length) % siblings.length];
+      next.focus();
+      select(next);
+    }
+
+    trigger.addEventListener('click', function () {
+      if (panel.hidden) { open(); } else { close(false); }
+    });
+
+    panel.addEventListener('click', function (event) {
+      var option = event.target.closest('[role="radio"]');
+      if (option) { select(option); close(true); }
+    });
+
+    menu.addEventListener('keydown', function (event) {
+      var option = document.activeElement.closest ? document.activeElement.closest('[role="radio"]') : null;
+      if (event.key === 'Escape') {
+        if (!panel.hidden) { event.preventDefault(); close(true); }
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        if (panel.hidden) { event.preventDefault(); open(); }
+        else if (option) { event.preventDefault(); move(option, 1); }
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        if (panel.hidden) { event.preventDefault(); open(); }
+        else if (option) { event.preventDefault(); move(option, -1); }
+      } else if ((event.key === 'Enter' || event.key === ' ') && option) {
+        event.preventDefault();
+        select(option);
+        close(true);
+      }
+    });
+
+    // header.html has already applied both stored choices; reflect them here,
+    // then reveal the control now that it works.
+    var current = {
+      theme: window.__activeTheme || {{ fallback | jsonify }},
+      appearance: window.__activeAppearance || 'system'
+    };
+    options.forEach(function (o) {
+      if (o.dataset.value === current[groupOf(o).dataset.setting]) { check(o); }
+    });
+    menu.classList.add('is-ready');
+  })();
+</script>

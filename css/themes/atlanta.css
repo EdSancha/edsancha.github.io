@@ -58,26 +58,23 @@
   --site-width-lg: 600px;
   --site-width-xl: 680px;
   --site-width-xxl: 800px;
+
+  /* Dark values (the 60% shade as ground, a lighter blue for links). main.css decides when they become live. */
+  --body-foreground-dark: #D3DAE3;
+  --body-background-dark: #0E1B2D;
+  --link-foreground-dark: #7FA6DC;
+  --link-hover-foreground-dark: #A7C4EA;
+  --muted-foreground-dark: #8A9BB4;
+  --rule-color-dark: #1C365A;
+  --blockquote-foreground-dark: #A7B4C6;
+  --blockquote-border-dark: #234471;
+
+  --code-background-dark: #152944;
+  --code-border-dark: #234471;
+  --terminal-background-dark: #070E17;
+  --terminal-border-dark: #1C365A;
+  --terminal-foreground-dark: #D3DAE3;
+
+  --chip-border-color-dark: #234471;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark: the 60% shade as ground, a lighter blue for links */
-    --body-foreground: #D3DAE3;
-    --body-background: #0E1B2D;
-    --link-foreground: #7FA6DC;
-    --link-hover-foreground: #A7C4EA;
-    --muted-foreground: #8A9BB4;
-    --rule-color: #1C365A;
-    --blockquote-foreground: #A7B4C6;
-    --blockquote-border: #234471;
-
-    --code-background: #152944;
-    --code-border: #234471;
-    --terminal-background: #070E17;
-    --terminal-border: #1C365A;
-    --terminal-foreground: #D3DAE3;
-
-    --chip-border-color: #234471;
-  }
-}

@@ -43,25 +43,23 @@
   --site-width-lg: 620px;
   --site-width-xl: 680px;
   --site-width-xxl: 720px;
+
+  /* Dark values. main.css decides when these become live. */
+  --body-foreground-dark: #ece5d9;
+  --body-background-dark: #17150f;
+  --link-foreground-dark: #e0a06d;
+  --link-hover-foreground-dark: #efbe95;
+  --muted-foreground-dark: #a29a8b;
+  --rule-color-dark: #3a352c;
+  --blockquote-foreground-dark: #a29a8b;
+  --blockquote-border-dark: #3a352c;
+
+  --code-background-dark: #221f18;
+  --code-border-dark: #3a352c;
+  --terminal-background-dark: #221f18;
+  --terminal-border-dark: #3a352c;
+  --terminal-foreground-dark: #ece5d9;
+
+  --chip-border-color-dark: #3a352c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-foreground: #ece5d9;
-    --body-background: #17150f;
-    --link-foreground: #e0a06d;
-    --link-hover-foreground: #efbe95;
-    --muted-foreground: #a29a8b;
-    --rule-color: #3a352c;
-    --blockquote-foreground: #a29a8b;
-    --blockquote-border: #3a352c;
-
-    --code-background: #221f18;
-    --code-border: #3a352c;
-    --terminal-background: #221f18;
-    --terminal-border: #3a352c;
-    --terminal-foreground: #ece5d9;
-
-    --chip-border-color: #3a352c;
-  }
-}
