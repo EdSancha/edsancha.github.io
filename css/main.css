@@ -16,7 +16,6 @@
  * them into dark mode.
  * ------------------------------------------------------------------------ */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   /* Type */
@@ -54,6 +53,14 @@
   --terminal-border: #282828;
   --terminal-foreground: #fff;
 
+  /* Raised surfaces (the theme picker panel). The background follows the
+     page, so a theme that repaints --body-background repaints the panel with
+     it, in both light and dark, with no per-theme work. */
+  --surface-background: var(--body-background);
+  --surface-border-color: var(--blockquote-border);
+  --surface-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  --surface-hover-background: rgba(0, 0, 0, 0.06);
+
   /* Shape */
   --post-divider-color: var(--link-foreground);
   --chip-radius: 1em;
@@ -79,6 +86,11 @@
 
     --code-background: #1c1c28;
     --code-border: #33333f;
+
+    /* A black shadow is invisible on a dark ground; deepen it, and lift the
+       hover overlay to white so it reads on a dark panel. */
+    --surface-shadow: 0 8px 26px rgba(0, 0, 0, 0.6);
+    --surface-hover-background: rgba(255, 255, 255, 0.09);
   }
 }
 
@@ -291,12 +303,20 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 1em;
 }
 
 .header a {
   margin-right: 1em;
   text-decoration: none;
+}
+
+/* Pushed to the right end of the nav; it is a preference, not a destination. */
+.header .theme-picker {
+  margin-left: auto;
 }
 
 .header a.extra {
@@ -881,4 +901,135 @@ ul.apps {
 .post-nav .newer {
   text-align: right;
   margin-left: auto;
+}
+
+
+/*****************************************************************************/
+/*
+/* Theme picker
+/*
+/* A palette button in the nav that swaps the theme stylesheet. Every name is
+/* set in that theme's own face, which a native <select> cannot do: font-family
+/* on <option> is ignored by Firefox and Safari, and mobile draws the list in
+/* the OS. The five faces the list needs but the page does not are fetched by
+/* css/theme-fonts.css, injected the first time the list opens.
+/*
+/* Hidden until the script reveals it, so a visitor without JavaScript is not
+/* shown a control that cannot work.
+/*
+/*****************************************************************************/
+
+.theme-picker {
+  position: relative;
+  display: none;
+  text-align: left;
+}
+
+.theme-picker.is-ready {
+  display: inline-block;
+}
+
+.theme-picker__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  margin: 0;
+  padding: 0.15em 0.5em;
+  font: inherit;
+  font-size: 0.85em;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  background: none;
+  border: 1px solid var(--surface-border-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-picker__trigger:hover,
+.theme-picker__trigger[aria-expanded="true"] {
+  color: var(--body-foreground);
+  background: var(--surface-hover-background);
+}
+
+.theme-picker__icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+
+/* The palette outline follows the text colour; the paint keeps its own hues so
+   the icon still reads as a palette at this size, on any theme. */
+.theme-picker__icon .palette-body {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+.theme-picker__caret {
+  width: 0.55em;
+  height: 0.55em;
+  flex: none;
+  fill: currentColor;
+  opacity: 0.7;
+}
+
+.theme-picker__trigger[aria-expanded="true"] .theme-picker__caret {
+  transform: rotate(180deg);
+}
+
+.theme-picker__list {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.4em);
+  /* Anchored to the picker's right edge, which is the right edge of the nav,
+     so the panel never overflows the viewport on a narrow screen. */
+  right: 0;
+  min-width: 12em;
+  margin: 0;
+  padding: 0.25em 0;
+  list-style: none;
+  color: var(--body-foreground);
+  background: var(--surface-background);
+  border: 1px solid var(--surface-border-color);
+  border-radius: 6px;
+  box-shadow: var(--surface-shadow);
+}
+
+.theme-picker__list[hidden] {
+  display: none;
+}
+
+.theme-picker__option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding: 0.4em 0.9em;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.theme-picker__option:hover,
+.theme-picker__option:focus {
+  background: var(--surface-hover-background);
+  outline: none;
+}
+
+.theme-picker__option[aria-selected="true"] {
+  font-weight: var(--bold-font-weight);
+}
+
+/* A tick that shows only on the current theme, holding its space either way so
+   the names stay aligned. */
+.theme-picker__option::before {
+  content: "\2713";
+  width: 1em;
+  flex: none;
+  font-family: var(--meta-font-family);
+  font-size: 0.75em;
+  visibility: hidden;
+}
+
+.theme-picker__option[aria-selected="true"]::before {
+  visibility: visible;
 }

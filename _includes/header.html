@@ -16,33 +16,32 @@
     <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
 
     {%- comment -%}
-      Theme token overrides. Only emitted when a non-default theme is selected,
-      or in preview builds where the switcher needs something to retarget.
+      Theme token overrides, loaded after main.css. site_theme is what a
+      first-time visitor gets; the script below swaps in their stored choice
+      before first paint, so the page never flashes the wrong theme.
     {%- endcomment -%}
-    {%- assign active_theme = site.site_theme | default: 'default' -%}
-    {%- if active_theme != 'default' or site.preview %}
+    {%- assign active_theme = site.site_theme | default: 'atlanta' -%}
     <link id="theme-css" rel="stylesheet" href="{{ '/css/themes/' | append: active_theme | append: '.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
-    {%- endif %}
-{%- if site.preview %}
-    <link rel="stylesheet" href="{{ '/css/theme-switcher.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
     <script>
-      // Apply the previewer's last choice before first paint, and expose the
-      // setter the switcher control calls.
       window.__themeBase = "{{ '/css/themes/' | relative_url }}";
+      window.__activeTheme = {{ active_theme | jsonify }};
       (function () {
         var link = document.getElementById('theme-css');
-        window.__setPreviewTheme = function (name) {
-          link.href = window.__themeBase + name + '.css';
-          window.__previewTheme = name;
-          try { localStorage.setItem('previewTheme', name); } catch (e) {}
+        // Only names the site actually ships. A value left over from a renamed
+        // or removed theme would otherwise request a stylesheet that 404s.
+        var known = {{ site.data.themes | map: 'name' | jsonify }};
+        window.__setTheme = function (name) {
+          if (known.indexOf(name) < 0) { return; }
+          link.href = window.__themeBase + name + '.css?v={{ site.time | date: '%Y%m%d%H%M' }}';
+          window.__activeTheme = name;
+          try { localStorage.setItem('theme', name); } catch (e) {}
         };
         try {
-          var saved = localStorage.getItem('previewTheme');
-          if (saved) { window.__previewTheme = saved; link.href = window.__themeBase + saved + '.css'; }
+          var saved = localStorage.getItem('theme');
+          if (saved && saved !== window.__activeTheme) { window.__setTheme(saved); }
         } catch (e) {}
       })();
     </script>
-{%- endif %}
 
 {%- unless site.preview %}
 
@@ -74,7 +73,6 @@
       Preview build{% if site.preview_name %} &middot; {{ site.preview_name }}{% endif %} &middot;
       not indexed, no analytics &middot;
       <a href="{{ site.url }}">go to the live site</a>
-      &middot; {% include theme-switcher.html %}
     </div>
 {%- endif %}
 
@@ -93,6 +91,7 @@
         <a {% if page.url == "/work/" %}class="extra" {% endif %}href="{{ '/work/' | relative_url }}">Work</a>
         <a {% if page.url contains "/blog/" or is_post %}class="extra" {% endif %}href="{{ '/blog/' | relative_url }}">Writing</a>
         <a {% if page.url == "/my-reading-list/" %}class="extra" {% endif %}href="{{ '/my-reading-list/' | relative_url }}">Reading List</a>
+        {% include theme-switcher.html %}
     </nav>
 
     <script>

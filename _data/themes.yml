@@ -1,16 +1,11 @@
-# The themes offered by the preview-only theme picker, in the order they are
-# listed. Adding a theme means a file in css/themes/ *and* an entry here.
+# The themes the picker offers, in the order it lists them. Adding a theme
+# means a file in css/themes/ *and* an entry here.
 #
-#   name   file in css/themes/ (without .css), and the value stored in localStorage
+#   name   file in css/themes/ (without .css), and the value stored for the visitor
 #   label  what the picker shows
 #   font   the face the label itself is set in, so the list previews the type
-#   google the family to add to the picker's shared Google Fonts request, or
-#          omitted when the face is self-hosted (see css/theme-switcher.css)
-
-- name: default
-  label: Default
-  font: '"Poppins", sans-serif'
-  google: 'Poppins:wght@400'
+#   google the family to add to css/theme-fonts.css, which the picker loads the
+#          first time it is opened. Omitted when the face is self-hosted.
 
 - name: atlanta
   label: Atlanta
@@ -35,3 +30,8 @@
   label: Technical minimal
   font: '"IBM Plex Mono", monospace'
   google: 'IBM+Plex+Mono:wght@400'
+
+- name: legacy
+  label: Legacy
+  font: '"Poppins", sans-serif'
+  google: 'Poppins:wght@400'
