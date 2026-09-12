@@ -1,0 +1,64 @@
+/* Technical minimal
+ *
+ * High contrast, one electric accent, monospace for every piece of metadata
+ * (dates, reading time, categories, tenure, captions) and near-square chips.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=Inter:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono-font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --meta-font-family: var(--mono-font-family);
+  --title-font-weight: 700;
+  --title-letter-spacing: -0.03em;
+
+  --body-font-size: 17px;
+  --body-line-height: 1.6em;
+  --h1-font-size: 2.3em;
+  --h1-line-height: 1.1em;
+  --h2-font-size: 1.35em;
+  --h3-font-size: 1.1em;
+
+  --body-foreground: #101010;
+  --body-background: #ffffff;
+  --link-foreground: #0040dd;
+  --link-hover-foreground: #002ea0;
+  --muted-foreground: #6a6a6a;
+  --rule-color: #e2e2e2;
+  --blockquote-foreground: #545454;
+  --blockquote-border: #d2d2d2;
+
+  --code-background: #f4f4f5;
+  --code-border: #e2e2e2;
+  --terminal-background: #101010;
+  --terminal-border: #2a2a2a;
+  --terminal-foreground: #f4f4f5;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.125em;
+  --chip-border-color: #d2d2d2;
+
+  --site-width-lg: 600px;
+  --site-width-xl: 680px;
+  --site-width-xxl: 780px;
+
+  /* Dark values. main.css decides when these become live. */
+  --body-foreground-dark: #f2f2f2;
+  --body-background-dark: #0b0b0b;
+  --link-foreground-dark: #6f9dff;
+  --link-hover-foreground-dark: #a2c0ff;
+  --muted-foreground-dark: #949494;
+  --rule-color-dark: #262626;
+  --blockquote-foreground-dark: #adadad;
+  --blockquote-border-dark: #303030;
+
+  --code-background-dark: #161616;
+  --code-border-dark: #303030;
+  --terminal-background-dark: #161616;
+  --terminal-border-dark: #303030;
+  --terminal-foreground-dark: #f2f2f2;
+
+  --chip-border-color-dark: #303030;
+}
+

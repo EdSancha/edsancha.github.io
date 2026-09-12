@@ -1,24 +1,36 @@
 ---
 layout: default
-title: Eduardo Diaz Sancha - Blog
+title: Writing
+description: Essays on engineering leadership, AI-assisted software development and endurance training, plus older posts on iOS development and weekly reading lists.
 ---
 
 <div id="home">
-  <h1>Blog</h1>
+  <h1>Writing</h1>
+
+  <p class="intro">
+    Mostly engineering leadership, lately through the lens of endurance sport: resilience, pacing, slow productivity. New essays go out first on <a href="https://leadershipendurance.substack.com" rel="external nofollow" target="_blank">my Substack</a>; subscribe there if you want them in your inbox. Older posts cover iOS development and weekly reading lists. Browse <a href="{{ '/blog/categories/' | relative_url }}">by category</a>.
+  </p>
 
   <ul class="posts">
     {% for post in paginator.posts %}
       <li>
-        <!-- &raquo;  -->
-
         <p class="meta">
           <span>{{ post.date | date_to_string }}</span> 
           <span>{{post.timeToRead}}</span>
         </p>
 
-        <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        <p><a href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
 
-        <p> {{ post.description}} </p>
+        <p>{{ post.description }}</p>
+
+        {% assign post_categories = post.categories | where_exp: "c", "c != 'blog'" %}
+        {% if post_categories.size > 0 %}
+        <p class="categories">
+          {% for category in post_categories %}
+  <a href="{{ '/blog/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+  {% endfor %}
+        </p>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
@@ -34,7 +46,7 @@ title: Eduardo Diaz Sancha - Blog
 
   {% for page in (1..paginator.total_pages) %}
     {% if page == paginator.page %}
-      <a>{{ page }}</a>
+      <span class="current" aria-current="page">{{ page }}</span>
     {% elsif page == 1 %}
       <a href="{{ site.paginate_path | relative_url | replace: ':num', '' }}">{{ page }}</a>
     {% else %}

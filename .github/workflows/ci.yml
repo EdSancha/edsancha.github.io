@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  schedule:
+    # Weekly external link check (Mondays 09:00 UTC).
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and check internal links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: make check
+
+  external-links:
+    name: Check external links
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: make build
+      - run: |
+          bundle exec htmlproofer ./_site \
+            --allow-hash-href \
+            --ignore-urls "/^mailto:/,/amazon.com/,/apps.apple.com/,/itunes.apple.com/,/linkedin.com/,/instagram.com/" \
+            --no-enforce-https \
+            --ignore-status-codes "403,429,503"

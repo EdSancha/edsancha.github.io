@@ -1,12 +1,49 @@
-title: 			Eduardo Diaz Sancha's Site
-markdown: 		kramdown
-highlighter:  rouge
-baseurl:		/
-source:      	.
-destination: 	./_site
-url: 			https://edsancha.com
+title: Eduardo Diaz Sancha
+# Short tagline used by jekyll-seo-tag in the home page <title>.
+tagline: Director of Engineering
+description: >-
+  Director of Engineering writing about engineering leadership, AI-assisted
+  software development, and endurance training.
+author: Eduardo Diaz Sancha
+url: https://edsancha.com
+baseurl: ""
+source: .
+destination: ./_site
+markdown: kramdown
+highlighter: rouge
 paginate: 5
 paginate_path: "/blog/:num"
+lang: en
 plugins:
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Used by jekyll-seo-tag for the JSON-LD person/profile block.
+social:
+  name: Eduardo Diaz Sancha
+  links:
+    - https://www.linkedin.com/in/edsancha
+    - https://github.com/edsancha
+    - https://www.instagram.com/edsancha
+
+# Keep tooling and docs out of the generated site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - CLAUDE.md
+  - AGENTS.md
+  - .cursor-instructions.md
+  - .claude/
+  - .github/
+  - .editorconfig
+  - vendor/
+  - node_modules/
+
+# Which file in css/themes/ supplies the design tokens, and so what a
+# first-time visitor sees. The nav's theme picker lets them choose another;
+# "legacy" is the values already in css/main.css, the site's original look.
+site_theme: atlanta

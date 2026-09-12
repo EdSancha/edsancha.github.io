@@ -1,0 +1,93 @@
+/* Canarion
+ *
+ * Canary yellow and its complement, with Canarina for headings.
+ *
+ * Canarina is by Ariel Martín Pérez of Tunera Type Foundry, licensed under
+ * the SIL Open Font License 1.1 with the Reserved Font Name "Canarina".
+ * It is self-hosted, unmodified, and the copyright notice and full licence
+ * travel with it in assets/fonts/canarina/ as the OFL requires.
+ * https://www.tunera.xyz/fonts/canarina/
+ *
+ * Body text is Geist.
+ *
+ * Colour: canary yellow #FFEF00 and its complement, the periwinkle #5F71FF.
+ * Canary is unusable as a link colour on a pale ground — it measures 1.17:1,
+ * nowhere near the 4.5:1 body text needs — but it is superb on a dark one at
+ * 15.6:1. So the two modes divide the pair rather than repeat it: dark mode
+ * gives the yellow the accent role, light mode hands it to the complement.
+ * The pure complement is itself 3.88:1 on the light ground, just short, so it
+ * is darkened 15% toward black to #5160D9, which measures 5.11:1 and reads as
+ * the same blue.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Canarina ships three static cuts; despite the names they are weights, not
+   optical sizes: Chica 400, Fina 500, Grande 800. Headings use Grande, so it
+   is the only cut shipped. See assets/fonts/canarina/README.md. */
+@font-face {
+  font-family: "Canarina";
+  src: url("../../assets/fonts/canarina/Canarina-Grande.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-family: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --meta-font-family: var(--font-family);
+  --title-font-family: "Canarina", "Geist", system-ui, sans-serif;
+  --title-font-weight: 800;
+  --title-letter-spacing: 0;
+
+  --body-font-size: 17px;
+  --body-line-height: 1.68em;
+  --h1-font-size: 2.5em;
+  --h1-line-height: 1.1em;
+  --h2-font-size: 1.5em;
+  --h3-font-size: 1.15em;
+
+  /* Light: pale canary ground, ink near-black, links take the complement */
+  --body-foreground: #1A1804;
+  --body-background: #FFFDF0;
+  --link-foreground: #5160D9;
+  --link-hover-foreground: #3E49A6;
+  --muted-foreground: #5C5730;
+  --rule-color: #E8E0B0;
+  --blockquote-foreground: #5C5730;
+  --blockquote-border: #DED5A0;
+
+  --code-background: #FBF4D2;
+  --code-border: #DED5A0;
+  --terminal-background: #14130A;
+  --terminal-border: #332F0E;
+  --terminal-foreground: #F2EFDC;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.25em;
+  --chip-border-color: #DED5A0;
+
+  --site-width-lg: 610px;
+  --site-width-xl: 690px;
+  --site-width-xxl: 820px;
+
+  /* Dark values (warm near-black ground, and canary finally gets to be the accent). main.css decides when they become live. */
+  --body-foreground-dark: #F2EFDC;
+  --body-background-dark: #14130A;
+  --link-foreground-dark: #FFEF00;
+  --link-hover-foreground-dark: #FFF799;
+  --muted-foreground-dark: #B0AA84;
+  --rule-color-dark: #332F0E;
+  --blockquote-foreground-dark: #B0AA84;
+  --blockquote-border-dark: #4A441A;
+
+  --code-background-dark: #1F1D10;
+  --code-border-dark: #4A441A;
+  --terminal-background-dark: #0C0B06;
+  --terminal-border-dark: #332F0E;
+  --terminal-foreground-dark: #F2EFDC;
+
+  --chip-border-color-dark: #4A441A;
+}
+

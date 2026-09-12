@@ -9,7 +9,33 @@ layout: default
 
 <h1>{{ page.title }}</h1>
 
+{% if page.source_url %}
+<p class="meta source">Originally published on <a href="{{ page.source_url }}" rel="external nofollow" target="_blank">{{ page.source_name | default: "another site" }}</a>{% if page.source_date %}, {{ page.source_date }}{% endif %}.</p>
+{% endif %}
+
+{% assign post_categories = page.categories | where_exp: "c", "c != 'blog'" %}
+{% if post_categories.size > 0 %}
+<p class="categories">
+  {% for category in post_categories %}
+  <a href="{{ '/blog/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>
+  {% endfor %}
+</p>
+{% endif %}
+
+{% if page.intro %}
+  {% capture intro_file %}intro-{{ page.intro }}.html{% endcapture %}
+  {% include {{ intro_file }} %}
+{% endif %}
+
 <div class="post">
 {{ content }}
 </div>
 
+<nav class="post-nav" aria-label="More writing">
+  {% if page.previous %}
+  <a class="older" href="{{ page.previous.url | relative_url }}" rel="prev"><span>Older</span>{{ page.previous.title }}</a>
+  {% endif %}
+  {% if page.next %}
+  <a class="newer" href="{{ page.next.url | relative_url }}" rel="next"><span>Newer</span>{{ page.next.title }}</a>
+  {% endif %}
+</nav>

@@ -1,5 +1,6 @@
 ---
-layout: last-week-read
+layout: post
+intro: last-week-reads
 title:  "Last Week Reads - April 28th - May 5th"
 description:  "Transitioning, ad-privacy, app startup growing pains, and diversity."
 date:   2021-05-05 23:30:00

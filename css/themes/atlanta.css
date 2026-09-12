@@ -1,0 +1,80 @@
+/* Atlanta
+ *
+ * Built from the single colour #234471 ("Atlanta") and nothing else: every
+ * value below is that colour mixed toward white or black, so the whole theme
+ * is one hue at different weights.
+ *
+ *   tints   #4F698D  #7B8FAA  #A7B4C6  #D3DAE3  #E9ECF1
+ *   base    #234471
+ *   shades  #1C365A  #152944  #0E1B2D  #070E17
+ *
+ * Light mode puts the base colour to work as the link colour on a pale tint.
+ * Dark mode inverts it: the 60% shade becomes the ground, and links move to a
+ * lighter blue so they stay legible against it. Every text pairing clears
+ * WCAG AA — the tightest is muted text in light mode at 4.7:1.
+ *
+ * Type is Jost, a geometric sans in the Futura line. Its x-height is smaller
+ * than most UI sans faces, so the body size is set up rather than down to keep
+ * it comfortable, with the measure pulled in to match the narrower forms.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --font-family: "Jost", "Futura", "Century Gothic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --meta-font-family: var(--font-family);
+  --title-font-family: var(--font-family);
+  --title-font-weight: 700;
+  --title-letter-spacing: -0.01em;
+
+  --body-font-size: 17.5px;
+  --body-line-height: 1.7em;
+  --h1-font-size: 2.35em;
+  --h1-line-height: 1.18em;
+  --h2-font-size: 1.4em;
+  --h3-font-size: 1.12em;
+
+  /* Light: pale tint ground, base colour as the accent */
+  --body-foreground: #14203A;
+  --body-background: #EDF0F5;
+  --link-foreground: #234471;
+  --link-hover-foreground: #152944;
+  --muted-foreground: #5A6B85;
+  --rule-color: #C9D2DE;
+  --blockquote-foreground: #4A5A73;
+  --blockquote-border: #A7B4C6;
+
+  --code-background: #E1E6EE;
+  --code-border: #C9D2DE;
+  --terminal-background: #0E1B2D;
+  --terminal-border: #1C365A;
+  --terminal-foreground: #D3DAE3;
+
+  --post-divider-color: var(--rule-color);
+  --chip-radius: 0.3em;
+  --chip-border-color: #A7B4C6;
+
+  --site-width-lg: 600px;
+  --site-width-xl: 680px;
+  --site-width-xxl: 800px;
+
+  /* Dark values (the 60% shade as ground, a lighter blue for links). main.css decides when they become live. */
+  --body-foreground-dark: #D3DAE3;
+  --body-background-dark: #0E1B2D;
+  --link-foreground-dark: #7FA6DC;
+  --link-hover-foreground-dark: #A7C4EA;
+  --muted-foreground-dark: #8A9BB4;
+  --rule-color-dark: #1C365A;
+  --blockquote-foreground-dark: #A7B4C6;
+  --blockquote-border-dark: #234471;
+
+  --code-background-dark: #152944;
+  --code-border-dark: #234471;
+  --terminal-background-dark: #070E17;
+  --terminal-border-dark: #1C365A;
+  --terminal-foreground-dark: #D3DAE3;
+
+  --chip-border-color-dark: #234471;
+}
+

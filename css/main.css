@@ -4,36 +4,157 @@
 /*
 /*****************************************************************************/
 
-/* Variables */ 
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+/* Design tokens ------------------------------------------------------------
+ *
+ * Everything a theme is allowed to change lives here. Themes are files in
+ * css/themes/ that redefine these values and nothing else; header.html loads
+ * the chosen one after this file.
+ *
+ * Themeable colours come in pairs: --x is the light value, --x-dark its dark
+ * counterpart. A theme declares either or both and never writes a media query
+ * — the two switch blocks below this list are the only places that choose,
+ * and a theme that omits a --*-dark value simply inherits the one here.
+ * ------------------------------------------------------------------------ */
 
 
 :root {
+  /* Form controls and scrollbars follow the live palette. Overridden by the
+     two switch blocks below. */
+  color-scheme: light;
+
+  /* Type */
   --font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --font-weight: normal;
-  --bold-font-weight: bold; 
+  --mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --meta-font-family: var(--font-family);
+  --font-weight: 400;
+  --bold-font-weight: 700;
 
   --title-font-family: var(--font-family);
-  --title-font-weight: bold;
-  
-  --body-foreground: #0d0032;
-  --body-background: #eee;
-  --link-foreground: #3500d3;
-  --blockquote-foreground: #797979;
-  --blockquote-border: #c5c5c5;
+  --title-font-weight: 700;
+  --title-letter-spacing: normal;
 
+  --body-font-size: 18px;
+  --body-line-height: 1.5em;
+  --h1-font-size: 2.4em;
+  --h1-line-height: 1.2em;
+  --h2-font-size: 1.4em;
+  --h3-font-size: 1.2em;
+
+  /* Colour. Every themeable colour is a pair: the light value and its
+     --*-dark counterpart. The two switch blocks below are the only places
+     that choose between them, so a theme declares values and never writes a
+     media query — and a theme that defines only light values inherits these
+     dark ones instead of leaking light ones into dark mode. */
+  --body-foreground: #0d0032;
+  --body-foreground-dark: #eee;
+  --body-background: #eee;
+  --body-background-dark: #111;
+  --link-foreground: #3500d3;
+  --link-foreground-dark: #64c1f8;
+  --link-hover-foreground: #282828;
+  --link-hover-foreground-dark: #9ad8fb;
+  --muted-foreground: #767676;
+  --muted-foreground-dark: #9a9a9a;
+  --blockquote-foreground: #797979;
+  --blockquote-foreground-dark: #979797;
+  --blockquote-border: #c5c5c5;
+  --blockquote-border-dark: #454545;
+  --rule-color: var(--body-foreground);
+  --rule-color-dark: var(--body-foreground-dark);
+
+  --code-background: #eef;
+  --code-background-dark: #1c1c28;
+  --code-border: #ddd;
+  --code-border-dark: #33333f;
+  --terminal-background: #333;
+  --terminal-background-dark: #333;
+  --terminal-border: #282828;
+  --terminal-border-dark: #282828;
+  --terminal-foreground: #fff;
+  --terminal-foreground-dark: #fff;
+
+  /* Derived, so they follow whichever set is live with no pair of their own. */
+  --accent: var(--link-foreground);
+
+  /* Raised surfaces (the settings panel). The background follows the page, so
+     a theme that repaints --body-background repaints the panel with it. The
+     shadow keeps one geometry and varies only its colour, since a black
+     shadow is invisible on a dark ground. */
+  --surface-background: var(--body-background);
+  --surface-border-color: var(--blockquote-border);
+  --surface-shadow: 0 6px 20px var(--surface-shadow-color);
+  --surface-shadow-color: rgba(0, 0, 0, 0.18);
+  --surface-shadow-color-dark: rgba(0, 0, 0, 0.6);
+  --surface-hover-background: rgba(0, 0, 0, 0.06);
+  --surface-hover-background-dark: rgba(255, 255, 255, 0.09);
+
+  /* Shape */
+  --post-divider-color: var(--link-foreground);
+  --chip-radius: 1em;
+  --chip-border-color: var(--blockquote-border);
+  --chip-border-color-dark: var(--blockquote-border-dark);
+
+  /* Measure, per breakpoint */
+  --site-width-sm: 400px;
+  --site-width-md: 480px;
+  --site-width-lg: 585px;
+  --site-width-xl: 700px;
+  --site-width-xxl: 900px;
 }
 
+/* ---------------------------------------------------------------------------
+ * Light and dark: the only two places that choose.
+ *
+ * Both blocks carry the identical list, so the dark values themselves live in
+ * exactly one place — the --*-dark pairs above, or a theme's override of them.
+ * data-appearance is set on <html> by the settings menu: absent means "follow
+ * the OS", which is the default.
+ * ------------------------------------------------------------------------ */
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --body-foreground: #eee;
-    --body-background: #111;
-    --link-foreground: #64c1f8;
-    --blockquote-foreground: #797979;
-    --blockquote-border: #c5c5c5;
+  :root:not([data-appearance="light"]) {
+    color-scheme: dark;
+    --body-foreground: var(--body-foreground-dark);
+    --body-background: var(--body-background-dark);
+    --link-foreground: var(--link-foreground-dark);
+    --link-hover-foreground: var(--link-hover-foreground-dark);
+    --muted-foreground: var(--muted-foreground-dark);
+    --blockquote-foreground: var(--blockquote-foreground-dark);
+    --blockquote-border: var(--blockquote-border-dark);
+    --rule-color: var(--rule-color-dark);
+
+    --code-background: var(--code-background-dark);
+    --code-border: var(--code-border-dark);
+    --terminal-background: var(--terminal-background-dark);
+    --terminal-border: var(--terminal-border-dark);
+    --terminal-foreground: var(--terminal-foreground-dark);
+
+    --chip-border-color: var(--chip-border-color-dark);
+    --surface-shadow-color: var(--surface-shadow-color-dark);
+    --surface-hover-background: var(--surface-hover-background-dark);
   }
+}
+
+:root[data-appearance="dark"] {
+  color-scheme: dark;
+    --body-foreground: var(--body-foreground-dark);
+    --body-background: var(--body-background-dark);
+    --link-foreground: var(--link-foreground-dark);
+    --link-hover-foreground: var(--link-hover-foreground-dark);
+    --muted-foreground: var(--muted-foreground-dark);
+    --blockquote-foreground: var(--blockquote-foreground-dark);
+    --blockquote-border: var(--blockquote-border-dark);
+    --rule-color: var(--rule-color-dark);
+
+    --code-background: var(--code-background-dark);
+    --code-border: var(--code-border-dark);
+    --terminal-background: var(--terminal-background-dark);
+    --terminal-border: var(--terminal-border-dark);
+    --terminal-foreground: var(--terminal-foreground-dark);
+
+    --chip-border-color: var(--chip-border-color-dark);
+    --surface-shadow-color: var(--surface-shadow-color-dark);
+    --surface-hover-background: var(--surface-hover-background-dark);
 }
 
 /* Global Reset */
@@ -48,8 +169,9 @@ body {
   background: var(--body-background);
   color: var(--body-foreground);  
   font-family: var(--font-family);
-  font-size: 18px;
-  line-height: 1.5em;
+  font-weight: var(--font-weight);
+  font-size: var(--body-font-size);
+  line-height: var(--body-line-height);
 }
 
 h1, h2, h3 {
@@ -73,28 +195,33 @@ li {
   margin-bottom: 0.2em;
 }
 
+strong, b {
+  font-weight: var(--bold-font-weight);
+}
+
 hr {
   border: 0;
   height: 1px;
-  background: var(--body-foreground);
+  background: var(--rule-color);
   margin: 2em 0;
 }
 
 h1 {
-  line-height: 1.2em;
-  font-size:2.4em; 
+  line-height: var(--h1-line-height);
+  font-size: var(--h1-font-size);
+  letter-spacing: var(--title-letter-spacing);
   font-weight:var(--title-font-weight);
   margin-bottom: 0.5em; 
 }
 
 h2 {
-  font-size:1.4em; 
+  font-size: var(--h2-font-size);
   font-weight:var(--title-font-weight);
   margin-bottom: 0.3em; 
 }
 
 h3 {
-  font-size:1.2em; 
+  font-size: var(--h3-font-size);
   font-weight:var(--title-font-weight);
   margin-bottom: 0.3em; 
 }
@@ -137,8 +264,6 @@ blockquote p {color:var(--blockquote-foreground);}
 	left: 0;
 	z-index:1;
 }
-  z-index: 1;
-}
 
 /*****************************************************************************/
 /*
@@ -151,12 +276,12 @@ blockquote p {color:var(--blockquote-foreground);}
 
 .posts a {
   font-size:1.4em;
-  font-weight:bold;
+  font-weight: var(--bold-font-weight);
 }
 
 .posts li {
   line-height: 1.4em;
-  border-bottom: 1px solid var(--link-foreground);
+  border-bottom: 1px solid var(--post-divider-color);
 }
 
 .pagination {
@@ -194,7 +319,7 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .pagination span.disabled {
-  color: #aaa;
+  color: var(--muted-foreground);
 }
 
 .pagination em {
@@ -206,7 +331,7 @@ blockquote p {color:var(--blockquote-foreground);}
   .pagination a, .pagination span.gap {
     display: none;
     margin: 0;
-    color: #aaa;
+    color: var(--muted-foreground);
   }
 
   nav.pagination a.prev, nav.pagination a.next {
@@ -234,19 +359,43 @@ blockquote p {color:var(--blockquote-foreground);}
 
 .footer {
   font-size: 0.9em;
-  color: #282828;
+  color: var(--muted-foreground);
   margin-top: 1em;
   width: 100%;
   text-align: center;
 }
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* column-gap rather than a margin on each link: the margin also applied
+     after the last one, wasting the width that pushed the settings button
+     onto a second row on a phone. row-gap so that if it ever does wrap, the
+     rows are separated instead of colliding with each other and the title. */
+  column-gap: 1em;
+  row-gap: 0.5em;
   margin-bottom: 1em;
 }
 
 .header a {
-  margin-right: 1em;
   text-decoration: none;
+}
+
+/* Below 480px .site is 90% of the viewport — about 338px on a 375px phone —
+   and the four links plus the settings button need more than that at full
+   size. Tightening both buys ~60px, which puts the nav back on one line down
+   to about 360px. Narrower than that it wraps, now cleanly. */
+@media only screen and (max-width: 479px) {
+  .header {
+    column-gap: 0.55em;
+    font-size: 0.9em;
+  }
+}
+
+/* Pushed to the right end of the nav; it is a preference, not a destination. */
+.header .settings-menu {
+  margin-left: auto;
 }
 
 .header a.extra {
@@ -254,7 +403,7 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .header a.extra:hover {
-  color: #282828;
+  color: var(--link-hover-foreground);
 }
 
 .footer-menu {
@@ -271,7 +420,7 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .footer .contact a:hover {
-  color: #282828;
+  color: var(--link-hover-foreground);
   text-decoration:none
 }
 
@@ -288,36 +437,59 @@ blockquote p {color:var(--blockquote-foreground);}
     margin: -36px 0 0 0;
   }
 
-.footer a {
-    display: inline-block;
-/*    padding-left: 33px; */
-    width: 34px;
-    height: 26px;
-    margin-top:  1em;
-    margin-bottom: 10px;
-    
-    /* CSS filter generator to convert from black to target hex color (#3500D3) https://codepen.io/sosuke/pen/Pjoqqp */
-    filter: brightness(0) saturate(100%) invert(15%) sepia(96%) saturate(6688%) hue-rotate(260deg) brightness(74%) contrast(134%);
-
-
-    -o-transition: all .3s;
-    -moz-transition: all .3s;
-    -webkit-transition: all .3s;
-    -ms-transition: all .3s;
+/* Social icons: inline SVG using currentColor, so they follow the theme
+   instead of the old PNG sprites tinted with a hard-coded CSS filter. */
+.footer .social {
+  display: flex;
+  justify-content: center;
+  gap: 1.4em;
+  margin: 1em 0 0.6em;
 }
 
-.footer a.rss { background: url(../img/social-icons/rss.png) left top no-repeat;}
-.footer a.aboutme { background: url(../img/social-icons/aboutme.png) left top no-repeat; }
-.footer a.apple { background: url(../img/social-icons/apple.png) left top no-repeat; }
-.footer a.email { background: url(../img/social-icons/email.png) left top no-repeat; }
-.footer a.github { background: url(../img/social-icons/github-alt.png) left top no-repeat; }
-.footer a.instagram { background: url(../img/social-icons/instagram.png) left top no-repeat; }
-.footer a.location { background: url(../img/social-icons/location.png) left top no-repeat; }
-.footer a.linkedin { background: url(../img/social-icons/linkedin-alt.png) left top no-repeat; }
-.footer a.pinterest { background: url(../img/social-icons/pinterest.png) left top no-repeat; }
-.footer a.twitter { background: url(../img/social-icons/twitter.png) left top no-repeat; }
+.footer .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--link-foreground);
+  border-bottom: 0;
+  transition: color 0.2s;
+}
 
-.footer a:hover { background-position: left -34px; }
+.footer .social a:hover {
+  color: var(--link-hover-foreground);
+  border-bottom: 0;
+}
+
+.footer .social svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* Keyboard focus must stay visible on every interactive element. */
+a:focus-visible,
+select:focus-visible,
+.skip-link:focus {
+  outline: 2px solid var(--link-foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5em 1em;
+  background: var(--body-background);
+  color: var(--link-foreground);
+  z-index: 20;
+}
+
+.skip-link:focus {
+  left: 0;
+}
 
 /*Small screens*/
 /*@media only screen and (max-width: 480px) {
@@ -334,7 +506,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 480px) {
 
   .site {
-    width: 400px;
+    width: var(--site-width-sm);
     margin:  1em auto 1em;
     line-height: 1.5em;
   }
@@ -345,7 +517,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 600px) {
 
   .site {
-    width: 480px;
+    width: var(--site-width-md);
     margin:  1em auto 1em;
     line-height: 1.5em;
   }
@@ -379,7 +551,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 768px) {
 
   .site {
-    width: 585px;
+    width: var(--site-width-lg);
     margin:  1em auto 1em;
     line-height: 1.5em;
   }
@@ -410,7 +582,7 @@ blockquote p {color:var(--blockquote-foreground);}
 /*Horizontal pads and laptops*/
 @media only screen and (min-width: 992px) {
   .site {
-    width: 700px;
+    width: var(--site-width-xl);
     margin:  2em auto 2em;
     line-height: 1.5em;
   }
@@ -441,7 +613,7 @@ blockquote p {color:var(--blockquote-foreground);}
 @media only screen and (min-width: 1382px) {
 
   .site {
-    width: 900px;
+    width: var(--site-width-xxl);
     margin:  3em auto 3em;
     line-height: 1.5em;
   }
@@ -474,15 +646,16 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .title a {
-  color: #a00;
+  color: var(--accent);
 }
 
 .title a:hover {
-  color: #282828;
+  color: var(--link-hover-foreground);
 }
 
 .meta {
-  color: #aaa;
+  color: var(--muted-foreground);
+  font-family: var(--meta-font-family);
   font-size: 80%;
   margin-bottom: 12px;
   margin-top:1.4em;
@@ -501,8 +674,8 @@ blockquote p {color:var(--blockquote-foreground);}
 
 /* standard */
 .post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
+  border: 1px solid var(--code-border);
+  background-color: var(--code-background);
   padding: 0 .4em;
 }
 
@@ -511,8 +684,9 @@ blockquote p {color:var(--blockquote-foreground);}
 }
 
 .post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
+  border: 1px solid var(--code-border);
+  background-color: var(--code-background);
+  font-family: var(--mono-font-family);
   font-size: 75%;
   line-height: 1em;
 }
@@ -523,13 +697,13 @@ blockquote p {color:var(--blockquote-foreground);}
 
 /* terminal */
 .post pre.terminal {
-  border: 1px solid #282828;
-  background-color: #333;
-  color: #FFF;
+  border: 1px solid var(--terminal-border);
+  background-color: var(--terminal-background);
+  color: var(--terminal-foreground);
 }
 
 .post pre.terminal code {
-  background-color: #333;
+  background-color: var(--terminal-background);
 }
 
 .post img {
@@ -591,7 +765,7 @@ ul.apps {
     text-align: center;
     line-height: 1em;
     padding: 8px 0 0;
-    color: #888;
+    color: var(--muted-foreground);
   }
   ul.apps a:hover {
     border: 0;
@@ -627,4 +801,321 @@ ul.apps {
    top: 0;
    width: 100%;
    max-width: 590px
+}
+
+/*****************************************************************************/
+/*
+/* Home: Now section and recent writing
+/*
+/*****************************************************************************/
+
+.recent-posts {
+  list-style-type: none;
+}
+
+.recent-posts li {
+  margin-bottom: 1em;
+}
+
+.recent-posts li a {
+  font-weight: var(--bold-font-weight);
+}
+
+.recent-posts li .meta {
+  display: inline;
+  margin-left: 0.8em;
+}
+
+.recent-posts li p {
+  margin: 0.2em 0 0;
+}
+
+/*****************************************************************************/
+/*
+/* Work: timeline
+/*
+/*****************************************************************************/
+
+.timeline {
+  list-style-type: none;
+}
+
+.timeline li {
+  margin-bottom: 0.8em;
+  padding-left: 7em;
+  text-indent: -7em;
+}
+
+.timeline .when {
+  display: inline-block;
+  width: 6.5em;
+  margin-right: 0.5em;
+  text-indent: 0;
+  color: var(--muted-foreground);
+  font-family: var(--meta-font-family);
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+@media all and (max-width: 600px) {
+  .timeline li {
+    padding-left: 0;
+    text-indent: 0;
+  }
+
+  .timeline .when {
+    display: block;
+    width: auto;
+    margin-bottom: 0.2em;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Writing intro, source line, footer disclosure
+/*
+/*****************************************************************************/
+
+.intro {
+  margin-bottom: 1.5em;
+}
+
+.meta.source {
+  margin-top: 0;
+}
+
+.footer .disclosure {
+  color: var(--muted-foreground);
+  font-size: 0.8em;
+  margin: 1.5em 0 0;
+}
+
+.footer .disclosure a {
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 0;
+  filter: none;
+}
+
+/*****************************************************************************/
+/*
+/* Categories and post navigation
+/*
+/*****************************************************************************/
+
+.categories {
+  margin: 0 0 1em;
+}
+
+.posts .categories a {
+  font-size: 0.75em;
+  font-weight: normal;
+}
+
+.categories a,
+.category-index a {
+  font-family: var(--meta-font-family);
+  display: inline-block;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0.15em 0.7em;
+  border: 1px solid var(--chip-border-color);
+  border-radius: var(--chip-radius);
+  font-size: 0.75em;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.6em;
+  color: var(--body-foreground);
+  opacity: 0.85;
+}
+
+.categories a:hover,
+.category-index a:hover {
+  border: 1px solid var(--link-foreground);
+  color: var(--link-foreground);
+  opacity: 1;
+}
+
+.category-index {
+  margin-bottom: 2em;
+}
+
+.category-index .count {
+  opacity: 0.7;
+  margin-left: 0.3em;
+}
+
+.category-posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+.category-posts li .meta {
+  display: inline;
+  margin-left: 0.6em;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin: 2em 0 1em;
+  padding-top: 1em;
+  border-top: 1px solid var(--blockquote-border);
+}
+
+.post-nav a {
+  flex: 1;
+  font-weight: var(--bold-font-weight);
+}
+
+.post-nav a span {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+  color: var(--muted-foreground);
+  font-family: var(--meta-font-family);
+}
+
+.post-nav .newer {
+  text-align: right;
+  margin-left: auto;
+}
+
+
+/*****************************************************************************/
+/*
+/* Settings menu
+/*
+/* One button in the nav opens one panel holding every site preference: theme
+/* today, appearance today, language when there is something to translate.
+/* Four nav links plus three separate controls cannot share a 337px line on a
+/* phone, which is why they share a menu instead.
+/*
+/* The trigger is icon-only: it once showed the theme's name, and "Technical
+/* minimal" is what pushed the nav onto a second row on a phone.
+/*
+/* Hidden until the script reveals it, so a visitor without JavaScript is not
+/* shown a control that cannot work.
+/*
+/*****************************************************************************/
+
+.settings-menu {
+  position: relative;
+  display: none;
+  text-align: left;
+}
+
+.settings-menu.is-ready {
+  display: inline-block;
+}
+
+.settings-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* A comfortable touch target, which 24px icon buttons are not. */
+  width: 2.2em;
+  height: 2.2em;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--muted-foreground);
+  background: none;
+  border: 1px solid var(--surface-border-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.settings-menu__trigger:hover,
+.settings-menu__trigger[aria-expanded="true"] {
+  color: var(--body-foreground);
+  background: var(--surface-hover-background);
+}
+
+.settings-menu__icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.settings-menu__panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.4em);
+  /* Anchored to the button's right edge, which is the right edge of the nav,
+     so the panel never overflows the viewport on a narrow screen. */
+  right: 0;
+  min-width: 13em;
+  /* Nine rows and two headings must not run off a short phone. */
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.35em 0;
+  color: var(--body-foreground);
+  background: var(--surface-background);
+  border: 1px solid var(--surface-border-color);
+  border-radius: 6px;
+  box-shadow: var(--surface-shadow);
+}
+
+.settings-menu__panel[hidden] {
+  display: none;
+}
+
+.settings-menu__group + .settings-menu__group {
+  margin-top: 0.35em;
+  padding-top: 0.35em;
+  border-top: 1px solid var(--surface-border-color);
+}
+
+.settings-menu__heading {
+  padding: 0.2em 0.9em 0.35em;
+  font-family: var(--meta-font-family);
+  font-size: 0.7em;
+  font-weight: var(--bold-font-weight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.settings-menu__option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding: 0.4em 0.9em;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.settings-menu__option:hover,
+.settings-menu__option:focus {
+  background: var(--surface-hover-background);
+  outline: none;
+}
+
+.settings-menu__option[aria-checked="true"] {
+  font-weight: var(--bold-font-weight);
+}
+
+/* A tick that shows only on the current choice, holding its space either way
+   so the names stay aligned. */
+.settings-menu__option::before {
+  content: "\2713";
+  width: 1em;
+  flex: none;
+  font-family: var(--meta-font-family);
+  font-size: 0.75em;
+  visibility: hidden;
+}
+
+.settings-menu__option[aria-checked="true"]::before {
+  visibility: visible;
 }

@@ -1,15 +1,67 @@
 <!DOCTYPE html>
-    <html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+{%- if site.preview %}
+    <meta name="robots" content="noindex, nofollow">
+{%- endif %}
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | xml_escape }}" href="{{ '/feed.xml' | absolute_url }}">
+
     <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="{{ '/css/syntax.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+
+    {%- comment -%}
+      Theme token overrides, loaded after main.css. site_theme is what a
+      first-time visitor gets; the script below swaps in their stored theme
+      and appearance before first paint, so the page never flashes the wrong
+      one.
+    {%- endcomment -%}
+    {%- assign active_theme = site.site_theme | default: 'atlanta' -%}
+    <link id="theme-css" rel="stylesheet" href="{{ '/css/themes/' | append: active_theme | append: '.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+    <script>
+      window.__themeBase = "{{ '/css/themes/' | relative_url }}";
+      window.__activeTheme = {{ active_theme | jsonify }};
+      window.__activeAppearance = 'system';
+      (function () {
+        var link = document.getElementById('theme-css');
+        // Only names the site actually ships. A value left over from a renamed
+        // or removed theme would otherwise request a stylesheet that 404s.
+        var known = {{ site.data.themes | map: 'name' | jsonify }};
+        window.__setTheme = function (name) {
+          if (known.indexOf(name) < 0) { return; }
+          link.href = window.__themeBase + name + '.css?v={{ site.time | date: '%Y%m%d%H%M' }}';
+          window.__activeTheme = name;
+          try { localStorage.setItem('theme', name); } catch (e) {}
+        };
+
+        // "system" means no attribute at all, so the prefers-color-scheme
+        // query in main.css decides. The other two override it both ways.
+        window.__setAppearance = function (name) {
+          if (['system', 'light', 'dark'].indexOf(name) < 0) { return; }
+          if (name === 'system') {
+            document.documentElement.removeAttribute('data-appearance');
+          } else {
+            document.documentElement.setAttribute('data-appearance', name);
+          }
+          window.__activeAppearance = name;
+          try { localStorage.setItem('appearance', name); } catch (e) {}
+        };
+
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          if (savedTheme && savedTheme !== window.__activeTheme) { window.__setTheme(savedTheme); }
+          var savedAppearance = localStorage.getItem('appearance');
+          if (savedAppearance) { window.__setAppearance(savedAppearance); }
+        } catch (e) {}
+      })();
+    </script>
+
+{%- unless site.preview %}
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCPXBKNSLQ"></script>
@@ -20,10 +72,29 @@
 
       gtag('config', 'G-SCPXBKNSLQ');
     </script>
+{%- endunless %}
 
 </head>
 
 <body>
+{%- if site.preview %}
+    <style>
+      .preview-bar {
+        position: sticky; top: 0; z-index: 10;
+        padding: 0.4em 1em;
+        background: #7a2e00; color: #fff;
+        font-size: 0.8em; line-height: 1.5em; text-align: center;
+      }
+      .preview-bar a { color: #fff; text-decoration: underline; }
+    </style>
+    <div class="preview-bar">
+      Preview build{% if site.preview_name %} &middot; {{ site.preview_name }}{% endif %} &middot;
+      not indexed, no analytics &middot;
+      <a href="{{ site.url }}">go to the live site</a>
+    </div>
+{%- endif %}
+
+    <a class="skip-link" href="#content">Skip to content</a>
 
     <div class="site">
 
@@ -31,37 +102,30 @@
                 <span class="progress"></span>
             </div>
 
-    <div class="header">
-        <a {% if page.url == "/index.html" %}class="extra" href="/">Home {% else %} href="/"> Home {% endif %} </a>
-        <a {% if page.url == "/work/index.html" %}class="extra" {% endif %} href="/work/">Work</a>
-        <a {% if page.url == "/blog/index.html" or page.layout == 'post' %} class="extra" {% endif %} href="/blog/">Blog</a>
-        <a {% if page.url == "/my-reading-list/index.html" or page.layout == 'post' %} class="extra" {% endif %} href="/my-reading-list/">Reading List</a>
-
-    </div>
+    {%- assign is_post = false -%}
+    {%- if page.layout == 'post' -%}{%- assign is_post = true -%}{%- endif -%}
+    <nav class="header" aria-label="Main">
+        <a {% if page.url == "/" %}class="extra" {% endif %}href="{{ '/' | relative_url }}">Home</a>
+        <a {% if page.url == "/work/" %}class="extra" {% endif %}href="{{ '/work/' | relative_url }}">Work</a>
+        <a {% if page.url contains "/blog/" or is_post %}class="extra" {% endif %}href="{{ '/blog/' | relative_url }}">Writing</a>
+        <a {% if page.url == "/my-reading-list/" %}class="extra" {% endif %}href="{{ '/my-reading-list/' | relative_url }}">Reading List</a>
+        {% include settings-menu.html %}
+    </nav>
 
     <script>
+        (function () {
+            var progressBar = document.querySelector('.progress');
+            if (!progressBar) return;
 
-        const progressPanel = document.querySelector('.progressPanel')
-        const progressBar = document.querySelector('.progress')
+            var update = function () {
+                var docElem = document.documentElement;
+                var height = docElem.scrollHeight - docElem.clientHeight;
+                var readPercent = height > 0 ? (docElem.scrollTop || document.body.scrollTop) / height * 100 : 100;
+                progressBar.style.transform = 'translate3d(' + (readPercent - 100) + '%, 0, 0)';
+            };
 
-        const handleProgressBar = (_) => {
-            
-            var docElem = document.documentElement;
-            var docBody = document.body;
-            var scrollTop = (docBody.scrollTop || docElem.scrollTop);
-            var scrollTop = docElem.scrollTop;
-
-            var height = docElem.scrollHeight - docElem.clientHeight;
-        
-            readPercent = scrollTop / height * 100;
-            progressBar.style.transform = `translate3d(${ readPercent - 100 }%, 0, 0)`
-
-        }
-
-        const loop = () => {
-            handleProgressBar(document.querySelector('header'))
-            window.requestAnimationFrame(loop)
-        }
-
-        loop()
-    </script>   
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
+    </script>

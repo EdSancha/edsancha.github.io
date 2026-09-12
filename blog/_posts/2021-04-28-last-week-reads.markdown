@@ -1,5 +1,6 @@
 ---
-layout: last-week-read
+layout: post
+intro: last-week-reads
 title:  "Last Week Reads - April 21st - April 28th"
 description:  Communication architecture, bias on few seconds of speech, gender bias in leadership, management tips and Basecamp controversy. 
 date:   2021-04-28 23:30:00

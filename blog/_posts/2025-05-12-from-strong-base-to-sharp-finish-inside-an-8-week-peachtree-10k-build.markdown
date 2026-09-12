@@ -6,9 +6,11 @@ layout: post
 timeToRead: 3 minutes read
 description: "Discover the 8-week training program designed to help a seasoned athlete break 40 minutes in the Peachtree 10K, emphasizing heart rate zones, progressive overload, and long-term endurance goals."
 categories: running training 10k
+source_name: "the Salitre Coaching blog"
+source_url: "https://www.salitre.co/blog/from-strong-base-to-sharp-finish-inside-an-8-week-peachtree-10k-build"
+source_date: "12th May, 2025"
+canonical_url: "https://www.salitre.co/blog/from-strong-base-to-sharp-finish-inside-an-8-week-peachtree-10k-build"
 ---
-
-__(This article was published originally on the [Salitre Coaching Blog](https://www.salitre.co/blog/from-strong-base-to-sharp-finish-inside-an-8-week-peachtree-10k-build) on the 12th May, 2025)__
 
 ![Runner on a track, symbolizing a training build-up](https://zipperapiproduction-staticbucket-17jztgq81vkfk.s3.amazonaws.com/user-uploads/12752/113045c7-7f35-4678-b12d-db88375829cd.__zcrop__.webp)
 
