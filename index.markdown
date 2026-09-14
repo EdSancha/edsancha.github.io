@@ -14,6 +14,7 @@ I'm interested in technology, leadership, fitness and endurance training, parent
 
 - **Focus:** AI-assisted engineering at scale (adoption, governance and measurable outcomes), customer-experience automation, and platform modernization that pays for itself.
 - **Open to:** Director / Head of Engineering roles and advisory work with teams adopting AI in their software lifecycle.
+- **Building:** [Alisi](https://tryalisi.com){:rel="external nofollow" target="_blank"}, a safety-first breath-training app for athletes, as a solo founder using AI-assisted engineering end to end: agents write most of the code, and CI enforces the product rules they must not break.
 - **Outside work:** I coach endurance athletes at [Salitre Coaching](https://www.salitre.co){:rel="external nofollow" target="_blank"} and race marathons and Ironman triathlons.
 
 [Full history]({{ '/work/' | relative_url }}) · [Resume (PDF)]({{ '/assets/eduardo-diaz-sancha-resume.pdf' | relative_url }}) · [LinkedIn](https://www.linkedin.com/in/edsancha){:rel="external nofollow" target="_blank"} · [Email me](mailto:edsancha@gmail.com?subject=%5BWEB%5D%20Contact)
