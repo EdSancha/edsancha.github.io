@@ -7,8 +7,10 @@ timeToRead: "5 minutes read"
 description: "During the pandemic we were allowed to say things were scary. In tech today, doubt about AI reads as resistance, and that is a burnout machine leaders can switch off."
 categories: "leadership management wellbeing"
 source_name: "Substack"
-source_url: "https://leadershipendurance.substack.com"
+source_url: "https://leadershipendurance.substack.com/p/the-cognitive-dissonance-of-working"
 source_date: "15th September, 2026"
+canonical_url: "https://leadershipendurance.substack.com/p/the-cognitive-dissonance-of-working"
+image: "https://substack-post-media.s3.amazonaws.com/public/images/d9976bb1-695b-49db-a77e-e5d97d2d93f6_1916x821.png"
 ---
 
 _Hello, this is [Eduardo](https://www.linkedin.com/in/edsancha) and I'm an Engineering Leader and Certified Running coach. Leadership Endurance is back after a long pause: a newsletter about leadership, endurance sports, performance and growth, in the confluence of these worlds._
