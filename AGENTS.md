@@ -34,22 +34,22 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `_data/books.yml` | The books, in page order: sections (`title`, `level`, optional `intro`) with `books` (`title`, `asin`, optional `note`). Add a book here, not in the page |
 | `_data/apps.yml` | The Work page app tiles (`name`, `url`, `image`, optional `alt`/`title`). Add an app here, not in the page |
 | `disclosure/index.markdown` | Affiliate-link disclosure |
-| `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups) |
-| `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `settings-menu.html` (the nav's settings menu: theme and appearance), `footer.html` (social links), `helpers/strava.html` |
+| `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups), `project` (currently unused by any page) |
+| `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `settings-menu.html` (the nav's settings menu: theme and appearance), `footer.html` (affiliate disclosure link and social links as inline SVG), `helpers/strava.html` (Strava embed: `{% include helpers/strava.html url="..." %}`) |
 | `css/main.css` | All styling, plus the design tokens every theme overrides. Owns the light/dark switch: themes declare `--x` / `--x-dark` pairs and never a media query |
 | `css/themes/` | One file per theme, overriding tokens only. `legacy.css` overrides nothing: the values in `main.css` are that theme, and it carries only the Poppins import |
 | `_data/themes.yml` | The themes the nav picker offers, and the face each name is set in. A new theme needs an entry here as well as a file in `css/themes/` |
 | `css/theme-fonts.css` | The label faces the settings menu needs but the page has not loaded. Fetched on first open of the menu, never on page load |
-| `img/` | Images. `img/apps/` are the Work page tiles, `img/social-icons/` the footer icons |
+| `img/` | Images. `img/apps/` are the Work page tiles. Footer icons are inline SVG in `_includes/footer.html`, not image files |
 | `feed.xml` | RSS, last 10 posts |
 | `_config.preview.yml` | Overlay applied to theme previews only (noindex, no analytics, no sitemap) |
 | `.github/workflows/pages.yml` | Builds production plus every `theme/*` preview and deploys them together |
 | `.github/scripts/build-previews.sh` | Builds each `theme/*` branch into `_site/preview/<name>/` |
-| `assets/` | Downloadable files. `eduardo-diaz-sancha-resume.pdf` is linked from Home and Work; replace it in place to update the resume, keep the file name |
+| `assets/` | Downloadable files. `eduardo-diaz-sancha-resume.pdf` is linked from Home and Work; replace it in place to update the resume, keep the file name. `assets/fonts/canarina/` is the self-hosted face of the `canarion` theme |
 
 ## Conventions
 
-- **Posts**: follow `.claude/skills/new-post/SKILL.md` (file name, front matter, reading time, republished-article fields). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
+- **Posts**: follow `.claude/skills/new-post/SKILL.md` (plain Markdown, readable by any agent: file name, front matter, reading time, republished-article fields, importing from Substack and the Salitre blog). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
 - **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
 - **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Every internal link and asset path must go through `relative_url` (`{{ '/feed.xml' | relative_url }}`, `{{ post.url | relative_url }}`) — never a bare `/path`, which would break the preview builds that run under a `/preview/<name>/` baseurl.
 - **Styling**: add rules to `css/main.css` using the design tokens at the top of that file (`--body-foreground`, `--link-foreground`, `--muted-foreground`, `--meta-font-family`, ...). Never hard-code a colour, font or measure in a rule: put a token on `:root` and use it, or a theme cannot change it. Any new value must work in both light and dark mode. No CSS frameworks, no build step.
