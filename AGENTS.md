@@ -19,7 +19,7 @@ make serve     # local preview at http://localhost:4000 with live reload
 make check     # build + htmlproofer on _site (internal links, images, alt text)
 ```
 
-CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `master`. Run it locally before pushing.
+CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `master`. Run it locally before pushing. The same workflow also checks external links weekly (Mondays 09:00 UTC) or on manual dispatch; that job does not run on pushes or PRs and does not block deploys. `theme-branch.yml` runs `make check` on every `theme/*` push.
 
 ## Layout of the repo
 
@@ -44,6 +44,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `feed.xml` | RSS, last 10 posts |
 | `_config.preview.yml` | Overlay applied to theme previews only (noindex, no analytics, no sitemap) |
 | `.github/workflows/pages.yml` | Builds production plus every `theme/*` preview and deploys them together |
+| `.github/workflows/theme-branch.yml` | Checks a pushed `theme/*` branch; its completion triggers `pages.yml`, which rebuilds from `master` and deploys |
 | `.github/scripts/build-previews.sh` | Builds each `theme/*` branch into `_site/preview/<name>/` |
 | `assets/` | Downloadable files. `eduardo-diaz-sancha-resume.pdf` is linked from Home and Work; replace it in place to update the resume, keep the file name. `assets/fonts/canarina/` is the self-hosted face of the `canarion` theme |
 
