@@ -49,7 +49,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 
 ## Conventions
 
-- **Posts**: follow `.claude/skills/new-post/SKILL.md` (plain Markdown, readable by any agent: file name, front matter, reading time, republished-article fields, importing from Substack and the Salitre blog). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
+- **Posts**: follow the `new-post` skill at `.agents/skills/new-post/SKILL.md` (plain Markdown, readable by any agent: file name, front matter, reading time, republished-article fields, importing from Substack and the Salitre blog). `description` is used in the index, RSS and meta tags, so keep it one plain sentence with no "From Substack:" style prefix.
 - **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
 - **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Every internal link and asset path must go through `relative_url` (`{{ '/feed.xml' | relative_url }}`, `{{ post.url | relative_url }}`) — never a bare `/path`, which would break the preview builds that run under a `/preview/<name>/` baseurl.
 - **Styling**: add rules to `css/main.css` using the design tokens at the top of that file (`--body-foreground`, `--link-foreground`, `--muted-foreground`, `--meta-font-family`, ...). Never hard-code a colour, font or measure in a rule: put a token on `:root` and use it, or a theme cannot change it. Any new value must work in both light and dark mode. No CSS frameworks, no build step.
@@ -58,6 +58,10 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 - **A language picker** is designed into `_includes/settings-menu.html` but not rendered, because nothing is translated. Wiring it up needs translated content and a URL scheme first (no i18n plugin is on the GitHub Pages allowlist, so it would be per-locale directories plus a `lang` key in front matter); the menu then gains a third group in the same shape as the other two.
 - **Affiliate links**: book links are generated from the ASIN in `_data/books.yml` as `https://www.amazon.com/dp/<asin>?tag=eds02a-20` with `rel="external nofollow sponsored"`; the disclosure lives at `/disclosure/` and is linked from the footer. Keep it that way.
 - **HTML**: 2-space indentation (`.editorconfig`). Keep the site dependency-free: no npm, no bundlers.
+
+## Skills
+
+- `.agents/skills/new-post/SKILL.md`: add a post or republish one from Substack or the Salitre blog. Codex reads skills from `.agents/skills/`; `.claude/skills/new-post` is a symlink to the same folder for Claude Code.
 
 ## Guardrails for agents
 

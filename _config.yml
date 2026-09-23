@@ -38,6 +38,7 @@ exclude:
   - AGENTS.md
   - .cursor-instructions.md
   - .claude/
+  - .agents/
   - .github/
   - .editorconfig
   - vendor/
