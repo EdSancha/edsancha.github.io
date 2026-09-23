@@ -36,6 +36,11 @@ exclude:
   - README.md
   - CLAUDE.md
   - AGENTS.md
+  - blog/AGENTS.md
+  - css/AGENTS.md
+  - _data/AGENTS.md
+  - _includes/AGENTS.md
+  - my-reading-list/AGENTS.md
   - .cursor-instructions.md
   - .claude/
   - .agents/
