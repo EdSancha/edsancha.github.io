@@ -6,5 +6,5 @@
 
 - [ ] `make check` passes locally (build + internal links)
 - [ ] Touched pages look right in light and dark mode
-- [ ] New posts: front matter complete (`title`, `date`, `description`, `timeToRead`, `categories`)
+- [ ] New posts: front matter complete (`layout`, `title`, `date`, `author`, `description`, `timeToRead`, `categories`)
 - [ ] No production settings changed (`CNAME`, `url`, GA tag) unless intended
