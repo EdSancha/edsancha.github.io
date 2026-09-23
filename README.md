@@ -10,7 +10,7 @@ make serve     # http://localhost:4000
 make check     # build + link check (what CI runs)
 ```
 
-Project conventions for people and coding agents are in [`CLAUDE.md`](CLAUDE.md). Adding a post: [`.claude/skills/new-post/SKILL.md`](.claude/skills/new-post/SKILL.md).
+Project conventions for people and coding agents are in [`AGENTS.md`](AGENTS.md). Adding a post: [`.agents/skills/new-post/SKILL.md`](.agents/skills/new-post/SKILL.md).
 
 ## Acknowledgements
 
