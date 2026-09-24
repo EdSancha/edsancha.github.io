@@ -6,6 +6,11 @@ author: "Eduardo Diaz Sancha"
 timeToRead: "6 minutes read"
 description: "Meta tripled its code output with AI and got a 40% rise in incidents. Any running coach would have called it: you don't get faster by making every day a hard day."
 categories: "leadership management"
+source_name: "Substack"
+source_url: "https://leadershipendurance.substack.com/p/there-is-no-such-thing-as-a-recovery"
+source_date: "24th September, 2026"
+canonical_url: "https://leadershipendurance.substack.com/p/there-is-no-such-thing-as-a-recovery"
+image: "https://images.unsplash.com/photo-1673433107266-e11be1613490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
 ---
 
 
