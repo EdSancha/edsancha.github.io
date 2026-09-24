@@ -24,11 +24,11 @@ Meta spent the last year shrinking product groups of ten to twenty people into "
 - Major incidents: **+40%**
 - Time spent firefighting those incidents: **+70%**
 
-At the same time, Shopify's CEO Tobias Lutke, remarked that AI helps employees produce more material, faster, without taking responsibility for its quality, and calling them 'slop grenades', in fact, reducing productivity. 
+At the same time, Shopify's CEO Tobias Lütke remarked that AI helps employees produce more material, faster, without taking responsibility for its quality, calling the results 'slop grenades' that actually reduce productivity.
 
 Read these stories, and others lately, as an engineering leader and you see a productivity impact story with struggles keeping quality. Read it as a coach and you see an athlete who tripled their weekly mileage, dropped their physio, and is now emailing you about a sore Achilles.
 
-I've been in both sides and every coach will tell you the same, the answer is never "run harder".
+I've been on both sides and every coach will tell you the same, the answer is never "run harder".
 
 ## Intensity isn't the problem. Distribution is.
 
@@ -36,15 +36,15 @@ Here's the thing most people get wrong about how endurance athletes train: they 
 
 Amateurs do the opposite. Every run is a little bit hard. Never hard enough to force real adaptation, never easy enough to recover from. It feels productive (you're sweating!) and it produces exactly two outcomes: a plateau or an injury.
 
-My own log from last year succesful attempt to run a sub3 marathon build shows this: 80% of my running time, 87% of overall exercise in the two lowest heart rate zones.
+My own log from last year's successful sub-3 marathon build shows this: 80% of my running time, 87% of overall exercise in the two lowest heart rate zones.
 
 Now look at what "AI in every sprint" actually does to a team's intensity distribution. Agents don't get tired, so the temptation is to make every ticket a hard session. Bigger PRs, more of them, faster. The easy work, the reading, the verification, the "let me just trace this through before I merge it", gets squeezed out because it doesn't show up in the throughput chart. You've built a plan where everything is a tempo or intervals run. **The 220% is the tempo run. The 40% is the Achilles.**
 
-## The load might be what it looks wrong, but the problem is how fast you got there.
+## The load isn't the problem. How fast you got there is.
 
 Sports science has a cleaner version of this than "don't overdo it". Tim Gabbett's work on the training-injury paradox compares an athlete's *acute* load (this week) to their *chronic* load (roughly the last month). Athletes with a high chronic load are the most protected from injury, because they earned it gradually. The ones who get hurt are the ones whose acute load spikes well above what their body is used to. Across rugby, soccer and running, the danger zone starts when this week is about one and a half times the recent average.
 
-Meta didn't add a hard session. It multiplied the acute load by three in one year *and cut the people who absorb it*. Fewer humans per pod means fewer reviewers, fewer people holding context, fewer people who know why the weird thing in the codebase is weird. It seems good in paper, but those radical changes create extra stress in the teams, it's not that the org didn't lack capacity to produce. It lacked the right adaptions to absorb what it produced.
+Meta didn't add a hard session. It multiplied the acute load by three in one year *and cut the people who absorb it*. Fewer humans per pod means fewer reviewers, fewer people holding context, fewer people who know why the weird thing in the codebase is weird. It seems good on paper, but those radical changes create extra stress in the teams, it's not that the org didn't lack capacity to produce. It lacked the right adaptations to absorb what it produced.
 
 ## Incidents are the niggle companies are ignoring
 
