@@ -58,6 +58,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 ## Skills
 
 - `.agents/skills/new-post/SKILL.md`: add a post or republish one from Substack or the Salitre blog. Codex reads skills from `.agents/skills/`; `.claude/skills/new-post` is a symlink to the same folder for Claude Code.
+- `.agents/skills/cross-post/SKILL.md`: cross-post a finished essay to Substack, the LinkedIn newsletter and a LinkedIn post (drafts via Claude in Chrome; Ed publishes and merges), then set its `canonical_url` and update the brain notes. `render.py` there turns a post into paste-ready HTML. Symlinked into `.claude/skills/` the same way.
 
 ## Guardrails for agents
 
