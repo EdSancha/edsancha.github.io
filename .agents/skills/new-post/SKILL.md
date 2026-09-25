@@ -62,6 +62,10 @@ make check
 
 Then open `http://localhost:4000/blog/` with `make serve` and confirm the post appears first with the right date and description. The post must render in light and dark mode (code blocks and images included).
 
+## Cross-posting
+
+For an essay written here first that should also go to Substack and LinkedIn, use the `cross-post` skill after committing the post.
+
 ## Sources this site republishes from
 
 - Substack: https://leadershipendurance.substack.com (leadership and endurance essays)
