@@ -37,7 +37,7 @@ jobs:
     steps:
       # Always build production from master, whichever branch triggered the run,
       # so pushing a theme branch can never publish theme content at the root.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: master
           fetch-depth: 0
@@ -45,12 +45,12 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - name: Build production site
         run: make build
       - name: Build theme previews
         run: .github/scripts/build-previews.sh
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -63,4 +63,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
