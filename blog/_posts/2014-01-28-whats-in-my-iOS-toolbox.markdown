@@ -96,7 +96,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 *Update: I've written a second part to this article in [What's in my iOS Toolbox? (2)][toolbox].*
 
-[toolbox]: {% post_url 2014-02-03-whats-in-my-iOS-toolbox-2 %}
+[toolbox]: {% post_url blog/2014-02-03-whats-in-my-iOS-toolbox-2 %}
 
 [pttrns]: http://pttrns.com
 [austin]: https://twitter.com/austinlouden

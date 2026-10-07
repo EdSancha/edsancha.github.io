@@ -9,7 +9,7 @@ categories: tools development me
 
 *Note: This is the continuation to [What's in my iOS Toolbox?][toolbox] article.*
 
-[toolbox]: {% post_url 2014-01-28-whats-in-my-iOS-toolbox %}
+[toolbox]: {% post_url blog/2014-01-28-whats-in-my-iOS-toolbox %}
 
 After writing the previous article, I realized that there are a lot of tools that I left behind. I've used some of them eventually in projects. Some others are completely new for me but I'll try them in the future. I also think that it could be useful to write down some interesting 3rd party libraries that have a lot of future and some backend soultions for the every type of project.
 
