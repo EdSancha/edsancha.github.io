@@ -88,7 +88,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - iOS Goodies - Weekly goodies (articles, controls, free stuff...) related to iOS.
 - [Ben Scheirmann][Essential] - He has a more detailed list of iOS tools, actually I learned from some of the tools that I use from him. Check it out.
 - Twitter - I try to follow all the great developers I can and learn from them. The community is an unlimited source of information.
-- [Big Nerd Ranch][bnr] - Their books explain the basics and intermediate stuff in a great way. I'd love to go to one of their bootcamps.
+- Big Nerd Ranch - Their books explain the basics and intermediate stuff in a great way. I'd love to go to one of their bootcamps.
 
 ## Disclaimer
 
@@ -158,5 +158,4 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [stanford2]: http://www.stanford.edu/class/cs193p/cgi-bin/drupal/
 [ray]: http://www.raywenderlich.com
 [Essential]: https://benscheirman.com
-[bnr]: http://bignerdranch.com/
 [objcio]: http://objc.io/
