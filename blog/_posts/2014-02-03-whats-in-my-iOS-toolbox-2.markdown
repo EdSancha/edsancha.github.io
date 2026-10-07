@@ -9,7 +9,7 @@ categories: tools development me
 
 *Note: This is the continuation to [What's in my iOS Toolbox?][toolbox] article.*
 
-[toolbox]: http://edsancha.com/blog/2014/01/28/whats-in-my-iOS-toolbox
+[toolbox]: {% post_url 2014-01-28-whats-in-my-iOS-toolbox %}
 
 After writing the previous article, I realized that there are a lot of tools that I left behind. I've used some of them eventually in projects. Some others are completely new for me but I'll try them in the future. I also think that it could be useful to write down some interesting 3rd party libraries that have a lot of future and some backend soultions for the every type of project.
 
@@ -45,7 +45,7 @@ Checkout the excellent article about different Core Data frameworks and Librarie
 [mr]: https://github.com/magicalpanda/MagicalRecord
 [liya]: https://cutedgesystems.com/software/Liya/
 [cde]: http://thermal-core.com/CoreDataEditor/
-[CoreData]: https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CoreData/cdProgrammingGuide.html
+[CoreData]: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreData/index.html
 [NSHipsterCD]: http://nshipster.com/core-data-libraries-and-utilities/
 
 ## Automated testing
@@ -56,7 +56,7 @@ Automated testing is always a hard choice. You need to write scripts or code to 
 - [appium.io][appium] - Open-source and cross-platform framework to write tests in almost any language. Looks very promising.
 - [KIF][kif] - KIF, which stands for Keep It Functional, is an iOS integration test framework. It allows for easy automation of iOS apps by leveraging the accessibility attributes that the OS makes available for those with visual disabilities.
 - [Subliminal][subliminal] - Subliminal is an framework for writing iOS integration tests. Subliminal provides a familiar OCUnit/SenTest-like interface to Apple's UIAutomation framework, with tests written entirely in Objective-C.
-- [Calabash][calabash] - Calabash enables you to write and execute automated acceptance tests of Android and iOS mobile apps. Test scripts have to be written mainly in [Cucumber][cucumber] and also other Ruby testing frameworks.
+- Calabash - Calabash enables you to write and execute automated acceptance tests of Android and iOS mobile apps. Test scripts have to be written mainly in [Cucumber][cucumber] and also other Ruby testing frameworks.
 - [Frank][frank] - Frank allows you to write structured text test/acceptance tests/requirements (using Ruby/[Cucumber][cucumber]) and have them execute against your iOS application.
 
 [uia]: https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/InstrumentsUserGuide/UsingtheAutomationInstrument/UsingtheAutomationInstrument.html
@@ -64,9 +64,8 @@ Automated testing is always a hard choice. You need to write scripts or code to 
 [appium]: http://appium.io
 [kif]: https://github.com/kif-framework/KIF
 [subliminal]: https://github.com/inkling/Subliminal
-[calabash]: http://calaba.sh
 [frank]: http://www.testingwithfrank.com
-[cucumber]: http://cukes.info
+[cucumber]: https://cucumber.io
 
 
 ## Documentation
@@ -80,34 +79,30 @@ Automated testing is always a hard choice. You need to write scripts or code to 
 ## Backend Services
 
 - [Parse][parse] - Great Backend-as-a-Servicedrop-in that works along all platforms, it has the easiest to read documentation and sample projects, so it's highly recommeneded for beginners and small projects.
-- [Stackmob][stackmob] - Another great BaaS platform with great free plans. You can import your backend code and it has a free stack of functionalities in their "marketplace".
+- Stackmob - Another great BaaS platform with great free plans. You can import your backend code and it has a free stack of functionalities in their "marketplace".
 - [Helios][helios] - Open-source framework for iOS that provides push-notifications, passbook integration, app-purchases and data synchronization.
 - [UrbanAirship][urban] - Easy to integrate push notifications, with limited usage for free.
 
-There are another BaaS options that offer similar services like: [Windows Azure][azure], [Kinvey][kinvey], [Backendless][bless], [Shephertz][shep] ...
+There are another BaaS options that offer similar services like: [Windows Azure][azure], Kinvey, [Backendless][bless], [Shephertz][shep] ...
 
 [parse]: https://www.parse.com
-[stackmob]: https://www.stackmob.com
 [helios]: http://helios.io
 [urban]: http://urbanairship.com
 [azure]: http://www.windowsazure.com/
-[kinvey]: http://www.kinvey.com
 [bless]: https://backendless.com/
 [shep]: http://api.shephertz.com
 
 ## Analytics
 
-- [Appsee][appsee] - Appsee enables you to put yourself in the users’ shoes and visually understand exactly how your users interact with your app with user recordings, touch heatmaps and other functionalities. The free segment is a bit short but it's still a tool to consider.
+- Appsee - Appsee enables you to put yourself in the users’ shoes and visually understand exactly how your users interact with your app with user recordings, touch heatmaps and other functionalities. The free segment is a bit short but it's still a tool to consider.
 - [Segment.io][segment] - The idea behind is to have one pipeline for all your data. Send data to any analytics or marketing tool with a single integration. I think it's ideal if you don't know which analytics tool to use in the beginning.
 - [Testflight SDK][testflight] - Testfligh offers analytics and crash reports in its SDK too.
 
-Other solutions worth naming are: [Localytics][local], [MobileAppTracking][mat], [keen.io][keen], [Gekkoboard][gekko] ...
+Other solutions worth naming are: [Localytics][local], MobileAppTracking, [keen.io][keen], [Gekkoboard][gekko] ...
 
-[appsee]: http://www.appsee.com
 [segment]: https://segment.io
-[testflight]: http://testflight.com/
+[testflight]: https://developer.apple.com/testflight/
 [local]: http://www.localytics.com
-[mat]: http://mobileapptracking.com
 [keen]: https://keen.io
 [gekko]: http://www.gekkoboard.com
 

@@ -33,6 +33,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Makefile
+  - script/
   - README.md
   - CLAUDE.md
   - AGENTS.md

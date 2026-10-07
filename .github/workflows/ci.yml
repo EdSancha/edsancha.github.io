@@ -32,9 +32,4 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
       - run: make build
-      - run: |
-          bundle exec htmlproofer ./_site \
-            --allow-hash-href \
-            --ignore-urls "/^mailto:/,/amazon.com/,/apps.apple.com/,/itunes.apple.com/,/linkedin.com/,/instagram.com/" \
-            --no-enforce-https \
-            --ignore-status-codes "403,429,503"
+      - run: bundle exec ruby script/check-external-links.rb

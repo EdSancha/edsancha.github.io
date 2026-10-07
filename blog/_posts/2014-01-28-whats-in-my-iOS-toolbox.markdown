@@ -12,7 +12,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 ## Inspiration
 
 - [pttrns][pttrns] - I check this page often to find inspiration, it contains screenshots of latest apps released and filters by component, making easier to find design patterns.
-- [Mobile Patterns][mobilep] - Another curated feed with mobile design patterns by component. iOS and Android in this case. (Thanks to [@austinladen][austin])
+- Mobile Patterns - Another curated feed with mobile design patterns by component. iOS and Android in this case. (Thanks to [@austinladen][austin])
 - [Capptivate][capptivate] - Great page that showcases Apps and their UI animations.
 - [Dribbble][dribbble] - Invitation-only community of designers, it showcases beautiful current or experimental iOS designs among other platforms.
 - [Behance][behance] - Similar in concept to Dribbble but I could say more democratic, I personally like it more.
@@ -32,8 +32,8 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 
 - [Photoshop][photoshop] ($$$) - Photoshop and Adobe Creative Suite have been the standard for many years but I'm trying and considering the switch to...
 - [Pixelmator][pixel] ($) - Powerful image editing app for the Mac that has everything you need to create and edit your images.
-- [iOS 7 Template by Teehan+Lax][teehan] - iOS 7 Template in PSD format.
-- [Sketch][sketch] ($) - Vector-based drawing tool. Currently in learning process but it looks really good. Check also [Sketchmine][sketchmine] for samples.
+- iOS 7 Template by Teehan+Lax - iOS 7 Template in PSD format.
+- [Sketch][sketch] ($) - Vector-based drawing tool. Currently in learning process but it looks really good. Check also Sketchmine for samples.
 - [Glyphish][gly] ($) - The definitive Icon collection, a basic in your library.
 - [xScope][xScope] ($) - Super handy tool to try to make your apps as pixel perfect as possible. Color pickers, rulers, mirroring and lots of features for a tiny app.
 
@@ -42,7 +42,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [XCode][xcode] - Basic tool for every iOS Developer. There are some alternatives, like [AppCode][appcode], but XCode has been my companion since the beginning. It has some great plugins, that help you with simple tasks. Some of them are:
 - [OMColorSense][colorsense] - Adds a color interface to [UIColor whiteColor] calls  
 - [KSImageNamed][imagenamed] - Helps you find the right image autocompleting [UIImage imageNamed:@""].
-- [Maniac-Dev-Plugins][plugins] - Maniac Dev page keeps an updated list of Plugins for Xcode.
+- Maniac-Dev-Plugins - Maniac Dev page keeps an updated list of Plugins for Xcode.
 - [Sublime][sublime] - As it says in the page title, it's the editor you'll fall in love with, it has great features and the interface is super-friendly. It has multi-language syntax support, including Objective-C, but I mostly use it on backend and frontend projects.
 - [Vim][vim] - Vim is my usual terminal editor of choice.
 
@@ -68,7 +68,7 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [Instruments][instruments] - "Instruments is a performance, analysis, and testing tool for dynamically tracing and profiling OS X and iOS code." Essential tool and free with Xcode. So essential that I forgot it on my first draft, thanks [@chunkyguy][chunky].
 - [Crashlytics][crash] - Crashlytics provides powerful, yet light weight crash reporting for iOS and Android. I implement it in all projects from day one.
 - [Runscope][runscope] - Automated testing for APIs and backend services. Free with limited number of calls, I use it on development phases.
-- [Pulse.io][pulse] - Mobile Performance Monitoring, tool in alpha but with a great future. Measure idle times, network calls times, etc.
+- Pulse.io - Mobile Performance Monitoring, tool in alpha but with a great future. Measure idle times, network calls times, etc.
 - [Reveal][reveal] ($) - Mac OS app that allows you to inspect, modify and debug your app views and layers in a beautiful 3D interface.
 
 ## Deployment
@@ -85,10 +85,10 @@ In the latest 3 years I've been using some great apps, tools, technologies to cr
 - [Ash Furrow][ash] - Ash Furrow blog, great iOS posts among other things.
 - [Stanford Online Course][stanford] - A classic in iOS learning, probably the first thing that comes to my mind when people ask me about free iOS Learning. ([Downloads link][stanford2]).
 - [Ray Wenderlich][ray] - Ray Wenderlich's community of iOS tutorials is a broad source of examples and tutorials.
-- [iOS Goodies][iosgoodies] - Weekly goodies (articles, controls, free stuff...) related to iOS.
+- iOS Goodies - Weekly goodies (articles, controls, free stuff...) related to iOS.
 - [Ben Scheirmann][Essential] - He has a more detailed list of iOS tools, actually I learned from some of the tools that I use from him. Check it out.
-- [Twitter][twitter] - I try to follow all the great developers I can and learn from them. The community is an unlimited source of information.
-- [Big Nerd Ranch][bnr] - Their books explain the basics and intermediate stuff in a great way. I'd love to go to one of their bootcamps.
+- Twitter - I try to follow all the great developers I can and learn from them. The community is an unlimited source of information.
+- Big Nerd Ranch - Their books explain the basics and intermediate stuff in a great way. I'd love to go to one of their bootcamps.
 
 ## Disclaimer
 
@@ -96,10 +96,9 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 *Update: I've written a second part to this article in [What's in my iOS Toolbox? (2)][toolbox].*
 
-[toolbox]: http://edsancha.com/blog/2014/02/03/whats-in-my-iOS-toolbox-2
+[toolbox]: {% post_url 2014-02-03-whats-in-my-iOS-toolbox-2 %}
 
 [pttrns]: http://pttrns.com
-[mobilep]: http://www.mobile-patterns.com
 [austin]: https://twitter.com/austinlouden
 [capptivate]: http://capptivate.co
 [dribbble]: http://dribbble.com/search?q=ios
@@ -109,7 +108,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [apple]: https://developer.apple.com/design/
 [hig]:
 
-[git]: http://gitscm.org
+[git]: https://git-scm.com
 [github]: http://github.com
 [bitbucket]: http://bitbucket.org
 [sourcetree]: http://www.sourcetreeapp.com
@@ -117,9 +116,7 @@ There are a lot of tools in the market, some of them paid, some of them free but
 
 [photoshop]: http://www.adobe.com/photoshop
 [pixel]: http://www.pixelmator.com
-[teehan]: http://www.teehanlax.com/tools/ios7/
 [sketch]: http://www.bohemiancoding.com/sketch
-[sketchmine]: http://sketchmine.co
 [gly]: http://glyphish.com
 [xscope]: http://xscopeapp.com
 
@@ -127,7 +124,6 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [appcode]: http://jetbrains.com/objc
 [colorsense]: https://github.com/omz/ColorSense-for-Xcode
 [imagenamed]: https://github.com/ksuther/KSImageNamed-Xcode
-[plugins]: http://maniacdev.com/xcode-plugins
 
 [cocoapods]: http://cocoapods.org
 
@@ -138,32 +134,28 @@ There are a lot of tools in the market, some of them paid, some of them free but
 [sublime]: http://www.sublimetext.com
 [vim]: http://www.vim.org
 
-[ga]: http://www.google.com/analytics‎
-[flurry]: http://www.flurry.com
+[ga]: https://marketingplatform.google.com/about/analytics/
+[flurry]: https://www.flurry.com
 [mixpanel]: http://www.mixpanel.com
 
 [instruments]: https://developer.apple.com/library/mac/documentation/developertools/conceptual/InstrumentsUserGuide/Introduction/Introduction
 [chunky]: https://twitter.com/chunkyguy
 [crash]: http://crashlytics.com
 [runscope]: http://www.runscope.com
-[pulse]: http://pulse.io
 [reveal]: http://revealapp.com
 
-[testflight]: http://testflight.com/
+[testflight]: https://developer.apple.com/testflight/
 [cupertino]: https://github.com/nomad/cupertino
 [nomad]: http://nomad-cli.com
 
 [iosdevweekly]: http://iosdevweekly.com
-[dave]: https://twitter.com/daveverwer
+[dave]: https://daveverwer.com
 [nshipster]: http://nshipster.com
-[mattt]: http://mattt.me
+[mattt]: https://nshipster.com/authors/mattt/
 [ash]: http://ashfurrow.com/blog/
 [mikeash]: https://mikeash.com/pyblog/
 [stanford]: http://online.stanford.edu/course/developing-ios7-apps-fall-2013
 [stanford2]: http://www.stanford.edu/class/cs193p/cgi-bin/drupal/
 [ray]: http://www.raywenderlich.com
-[Essential]: http://benscheirman.com/2013/08/the-ios-developers-toolbelt/
-[twitter]: http://twitter.com
-[bnr]: http://bignerdranch.com/
-[iosgoodies]: http://ios-goodies.com
+[Essential]: https://benscheirman.com
 [objcio]: http://objc.io/
