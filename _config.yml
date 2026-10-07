@@ -20,6 +20,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Keep gist embeds script-only, as the github-pages gem configured them.
+gist:
+  noscript: false
+
 # Used by jekyll-seo-tag for the JSON-LD person/profile block.
 social:
   name: Eduardo Diaz Sancha

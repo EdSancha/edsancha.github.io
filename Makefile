@@ -1,6 +1,6 @@
 .PHONY: install build serve check clean
 
-# The github-pages gem's default theme SCSS needs a UTF-8 locale to compile.
+# Jekyll needs a UTF-8 locale to read non-ASCII content reliably.
 export LC_ALL ?= C.UTF-8
 export LANG ?= C.UTF-8
 

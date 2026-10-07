@@ -7,7 +7,7 @@ Plain Jekyll, no theme, no JavaScript framework. Hosted on GitHub Pages.
 
 - `.github/workflows/pages.yml` builds and deploys the site: production comes from `master` and lands at the root of https://edsancha.com. **Every push to `master` goes live.** Work on a branch and open a PR. (Pages source is set to "GitHub Actions", not "branch".)
 - The same deployment publishes one unlisted preview per `theme/*` branch at `/preview/<name>/`, listed at `/preview/`. This is for reviewing a theme still in development, on the real site, before it is merged; finished themes need no branch, because the nav picker already offers them. Previews are built with `_config.preview.yml` overlaid, so they are `noindex`, carry no analytics, show a preview bar and stay out of the sitemap. Push a `theme/*` branch to get a preview; delete the branch to remove it. A theme branch that fails to build is skipped and never blocks a production deploy.
-- The `Gemfile` pins `github-pages`, so a local build matches production. Only plugins on the GitHub Pages allowlist work (`jekyll-paginate` and `jekyll-gist` are in use).
+- The `Gemfile` lists Jekyll 3.10 and only the plugins `_config.yml` loads (`jekyll-gist`, `jekyll-paginate`, `jekyll-seo-tag`, `jekyll-sitemap`). Pages builds through `pages.yml`, so the `github-pages` gem and its plugin allowlist don't apply. To add a plugin, add it to both files.
 - `CNAME`, `url`, `baseurl` and the Google Analytics tag in `_includes/header.html` are production settings. Do not change them unless asked.
 
 ## Commands

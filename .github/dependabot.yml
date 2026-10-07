@@ -1,6 +1,5 @@
-# Monthly updates, baseline from the brain's agent-workflow notes. The github-pages gem pins
-# Jekyll and its plugins to what GitHub Pages runs, so it moves as one unit. Other minor and patch
-# bumps are grouped; majors get their own pull request. CI (.github/workflows/ci.yml) builds and
+# Monthly updates, baseline from the brain's agent-workflow notes. Minor and patch bumps are
+# grouped; majors get their own pull request. CI (.github/workflows/ci.yml) builds and
 # proofs every pull request.
 version: 2
 updates:
