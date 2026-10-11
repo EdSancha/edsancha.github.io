@@ -66,3 +66,5 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 - Do not add, remove or rename pages without being asked; URLs are linked from elsewhere.
 - Do not commit `_site/`, `.jekyll-cache/`, `vendor/`, or OS files (`.DS_Store`, `Thumbs.db`).
 - Before finishing any change: `make check` passes, and pages you touched look right in light and dark mode.
+
+- Commits are shared credit: every commit made in a session with Claude is authored as Eduardo (`EdSancha <edsancha@gmail.com>`) and ends with a `Co-Authored-By: Claude …` trailer. Never commit as Claude alone.
