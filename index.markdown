@@ -19,6 +19,18 @@ I'm interested in technology, leadership, fitness and endurance training, parent
 
 [Full history]({{ '/work/' | relative_url }}) · [Resume (PDF)]({{ '/assets/eduardo-diaz-sancha-resume.pdf' | relative_url }}) · [LinkedIn](https://www.linkedin.com/in/edsancha){:rel="external nofollow" target="_blank"} · [Email me](mailto:edsancha@gmail.com?subject=%5BWEB%5D%20Contact)
 
+## Fitness
+
+My last year of training from Garmin, refreshed every day: how long I train across every sport, how much of it is hard (minutes in heart-rate zones 4 and 5), and how far I run. I care much more about the first two than about distance, and most of that time should be easy.
+
+{% include helpers/garmin-heatmap.html name="training" %}
+
+{% include helpers/garmin-heatmap.html name="intensity" %}
+
+{% include helpers/garmin-heatmap.html name="running" %}
+
+[How these grids are made]({{ '/projects/garmin-heatmaps/' | relative_url }})
+
 ## Recent writing
 
 <ul class="recent-posts">

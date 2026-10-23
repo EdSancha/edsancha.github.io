@@ -1,0 +1,24 @@
+{%- comment -%}
+  A Garmin heatmap from _data/heatmaps.json, rendered by pages.yml:
+  {% include helpers/garmin-heatmap.html name="running" %}
+
+  The SVG only exists in deploy builds (pages.yml lists what it rendered in
+  _data/garmin_rendered.json). Local, CI and theme-preview builds show a note
+  instead, so a missing grid never breaks a build.
+{%- endcomment -%}
+{%- assign grid = site.data.heatmaps.grids | where: "name", include.name | first -%}
+{%- case grid.metric -%}
+  {%- when "duration", "activities" -%}{%- assign hue = "blue" -%}
+  {%- when "intensity", "elevation" -%}{%- assign hue = "orange" -%}
+  {%- when "sleep", "sleep-score" -%}{%- assign hue = "purple" -%}
+  {%- when "hrv" -%}{%- assign hue = "blue" -%}
+  {%- else -%}{%- assign hue = "green" -%}
+{%- endcase -%}
+<figure class="heatmap heatmap-{{ hue }}">
+{%- if site.data.garmin_rendered contains include.name -%}
+  {%- capture svg %}garmin/{{ include.name }}.svg{% endcapture -%}
+  {% include {{ svg }} %}
+{%- else -%}
+  <p class="heatmap-unavailable">The live heatmap appears on the published site.</p>
+{%- endif -%}
+</figure>

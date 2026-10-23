@@ -20,6 +20,18 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Projects: one file per project in _projects/, listed at /projects/.
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      type: projects
+    values:
+      layout: project
+
 # Keep gist embeds script-only, as the github-pages gem configured them.
 gist:
   noscript: false
@@ -46,6 +58,7 @@ exclude:
   - _data/AGENTS.md
   - _includes/AGENTS.md
   - my-reading-list/AGENTS.md
+  - projects/AGENTS.md
   - .cursor-instructions.md
   - .claude/
   - .agents/

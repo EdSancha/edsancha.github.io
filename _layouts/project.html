@@ -1,9 +1,17 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+
+<h1>{{ page.title }}</h1>
+
+<p class="intro">{{ page.description }}</p>
+
+{% if page.repo %}
+<p class="meta project-source">Code: <a href="{{ page.repo }}" rel="external nofollow" target="_blank">{{ page.repo | remove: "https://" }}</a></p>
+{% endif %}
 
 <div class="post">
 {{ content }}
 </div>
+
+<p class="project-back"><a href="{{ '/projects/' | relative_url }}">All projects</a></p>

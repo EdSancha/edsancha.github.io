@@ -1,0 +1,27 @@
+---
+layout: default
+title: Projects
+description: Things I build in the open, mostly where software meets endurance training.
+---
+
+<h1>Projects</h1>
+
+<p class="intro">
+  Things I build in the open, mostly where software meets endurance training. Each one has its code on GitHub.
+</p>
+
+{% assign projects = site.projects | sort: "date" | reverse %}
+<ul class="projects">
+  {% for project in projects %}
+  <li>
+    <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+    <p>{{ project.description }}</p>
+    {% if project.image %}
+    <a href="{{ project.url | relative_url }}" tabindex="-1">
+      <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" loading="lazy">
+    </a>
+    {% if project.image_caption %}<p class="project-image-caption">{{ project.image_caption }}</p>{% endif %}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
