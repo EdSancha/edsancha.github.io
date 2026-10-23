@@ -17,3 +17,4 @@ Thumbs.db
 # Garmin heatmaps, rendered by pages.yml at build time
 _includes/garmin/
 _data/garmin_rendered.json
+assets/garmin/
