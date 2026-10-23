@@ -82,7 +82,7 @@ jobs:
             echo "::warning::GARMIN_API_KEY is not set in the garmin environment; skipping the Garmin heatmaps."
             exit 0
           fi
-          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin
+          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin --themes light,dark
           echo "fresh=true" >> "$GITHUB_OUTPUT"
       - name: Warn about stale heatmaps
         if: steps.render.outcome == 'failure'
@@ -119,6 +119,16 @@ jobs:
         with:
           name: garmin-heatmaps
           path: _includes/garmin
+      - name: Publish the standalone heatmap images
+        # <name>-light.svg and <name>-dark.svg, with fixed colours, go to
+        # /assets/garmin/ for places that can only show images (the GitHub
+        # profile README). Pages inline <name>.svg instead.
+        run: |
+          mkdir -p assets/garmin
+          if [ -d _includes/garmin ]; then
+            find _includes/garmin \( -name '*-light.svg' -o -name '*-dark.svg' \) -exec mv -t assets/garmin/ {} +
+          fi
+          ls assets/garmin
       - name: List the Garmin heatmaps for Jekyll
         # _includes/helpers/garmin-heatmap.html only includes grids listed here,
         # so a missing SVG shows a note instead of breaking the build.
