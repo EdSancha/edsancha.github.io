@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: EdSancha/garmin-heatmap
-          ref: 39eac060b24cf6fa65f7d73ea0387d01c9ed428b # v0.3.0
+          ref: d094da33b6101859073775d017ab9363cd2248e1 # v0.4.0
           path: .garmin-heatmap
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -82,7 +82,7 @@ jobs:
             echo "::warning::GARMIN_API_KEY is not set in the garmin environment; skipping the Garmin heatmaps."
             exit 0
           fi
-          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin --themes light,dark
+          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin --themes light,dark,auto
           echo "fresh=true" >> "$GITHUB_OUTPUT"
       - name: Warn about stale heatmaps
         if: steps.render.outcome == 'failure'
@@ -120,13 +120,13 @@ jobs:
           name: garmin-heatmaps
           path: _includes/garmin
       - name: Publish the standalone heatmap images
-        # <name>-light.svg and <name>-dark.svg, with fixed colours, go to
-        # /assets/garmin/ for places that can only show images (the GitHub
-        # profile README). Pages inline <name>.svg instead.
+        # <name>-light.svg, <name>-dark.svg and <name>-auto.svg (reads on any
+        # background; the GitHub profile README uses it) go to /assets/garmin/
+        # for places that can only show images. Pages inline <name>.svg instead.
         run: |
           mkdir -p assets/garmin
           if [ -d _includes/garmin ]; then
-            find _includes/garmin \( -name '*-light.svg' -o -name '*-dark.svg' \) -exec mv -t assets/garmin/ {} +
+            find _includes/garmin \( -name '*-light.svg' -o -name '*-dark.svg' -o -name '*-auto.svg' \) -exec mv -t assets/garmin/ {} +
           fi
           ls assets/garmin
       - name: List the Garmin heatmaps for Jekyll
