@@ -1,0 +1,8 @@
+{
+  "grids": [
+    { "name": "running", "metric": "distance", "types": ["running"], "noun": "runs" },
+    { "name": "climbing", "metric": "elevation" },
+    { "name": "sleep", "metric": "sleep", "weeks": 17, "enabled": false },
+    { "name": "hrv", "metric": "hrv", "weeks": 17, "enabled": false }
+  ]
+}

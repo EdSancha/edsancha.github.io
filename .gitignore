@@ -13,3 +13,6 @@ vendor/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Garmin heatmaps, rendered by pages.yml at build time
+_includes/garmin/
