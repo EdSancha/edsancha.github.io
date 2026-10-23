@@ -17,6 +17,9 @@ on:
   workflow_run:
     workflows: ["Theme branch check"]
     types: [completed]
+  # Daily, to refresh the Garmin heatmaps.
+  schedule:
+    - cron: "17 5 * * *"
   workflow_dispatch:
 
 permissions:
@@ -31,8 +34,68 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Fetches Garmin data and renders the grids in _data/heatmaps.json. This is the
+  # only job that sees GARMIN_API_KEY: it is a secret of the "garmin" environment,
+  # which only master may use, and only the fetch step gets it. The build job
+  # also runs theme branches' code, so it never sees the key, only the SVGs.
+  # Third-party code here is pinned to reviewed commits.
+  heatmaps:
+    name: Render Garmin heatmaps
+    runs-on: ubuntu-latest
+    environment: garmin
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: master
+          persist-credentials: false
+          sparse-checkout: _data/heatmaps.json
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Restore the last good heatmaps
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: garmin
+          key: garmin-heatmaps-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: garmin-heatmaps-
+      - name: Fetch and render
+        id: render
+        # A Garmin outage or an expired key must never block a deploy: the
+        # restored heatmaps ship instead, with a warning.
+        continue-on-error: true
+        env:
+          GARMIN_API_KEY: ${{ secrets.GARMIN_API_KEY }}
+        run: |
+          if [ -z "$GARMIN_API_KEY" ]; then
+            echo "::warning::GARMIN_API_KEY is not set in the garmin environment; skipping the Garmin heatmaps."
+            exit 0
+          fi
+          npx --yes github:EdSancha/garmin-heatmap#c6f4037aa2ab7b052c9396a2d5431de42a060d4e build --config _data/heatmaps.json --out-dir garmin
+          echo "fresh=true" >> "$GITHUB_OUTPUT"
+      - name: Warn about stale heatmaps
+        if: steps.render.outcome == 'failure'
+        run: echo "::warning::Garmin fetch failed, so the last good heatmaps ship. Has GARMIN_API_KEY expired?"
+      - name: Save the heatmaps for next time
+        if: steps.render.outputs.fresh == 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: garmin
+          key: garmin-heatmaps-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: garmin-heatmaps
+          path: garmin
+          retention-days: 1
+          if-no-files-found: ignore
+
   build:
     name: Build site and previews
+    needs: heatmaps
+    # Build even if the heatmaps job failed outright; the site just lacks them.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
       # Always build production from master, whichever branch triggered the run,
@@ -41,6 +104,12 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
+      - name: Add the Garmin heatmaps
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        continue-on-error: true
+        with:
+          name: garmin-heatmaps
+          path: _includes/garmin
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"
@@ -57,6 +126,7 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

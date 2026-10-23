@@ -8,6 +8,7 @@ Plain Jekyll, no theme, no JavaScript framework. Hosted on GitHub Pages.
 - `.github/workflows/pages.yml` builds and deploys the site: production comes from `master` and lands at the root of https://edsancha.com. **Every push to `master` goes live.** Work on a branch and open a PR. (Pages source is set to "GitHub Actions", not "branch".)
 - The same deployment publishes one unlisted preview per `theme/*` branch at `/preview/<name>/`, listed at `/preview/`. This is for reviewing a theme still in development, on the real site, before it is merged; finished themes need no branch, because the nav picker already offers them. Previews are built with `_config.preview.yml` overlaid, so they are `noindex`, carry no analytics, show a preview bar and stay out of the sitemap. Push a `theme/*` branch to get a preview; delete the branch to remove it. A theme branch that fails to build is skipped and never blocks a production deploy.
 - The `Gemfile` lists Jekyll 4 and only the plugins `_config.yml` loads (`jekyll-gist`, `jekyll-paginate`, `jekyll-seo-tag`, `jekyll-sitemap`). Pages builds through `pages.yml`, so the `github-pages` gem and its plugin allowlist don't apply. To add a plugin, add it to both files. Posts live in `blog/_posts`, so `{% post_url %}` takes the `blog/` prefix (`{% post_url blog/2014-01-28-whats-in-my-iOS-toolbox %}`).
+- `pages.yml` also renders the Garmin heatmaps listed in `_data/heatmaps.json`, daily and on every deploy, into `_includes/garmin/` (gitignored, never committed). Its `heatmaps` job alone holds `GARMIN_API_KEY`, a secret of the `garmin` environment (deployment branches: `master` only). If the fetch fails, the last good SVGs ship with a warning; renew the key before it expires (Garmin emails a week ahead).
 - `CNAME`, `url`, `baseurl` and the Google Analytics tag in `_includes/header.html` are production settings. Do not change them unless asked.
 
 ## Commands
@@ -32,6 +33,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `blog/categories/index.html` | All posts grouped by category; post and index category links point at its anchors |
 | `my-reading-list/index.markdown` | Reading List page: intro prose plus a loop over `_data/books.yml` |
 | `_data/books.yml` | The books, in page order: sections (`title`, `level`, optional `intro`) with `books` (`title`, `asin`, optional `note`). Add a book here, not in the page |
+| `_data/heatmaps.json` | The Garmin heatmaps to render (see `_data/AGENTS.md`). Grids with `"enabled": false` fetch nothing |
 | `_data/apps.yml` | The Work page app tiles (`name`, `url`, `image`, optional `alt`/`title`). Add an app here, not in the page |
 | `disclosure/index.markdown` | Affiliate-link disclosure |
 | `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups), `project` (currently unused by any page) |
