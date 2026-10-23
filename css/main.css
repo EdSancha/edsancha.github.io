@@ -1176,6 +1176,16 @@ ul.apps {
   margin-bottom: 0.5em;
 }
 
+figure {
+  margin: 1.5em 0;
+}
+
+figcaption,
+.project-image-caption {
+  color: var(--muted-foreground);
+  font-size: 0.8em;
+}
+
 .project-source {
   margin-top: -0.5em;
 }

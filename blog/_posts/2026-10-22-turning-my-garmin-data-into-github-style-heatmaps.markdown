@@ -13,7 +13,10 @@ Garmin opened a Personal API this month. Until now the Connect developer program
 
 The same week, a post went around showing a whole summer of runs, climbing, sleep and HRV as GitHub contribution grids. I wanted that on this site, so I built it in an evening with Claude Code. It now lives in [Projects]({{ '/projects/garmin-heatmaps/' | relative_url }}), and the code is [on GitHub](https://github.com/EdSancha/garmin-heatmap){:rel="external nofollow" target="_blank"}.
 
-![Four heatmap grids drawn from sample data: running distance, elevation, sleep and overnight HRV, June to September.]({{ '/img/projects/garmin-heatmaps.png' | relative_url }})
+<figure>
+  <img src="{{ '/img/projects/garmin-heatmaps.png' | relative_url }}" alt="Four heatmap grids drawn from made-up sample data: running distance, elevation, sleep and overnight HRV, June to September.">
+  <figcaption>Made-up sample data, to show what the grids look like. Not my training.</figcaption>
+</figure>
 
 ## Finding the endpoints
 
@@ -26,7 +29,7 @@ A static site can't call Garmin from the reader's browser without handing the ke
 - A **fetcher** that runs in CI with the key, and reduces everything to one small record per day: distance, time and elevation per activity type, sleep, HRV, steps. No activity names, no GPS, no start times.
 - A **renderer** that turns those days into an SVG grid. The same code runs in Node at build time or in the browser as a `<garmin-heatmap>` web component.
 
-This site uses the build-time path. The deploy workflow fetches, renders and inlines the SVGs, so the pages ship with no JavaScript and no data file. Because the grids are inline, they pick up the site's fonts, and their colours follow the theme and dark mode.
+This site uses the build-time path. Every day, the deploy workflow fetches my data and renders the SVGs, ready to be inlined into a page with no JavaScript and no data file behind them. Inlined, the grids pick up the site's fonts, and their colours follow the theme and dark mode.
 
 ## Treating the key like a password
 
@@ -49,4 +52,4 @@ Neither failure could show up in the tests, because the fake API in them agreed 
 
 ## What's next
 
-Sleep and HRV are one line of config away. Before I switch them on I want to decide how much of my recovery I'm comfortable publishing. If you want grids for your own site, the [README](https://github.com/EdSancha/garmin-heatmap#readme){:rel="external nofollow" target="_blank"} has the setup.
+My real grids are rendering every day, but they aren't on the site yet: I still have to decide where they belong. Sleep and HRV are one line of config away, and before I switch them on I want to decide how much of my recovery I'm comfortable publishing. If you want grids for your own site, the [README](https://github.com/EdSancha/garmin-heatmap#readme){:rel="external nofollow" target="_blank"} has the setup.

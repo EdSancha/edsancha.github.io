@@ -20,6 +20,7 @@ description: Things I build in the open, mostly where software meets endurance t
     <a href="{{ project.url | relative_url }}" tabindex="-1">
       <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt }}" loading="lazy">
     </a>
+    {% if project.image_caption %}<p class="project-image-caption">{{ project.image_caption }}</p>{% endif %}
     {% endif %}
   </li>
   {% endfor %}

@@ -1,25 +1,25 @@
 ---
 title: Garmin Heatmaps
 date: 2026-10-22
-description: "My Garmin Connect training as GitHub-style activity grids, refreshed every day and rendered when this static site is built."
+description: "Garmin Connect training data as GitHub-style activity grids for static sites, refreshed every day and rendered when the site is built."
 image: /img/projects/garmin-heatmaps.png
-image_alt: "Four heatmap grids drawn from sample data: running distance in green, elevation in orange, sleep in purple and overnight HRV in blue, June to September."
+image_alt: "Four heatmap grids drawn from made-up sample data: running distance in green, elevation in orange, sleep in purple and overnight HRV in blue, June to September."
 repo: https://github.com/EdSancha/garmin-heatmap
+image_caption: "Made-up sample data, to show what the grids look like."
 ---
 
-Each square is a day of the last year, and the stronger the colour, the further I ran.
+Each square is a day, and the stronger the colour, the bigger the day: further run, more climbed, longer slept, higher overnight HRV. Every grid has a headline number for the period and a legend, and every square has a tooltip with its date and value.
 
-{% include helpers/garmin-heatmap.html name="running" %}
-
-The same year as elevation climbed, across every activity:
-
-{% include helpers/garmin-heatmap.html name="climbing" %}
+<figure>
+  <img src="{{ '/img/projects/garmin-heatmaps.png' | relative_url }}" alt="Four heatmap grids drawn from made-up sample data: running distance in green, elevation in orange, sleep in purple and overnight HRV in blue, June to September.">
+  <figcaption>Made-up sample data, to show what the grids look like. It isn't my training; my own grids will live elsewhere on this site.</figcaption>
+</figure>
 
 ## How it works
 
 - In October 2026 Garmin opened a [Personal API](https://developer.garmin.com/gc-developer-program/personal/personal-api/){:rel="external nofollow" target="_blank"}: any Garmin Connect user can create a key and pull their own data.
-- Once a day, the workflow that deploys this site fetches my last year of activities, adds them up per day and draws each grid as an SVG. The page you are reading includes those SVGs as they are, with no JavaScript and no data file behind them.
-- It only fetches what this page shows. Sleep and overnight HRV grids are supported but switched off, so that data stays in Garmin.
+- Once a day, the workflow that deploys this site fetches my last year of activities, adds them up per day and draws each grid as an SVG, ready to include in any page as it is, with no JavaScript and no data file behind it.
+- It only fetches what the site's grids need. Sleep and overnight HRV grids are supported but switched off, so that data stays in Garmin.
 - The API key lives in a GitHub secret that only one step of the deploy can read. If Garmin is down or the key expires, the site deploys with the previous day's grids.
 
 ## Use it on your own site
