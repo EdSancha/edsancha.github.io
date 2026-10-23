@@ -33,7 +33,13 @@ This site uses the build-time path. Every day, the deploy workflow fetches my da
 
 ## Time and intensity over distance
 
-The home page shows three grids, in this order: training time across every sport, hard minutes (time in heart-rate zones 4 and 5), and running distance. The order is deliberate. I value duration and intensity much more than distance. How long and how hard I train is what my body responds to. Distance depends on pace, terrain and which sport I did that day, and an easy ten kilometres costs something very different from ten kilometres of intervals. Distance is there because it's the number runners ask about, but it's the one I watch least.
+The home page shows three grids, in this order: training time across every sport, hard minutes (time in heart-rate zones 4 and 5), and running distance. The order is deliberate: I value duration and intensity much more than distance.
+
+I train on the idea that time on feet at low intensity compounds into the best aerobic engine. Hours of easy work, done consistently for months and years, build something no single hard session can. So the first grid is the one I care about most: how much time I put in, whatever the sport.
+
+The second keeps me honest from the other side. Hard minutes should be a small, deliberate share of the week. If that grid lights up orange every day, my easy days weren't easy.
+
+Distance comes last. It depends on pace, terrain and which sport I did that day, and chasing it tends to push easy runs faster than they should be. It's there because it's the number runners ask about, but it's the one I watch least.
 
 ## Treating the key like a password
 

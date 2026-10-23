@@ -21,7 +21,7 @@ I'm interested in technology, leadership, fitness and endurance training, parent
 
 ## Fitness
 
-My last year of training from Garmin, refreshed every day: how long I train across every sport, how much of it is hard (minutes in heart-rate zones 4 and 5), and how far I run. I care much more about the first two than about distance.
+My last year of training from Garmin, refreshed every day: how long I train across every sport, how much of it is hard (minutes in heart-rate zones 4 and 5), and how far I run. I care much more about the first two than about distance, and most of that time should be easy.
 
 {% include helpers/garmin-heatmap.html name="training" %}
 
