@@ -119,6 +119,13 @@ jobs:
         with:
           name: garmin-heatmaps
           path: _includes/garmin
+      - name: List the Garmin heatmaps for Jekyll
+        # _includes/helpers/garmin-heatmap.html only includes grids listed here,
+        # so a missing SVG shows a note instead of breaking the build.
+        run: |
+          ls _includes/garmin/*.svg 2>/dev/null | xargs -r -n1 basename | sed 's/\.svg$//' \
+            | jq -R . | jq -cs . > _data/garmin_rendered.json
+          echo "Rendered heatmaps: $(cat _data/garmin_rendered.json)"
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"

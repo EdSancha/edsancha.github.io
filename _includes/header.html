@@ -107,6 +107,7 @@
     <nav class="header" aria-label="Main">
         <a {% if page.url == "/" %}class="extra" {% endif %}href="{{ '/' | relative_url }}">Home</a>
         <a {% if page.url == "/work/" %}class="extra" {% endif %}href="{{ '/work/' | relative_url }}">Work</a>
+        <a {% if page.url contains "/projects/" %}class="extra" {% endif %}href="{{ '/projects/' | relative_url }}">Projects</a>
         <a {% if page.url contains "/blog/" or is_post %}class="extra" {% endif %}href="{{ '/blog/' | relative_url }}">Writing</a>
         <a {% if page.url == "/my-reading-list/" %}class="extra" {% endif %}href="{{ '/my-reading-list/' | relative_url }}">Reading List</a>
         {% include settings-menu.html %}

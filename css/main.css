@@ -94,6 +94,22 @@
   --chip-border-color: var(--blockquote-border);
   --chip-border-color-dark: var(--blockquote-border-dark);
 
+  /* Garmin heatmaps (_includes/helpers/garmin-heatmap.html): the colour of
+     an empty day, one hue per kind of metric, and the base the five levels
+     mix the hue into (pale in light mode, deep in dark mode). */
+  --heatmap-empty: #e4e4e7;
+  --heatmap-empty-dark: #26262b;
+  --heatmap-base: #ffffff;
+  --heatmap-base-dark: #16161a;
+  --heatmap-green: #2da44e;
+  --heatmap-green-dark: #3fbf5f;
+  --heatmap-orange: #d9622b;
+  --heatmap-orange-dark: #f0883e;
+  --heatmap-purple: #5b45b8;
+  --heatmap-purple-dark: #a08cf0;
+  --heatmap-blue: #2f63b8;
+  --heatmap-blue-dark: #58a6ff;
+
   /* Measure, per breakpoint */
   --site-width-sm: 400px;
   --site-width-md: 480px;
@@ -132,6 +148,13 @@
     --chip-border-color: var(--chip-border-color-dark);
     --surface-shadow-color: var(--surface-shadow-color-dark);
     --surface-hover-background: var(--surface-hover-background-dark);
+
+    --heatmap-empty: var(--heatmap-empty-dark);
+    --heatmap-base: var(--heatmap-base-dark);
+    --heatmap-green: var(--heatmap-green-dark);
+    --heatmap-orange: var(--heatmap-orange-dark);
+    --heatmap-purple: var(--heatmap-purple-dark);
+    --heatmap-blue: var(--heatmap-blue-dark);
   }
 }
 
@@ -155,6 +178,13 @@
     --chip-border-color: var(--chip-border-color-dark);
     --surface-shadow-color: var(--surface-shadow-color-dark);
     --surface-hover-background: var(--surface-hover-background-dark);
+
+    --heatmap-empty: var(--heatmap-empty-dark);
+    --heatmap-base: var(--heatmap-base-dark);
+    --heatmap-green: var(--heatmap-green-dark);
+    --heatmap-orange: var(--heatmap-orange-dark);
+    --heatmap-purple: var(--heatmap-purple-dark);
+    --heatmap-blue: var(--heatmap-blue-dark);
 }
 
 /* Global Reset */
@@ -1118,4 +1148,76 @@ ul.apps {
 
 .settings-menu__option[aria-checked="true"]::before {
   visibility: visible;
+}
+
+/*****************************************************************************/
+/*
+/* Projects
+/*
+/*****************************************************************************/
+
+.projects {
+  list-style-type: none;
+}
+
+.projects li {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--post-divider-color);
+}
+
+.projects h2 {
+  margin-bottom: 0.25em;
+}
+
+.projects img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+.project-source {
+  margin-top: -0.5em;
+}
+
+.project-back {
+  margin-top: 2em;
+}
+
+/*****************************************************************************/
+/*
+/* Garmin heatmaps: inline SVGs from garmin-heatmap. CSS overrides the fills
+/* the SVG carries, so the grid follows the theme and appearance.
+/*
+/*****************************************************************************/
+
+.heatmap {
+  --heatmap-color: var(--heatmap-green);
+  --garmin-heatmap-font: var(--font-family);
+  margin: 1.5em 0;
+}
+
+.heatmap-orange { --heatmap-color: var(--heatmap-orange); }
+.heatmap-purple { --heatmap-color: var(--heatmap-purple); }
+.heatmap-blue { --heatmap-color: var(--heatmap-blue); }
+
+.heatmap svg {
+  display: block;
+  color: var(--body-foreground);
+}
+
+.heatmap svg g text {
+  font-family: var(--mono-font-family);
+}
+
+.heatmap .level-0 { fill: var(--heatmap-empty); }
+.heatmap .level-1 { fill: color-mix(in oklab, var(--heatmap-color) 25%, var(--heatmap-base)); }
+.heatmap .level-2 { fill: color-mix(in oklab, var(--heatmap-color) 45%, var(--heatmap-base)); }
+.heatmap .level-3 { fill: color-mix(in oklab, var(--heatmap-color) 65%, var(--heatmap-base)); }
+.heatmap .level-4 { fill: color-mix(in oklab, var(--heatmap-color) 85%, var(--heatmap-base)); }
+.heatmap .level-5 { fill: var(--heatmap-color); }
+
+.heatmap-unavailable {
+  color: var(--muted-foreground);
+  font-size: 0.8em;
 }

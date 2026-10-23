@@ -28,6 +28,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 |---|---|
 | `index.markdown` | Home page: intro, Now section, recent writing |
 | `work/index.html` | Work history, recognition, app grid (rendered from `_data/apps.yml`) |
+| `projects/index.html`, `_projects/` | Projects section: the index, and one Markdown file per project (see `projects/AGENTS.md`) |
 | `blog/index.html` | Writing index (paginated, 5 per page, `/blog/:num`) |
 | `blog/_posts/` | Posts, `YYYY-MM-DD-slug.markdown` |
 | `blog/categories/index.html` | All posts grouped by category; post and index category links point at its anchors |
@@ -36,8 +37,8 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 | `_data/heatmaps.json` | The Garmin heatmaps to render (see `_data/AGENTS.md`). Grids with `"enabled": false` fetch nothing |
 | `_data/apps.yml` | The Work page app tiles (`name`, `url`, `image`, optional `alt`/`title`). Add an app here, not in the page |
 | `disclosure/index.markdown` | Affiliate-link disclosure |
-| `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups), `project` (currently unused by any page) |
-| `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `settings-menu.html` (the nav's settings menu: theme and appearance), `footer.html` (affiliate disclosure link and social links as inline SVG), `helpers/strava.html` (Strava embed: `{% include helpers/strava.html url="..." %}`) |
+| `_layouts/` | `default` (chrome), `post` (all articles; `intro: <name>` in front matter pulls in `_includes/intro-<name>.html`, used by the weekly reading roundups), `project` (every file in `_projects/`) |
+| `_includes/` | `header.html` (head via `{% seo %}`, nav, progress bar), `settings-menu.html` (the nav's settings menu: theme and appearance), `footer.html` (affiliate disclosure link and social links as inline SVG), `helpers/strava.html` (Strava embed: `{% include helpers/strava.html url="..." %}`), `helpers/garmin-heatmap.html` (a rendered Garmin grid) |
 | `css/main.css` | All styling, plus the design tokens every theme overrides. Owns the light/dark switch: themes declare `--x` / `--x-dark` pairs and never a media query |
 | `css/themes/` | One file per theme, overriding tokens only. `legacy.css` overrides nothing: the values in `main.css` are that theme, and it carries only the Poppins import |
 | `_data/themes.yml` | The themes the nav picker offers, and the face each name is set in. A new theme needs an entry here as well as a file in `css/themes/` |
@@ -55,7 +56,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 - **Metadata**: title, description, canonical, Open Graph, Twitter card and JSON-LD come from `jekyll-seo-tag` reading front matter (`title`, `description`, `image`, `canonical_url`). Page titles are short ("Work", "Writing"); the plugin appends the site name. `sitemap.xml` and `robots.txt` are generated; set `sitemap: false` in front matter to keep a file out.
 - **Links**: outbound links to companies and products use `rel="external nofollow"` and `target="_blank"`. Use `https://`. Every internal link and asset path must go through `relative_url` (`{{ '/feed.xml' | relative_url }}`, `{{ post.url | relative_url }}`) — never a bare `/path`, which would break the preview builds that run under a `/preview/<name>/` baseurl.
 - **HTML**: 2-space indentation (`.editorconfig`). Keep the site dependency-free: no npm, no bundlers.
-- **Path-specific rules** live in nested `AGENTS.md` files: `blog/` (posts), `css/` (styling, themes, light and dark), `_includes/` (settings menu, language picker), `my-reading-list/` (affiliate links), `_data/` (which of those each data file follows).
+- **Path-specific rules** live in nested `AGENTS.md` files: `blog/` (posts), `css/` (styling, themes, light and dark), `_includes/` (settings menu, language picker), `my-reading-list/` (affiliate links), `projects/` (projects), `_data/` (which of those each data file follows).
 
 ## Skills
 
