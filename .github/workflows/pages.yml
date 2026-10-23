@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: EdSancha/garmin-heatmap
-          ref: c6f4037aa2ab7b052c9396a2d5431de42a060d4e # v0.1.0
+          ref: 8354b2abf1565e12854a80a24c03ab972b33cd04 # v0.1.1
           path: .garmin-heatmap
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
