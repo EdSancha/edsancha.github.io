@@ -26,7 +26,7 @@ CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `maste
 
 | Path | What it is |
 |---|---|
-| `index.markdown` | Home page: intro, Now section, recent writing |
+| `index.markdown` | Home page: intro, Now section, Fitness (Garmin heatmaps, see `_data/AGENTS.md`), recent writing |
 | `work/index.html` | Work history, recognition, app grid (rendered from `_data/apps.yml`) |
 | `projects/index.html`, `_projects/` | Projects section: the index, and one Markdown file per project (see `projects/AGENTS.md`) |
 | `blog/index.html` | Writing index (paginated, 5 per page, `/blog/:num`) |

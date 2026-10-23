@@ -12,7 +12,7 @@ Each square is a day, and the stronger the colour, the bigger the day: further r
 
 <figure>
   <img src="{{ '/img/projects/garmin-heatmaps.png' | relative_url }}" alt="Four heatmap grids drawn from made-up sample data: running distance in green, elevation in orange, sleep in purple and overnight HRV in blue, June to September.">
-  <figcaption>Made-up sample data, to show what the grids look like. It isn't my training; my own grids will live elsewhere on this site.</figcaption>
+  <figcaption>Made-up sample data, to show what the grids look like. It isn't my training: my own grids are on the <a href="{{ '/#fitness' | relative_url }}">home page</a>.</figcaption>
 </figure>
 
 ## How it works

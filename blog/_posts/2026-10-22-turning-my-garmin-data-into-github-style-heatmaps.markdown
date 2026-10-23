@@ -3,7 +3,7 @@ layout: post
 title: "Turning My Garmin Data into GitHub-Style Heatmaps"
 date: 2026-10-22
 author: "Eduardo Diaz Sancha"
-timeToRead: "3 minutes read"
+timeToRead: "4 minutes read"
 description: "Garmin opened a Personal API, so I built a small library that turns my training into GitHub-style activity grids on this site, and learned the most from what broke in production."
 categories: development running
 image: "/img/projects/garmin-heatmaps.png"
@@ -29,7 +29,11 @@ A static site can't call Garmin from the reader's browser without handing the ke
 - A **fetcher** that runs in CI with the key, and reduces everything to one small record per day: distance, time and elevation per activity type, sleep, HRV, steps. No activity names, no GPS, no start times.
 - A **renderer** that turns those days into an SVG grid. The same code runs in Node at build time or in the browser as a `<garmin-heatmap>` web component.
 
-This site uses the build-time path. Every day, the deploy workflow fetches my data and renders the SVGs, ready to be inlined into a page with no JavaScript and no data file behind them. Inlined, the grids pick up the site's fonts, and their colours follow the theme and dark mode.
+This site uses the build-time path. Every day, the deploy workflow fetches my data, renders the SVGs and inlines them into the [home page]({{ '/#fitness' | relative_url }}), with no JavaScript and no data file behind them. Inlined, the grids pick up the site's fonts, and their colours follow the theme and dark mode.
+
+## Time and intensity over distance
+
+The home page shows three grids, in this order: training time across every sport, hard minutes (time in heart-rate zones 4 and 5), and running distance. The order is deliberate. I value duration and intensity much more than distance. How long and how hard I train is what my body responds to. Distance depends on pace, terrain and which sport I did that day, and an easy ten kilometres costs something very different from ten kilometres of intervals. Distance is there because it's the number runners ask about, but it's the one I watch least.
 
 ## Treating the key like a password
 
@@ -52,4 +56,4 @@ Neither failure could show up in the tests, because the fake API in them agreed 
 
 ## What's next
 
-My real grids are rendering every day, but they aren't on the site yet: I still have to decide where they belong. Sleep and HRV are one line of config away, and before I switch them on I want to decide how much of my recovery I'm comfortable publishing. If you want grids for your own site, the [README](https://github.com/EdSancha/garmin-heatmap#readme){:rel="external nofollow" target="_blank"} has the setup.
+Sleep and HRV are one line of config away. Before I switch them on, I want to decide how much of my recovery I'm comfortable publishing. If you want grids for your own site, the [README](https://github.com/EdSancha/garmin-heatmap#readme){:rel="external nofollow" target="_blank"} has the setup.

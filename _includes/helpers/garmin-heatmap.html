@@ -8,7 +8,8 @@
 {%- endcomment -%}
 {%- assign grid = site.data.heatmaps.grids | where: "name", include.name | first -%}
 {%- case grid.metric -%}
-  {%- when "elevation" -%}{%- assign hue = "orange" -%}
+  {%- when "duration", "activities" -%}{%- assign hue = "blue" -%}
+  {%- when "intensity", "elevation" -%}{%- assign hue = "orange" -%}
   {%- when "sleep", "sleep-score" -%}{%- assign hue = "purple" -%}
   {%- when "hrv" -%}{%- assign hue = "blue" -%}
   {%- else -%}{%- assign hue = "green" -%}
