@@ -35,7 +35,7 @@ This site uses the build-time path. Every day, the deploy workflow fetches my da
 
 The home page shows three grids, in this order: training time across every sport, hard minutes (time in heart-rate zones 4 and 5), and running distance. The order reflects what I value: duration and intensity much more than distance.
 
-I train on the idea that time on feet at low intensity compounds into the best aerobic engine. Hours of easy work, done consistently for months and years, build something no single hard session can. So training time comes first, whatever the sport.
+I train on the idea that time on feet at low intensity compounds into the best aerobic engine. Hours of easy work, done consistently for months and years, compound: they reduce the risk of injury while steadily increasing aerobic capacity. So training time comes first, whatever the sport.
 
 Hard minutes come second. I try to keep a balance of intensity, with hard work as a small, deliberate share of the week, and this grid simply shows how that balance turned out.
 
