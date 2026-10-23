@@ -52,6 +52,15 @@ jobs:
           persist-credentials: false
           sparse-checkout: _data/heatmaps.json
           sparse-checkout-cone-mode: false
+      # garmin-heatmap has no dependencies, so a checkout of a reviewed commit
+      # is all it needs: no npm, no install scripts.
+      - name: Check out garmin-heatmap
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: EdSancha/garmin-heatmap
+          ref: c6f4037aa2ab7b052c9396a2d5431de42a060d4e # v0.1.0
+          path: .garmin-heatmap
+          persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
@@ -73,7 +82,7 @@ jobs:
             echo "::warning::GARMIN_API_KEY is not set in the garmin environment; skipping the Garmin heatmaps."
             exit 0
           fi
-          npx --yes github:EdSancha/garmin-heatmap#c6f4037aa2ab7b052c9396a2d5431de42a060d4e build --config _data/heatmaps.json --out-dir garmin
+          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin
           echo "fresh=true" >> "$GITHUB_OUTPUT"
       - name: Warn about stale heatmaps
         if: steps.render.outcome == 'failure'
