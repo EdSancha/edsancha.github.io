@@ -6,7 +6,11 @@ author: "Eduardo Diaz Sancha"
 timeToRead: "7 minutes read"
 description: "A wonderful week in Wilmington finished with a good performance on a gale warning day."
 categories: "running leadership"
-image: "/img/blog/a-good-race-on-a-gale-warning-day/header.jpg"
+source_name: "Substack"
+source_url: "https://leadershipendurance.substack.com/p/a-good-race-on-a-gale-warning-day"
+source_date: "31st October, 2026"
+canonical_url: "https://leadershipendurance.substack.com/p/a-good-race-on-a-gale-warning-day"
+image: "https://substackcdn.com/image/fetch/$s_!xSbO!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fabbb0dda-8083-42c6-81f7-c9b9047ef17f_1600x533.jpeg"
 ---
 
 _Hello, this is [Eduardo](https://www.linkedin.com/in/edsancha) and I'm an Engineering Leader and Certified Running coach. Leadership Endurance is a newsletter about leadership, endurance sports, performance and growth, in the confluence of these worlds._
