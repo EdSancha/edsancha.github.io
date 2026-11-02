@@ -20,7 +20,7 @@ make serve     # local preview at http://localhost:4000 with live reload
 make check     # build + htmlproofer on _site (internal links, images, alt text)
 ```
 
-CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `master`. Run it locally before pushing. The same workflow also checks external links weekly (Mondays 09:00 UTC) or on manual dispatch; that job does not run on pushes or PRs and does not block deploys. `theme-branch.yml` runs `make check` on every `theme/*` push.
+CI (`.github/workflows/ci.yml`) runs `make check` on every PR and push to `master`. Run it locally before pushing. The same workflow also checks external links weekly (Mondays 09:00 UTC) or on manual dispatch; that job does not run on pushes or PRs and does not block deploys. A link that only times out shows as a warning on the run; anything else fails the job. `theme-branch.yml` runs `make check` on every `theme/*` push.
 
 ## Layout of the repo
 

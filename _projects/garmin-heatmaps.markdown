@@ -24,6 +24,6 @@ Each square is a day, and the stronger the colour, the bigger the day: further r
 
 ## Use it on your own site
 
-The library has no dependencies. Clone it, list the grids you want in a small config file and run `node bin/garmin-heatmap.js build` in your site's build, or drop the `<garmin-heatmap>` web component into any page. Metrics include distance, elevation, training time, sleep, sleep score, overnight HRV and steps, in kilometres or miles. The [README](https://github.com/EdSancha/garmin-heatmap#readme){:rel="external nofollow" target="_blank"} covers setup and how to keep the key safe.
+The library has no dependencies. Clone it, list the grids you want in a small config file and run `node bin/garmin-heatmap.js build` in your site's build, or drop the `<garmin-heatmap>` web component into any page. Metrics include distance, elevation, training time, sleep, sleep score, overnight HRV and steps, in kilometres or miles. The [README](https://github.com/EdSancha/garmin-heatmap){:rel="external nofollow" target="_blank"} covers setup and how to keep the key safe.
 
 I wrote up how it came together in [Turning my Garmin data into GitHub-style heatmaps]({% post_url blog/2026-10-22-turning-my-garmin-data-into-github-style-heatmaps %}).
