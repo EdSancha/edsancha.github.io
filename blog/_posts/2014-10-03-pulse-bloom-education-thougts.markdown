@@ -21,6 +21,6 @@ I recommend you to take a further look in the [NuVu Studio project webpage](http
 
 Most of the people will say that you need resources, money, time... All those are excuses. Overcoming the problems will be part of the learning too. The closest thing we did was a small company for Economics which organized a small Employment and Technology forum. It incredibly ended being profitable (with most of the profits from the after party).
 
-I've been disconnected from the University world 10 years already and I'd like to know that the method has changed. That everything has evolved to a more practical method, as the one I experienced in [ENST Bretagne](http://www.telecom-bretagne.eu) or what I've heard from some Tech Colleges here in US.
+I've been disconnected from the University world 10 years already and I'd like to know that the method has changed. That everything has evolved to a more practical method, as the one I experienced in [ENST Bretagne](https://www.imt-atlantique.fr/en) or what I've heard from some Tech Colleges here in US.
 
 If you're teaching and reading this, please, make your students create things, they'll thank you later from it. If you're already pushing your students to do cool stuff, thanks!

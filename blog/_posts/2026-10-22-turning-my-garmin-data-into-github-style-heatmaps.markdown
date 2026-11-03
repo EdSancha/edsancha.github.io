@@ -64,4 +64,4 @@ Neither failure could show up in the tests, because the fake API in them agreed 
 
 ## What's next
 
-Sleep and HRV are one line of config away. Before I switch them on, I want to decide how much of my recovery I'm comfortable publishing. If you want grids for your own site, the [README](https://github.com/EdSancha/garmin-heatmap#readme){:rel="external nofollow" target="_blank"} has the setup.
+Sleep and HRV are one line of config away. Before I switch them on, I want to decide how much of my recovery I'm comfortable publishing. If you want grids for your own site, the [README](https://github.com/EdSancha/garmin-heatmap){:rel="external nofollow" target="_blank"} has the setup.
