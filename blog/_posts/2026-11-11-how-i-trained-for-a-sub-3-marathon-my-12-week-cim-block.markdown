@@ -8,9 +8,9 @@ description: "Twelve weeks, about 37 running miles a week, a 50K in the middle a
 categories: running training
 image: "/img/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block/weekly-running-miles.png"
 source_name: "the Salitre Coaching blog"
-source_url: "https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block"
+source_url: "https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block/"
 source_date: "11th November, 2026"
-canonical_url: "https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block"
+canonical_url: "https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block/"
 ---
 
 On December 7, 2025, I ran the California International Marathon in 2:59:42. It was my seventh standalone marathon, my first under three hours, and a four-minute personal best on the 3:04 I had run in August.
