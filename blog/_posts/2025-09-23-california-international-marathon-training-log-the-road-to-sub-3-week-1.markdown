@@ -12,6 +12,8 @@ source_date: "23rd September, 2025"
 canonical_url: "https://www.salitre.co/blog/california-international-marathon-training-log-the-road-to-sub-3-week-1"
 ---
 
+_Update: this log stopped after week 1, and the race went well: 2:59:42. The whole block is in [How I trained for a sub-3 marathon](https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block), and the race in the [CIM 2025 race recap](https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42)._
+
 This past week marked the first week of a 12 week **build toward the California International Marathon (CIM) on December 7, 2025**. I’ll be sharing data, insights, and other information to give an insight on how I plan my training progress.
 
 CIM will be my 7th official standalone marathon (not counting two Ironman) and my second this year, after my recent personal best of 3h4m in a local race in the Atlanta suburbs. I’m going into it with some big goals, this time being a shot at a sub-3 marathon. That would be a ~4-minute personal best for me—doable but not easy! CIM is a notoriously fast course, and this year is serving as the USA marathon championships, so the field will be deep, giving me plenty of talented people to run with (or right behind for a nice draft).

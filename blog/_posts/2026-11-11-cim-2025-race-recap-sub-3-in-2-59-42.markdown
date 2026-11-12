@@ -1,0 +1,69 @@
+---
+layout: post
+title: "CIM 2025 Race Recap: Sub-3 in 2:59:42"
+date: 2026-11-11
+author: "Eduardo Diaz Sancha"
+timeToRead: "2 minutes read"
+description: "Halfway in 1:29:19, cramps at mile 20 and the last 10K spent 10 to 20 meters behind the 3-hour pacers: how my first sub-3 marathon went at the California International Marathon."
+categories: running training
+image: "/img/blog/cim-2025-race-recap-sub-3-in-2-59-42/cover.jpg"
+source_name: "the Salitre Coaching blog"
+source_url: "https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42"
+source_date: "11th November, 2026"
+canonical_url: "https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42"
+---
+
+![Watercolor illustration of Eduardo running the California International Marathon in a black CIM singlet, with other runners behind him.]({{ '/img/blog/cim-2025-race-recap-sub-3-in-2-59-42/cover.jpg' | relative_url }})
+
+On December 7, 2025, I ran the California International Marathon in 2:59:42. Eighteen seconds under three hours, a four-minute personal best, and my first sub-3.
+
+How I got there, including a 50K in the middle of the block and a calf strain near the end, is in a separate post: [How I trained for a sub-3 marathon](https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block).
+
+## Race morning
+
+The buses from Sacramento to the start in Folsom were really well organized. My advice: stay on the bus as long as you can. It keeps you warm on a December morning, and it was a cold, foggy one.
+
+## Miles 1–6: don't take the downhill
+
+The first mile is downhill, and seeing thousands of runners ahead of you going faster is impressive. I didn't push it. I ran the first mile slower than planned and then settled in with the 3-hour pacers, who were running a little under 3-hour pace.
+
+## Miles 6–13: settling in
+
+Through Fair Oaks we settled in, running 30 to 60 seconds ahead of 3-hour pace. I went through halfway in 1:29:19.
+
+## Miles 13–20: the quiet part
+
+The most uneventful part of the race. I found a good rhythm and focused on nutrition: Amacx gels, which are light and easy to digest because they're more liquid than most, at about 90 g of carbs per hour, plus a caffeine gel around mile 18.
+
+## Miles 20–26.2: hanging on
+
+There was little left. Stomach cramps at mile 20, my quads started to hurt at 23, and everything was asking me to slow down in the last two miles. I held on for dear life 10 to 20 meters behind the 3-hour pacers and hoped the time would come in under three hours.
+
+Don't be misled by how even the splits look. It was a mental battle to stay with the pacers and ignore how my body was complaining.
+
+![Two line charts of the race, mile by mile. Top: pace stayed between about 6:43 and 6:58 per mile, close to the 6:52 per mile needed for sub-3, slowing slightly after mile 20. Bottom: average heart rate rose from 148 bpm in mile 1 to about 163 by mile 5 and kept climbing to 172 by mile 26.]({{ '/img/blog/cim-2025-race-recap-sub-3-in-2-59-42/race-pace-heart-rate.png' | relative_url }})
+
+In the chart, pace barely moves while heart rate climbs the whole way, from about 150 in the first mile to over 170 in the last.
+
+I crossed the line in 2:59:42, freaking happy, and with a holiday season ahead to just relax.
+
+## The plan that got me there
+
+My plan was to ignore the rollers as much as possible and stick to my race pace. The terrain worked for me: the first 20 miles are easier thanks to the net downhill, and whatever I had left I used to hold that pace over the flatter last six.
+
+For fueling, I did a typical carb load before the race: pasta, bread and a good balance of protein. Before the start I took bicarb, Nomio and CurraNZ, and a caffeine gel right before the gun.
+
+## Is CIM as fast as its reputation?
+
+Yes. The net downhill helps, but what made it fast was the field and the pacers. I was impressed by how many runners were chasing sub-3.
+
+One thing for your supporters: it's a strict point-to-point race, so it's hard for anyone to see you in more than one spot.
+
+## Racing CIM this year?
+
+The [CIM race guide](https://www.salitre.co/race-guides/cim) has the elevation profile, my notes on each part of the course and a pace calculator that turns your goal time into mile splits for this course.
+
+---
+
+**Chasing your own sub-3?**
+Let’s talk. [Reach out here](https://www.salitre.co/contact), and we’ll build the plan together.
