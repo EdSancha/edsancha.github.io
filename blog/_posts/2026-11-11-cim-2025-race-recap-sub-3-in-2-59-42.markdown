@@ -8,9 +8,9 @@ description: "Halfway in 1:29:19, cramps at mile 20 and the last 10K spent 10 to
 categories: running training
 image: "/img/blog/cim-2025-race-recap-sub-3-in-2-59-42/cover.jpg"
 source_name: "the Salitre Coaching blog"
-source_url: "https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42"
+source_url: "https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42/"
 source_date: "11th November, 2026"
-canonical_url: "https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42"
+canonical_url: "https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42/"
 ---
 
 ![Watercolor illustration of Eduardo running the California International Marathon in a black CIM singlet, with other runners behind him.]({{ '/img/blog/cim-2025-race-recap-sub-3-in-2-59-42/cover.jpg' | relative_url }})

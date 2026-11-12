@@ -7,9 +7,9 @@ timeToRead: "2 minutes read"
 description: "The first week of my 12-week build toward a sub-3 marathon at the California International Marathon."
 categories: running training
 source_name: "the Salitre Coaching blog"
-source_url: "https://www.salitre.co/blog/california-international-marathon-training-log-the-road-to-sub-3-week-1"
+source_url: "https://www.salitre.co/blog/california-international-marathon-training-log-the-road-to-sub-3-week-1/"
 source_date: "23rd September, 2025"
-canonical_url: "https://www.salitre.co/blog/california-international-marathon-training-log-the-road-to-sub-3-week-1"
+canonical_url: "https://www.salitre.co/blog/california-international-marathon-training-log-the-road-to-sub-3-week-1/"
 ---
 
 _Update: this log stopped after week 1, and the race went well: 2:59:42. The whole block is in [How I trained for a sub-3 marathon](https://www.salitre.co/blog/how-i-trained-for-a-sub-3-marathon-my-12-week-cim-block), and the race in the [CIM 2025 race recap](https://www.salitre.co/blog/cim-2025-race-recap-sub-3-in-2-59-42)._
