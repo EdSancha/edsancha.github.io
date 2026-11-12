@@ -43,7 +43,7 @@ That averages out at about 37 running miles a week. It isn't a high-mileage plan
 
 In week 3 I ran the Bull Mountain Epic, my first ultra and my first real run in the mountains. The 50K turned into 56 km (35 miles). I fought the mountain and it almost won: the second loop was technical, my ankles kept rolling, and I got a good beating.
 
-I did it deliberately. I added the race to the plan a couple of weeks out, and it went in as a really long run, with no specific preparation and no extra recovery after. With my training load at the time, I doubt Alan would have recommended it, but durability and endurance were the whole point of the block.
+I did it deliberately. I added the race to the plan a couple of weeks out, with no specific preparation and no extra recovery after. The plan made it the long run of the week, after three threshold sessions, with one instruction: take it easy enough to roll into a standard loading week the week after. Durability and endurance were the whole point of the block.
 
 A week later I did a 14-mile long run in Asheville with about 1,600 ft of climbing, and was charged by a black bear on the way up Sunset Mountain. I yelled and roared at it, and it stopped. I still can't believe that worked.
 
