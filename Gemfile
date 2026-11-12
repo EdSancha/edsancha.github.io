@@ -14,4 +14,4 @@ group :jekyll_plugins do
 end
 
 # Used by `make check` to validate the generated site.
-gem "html-proofer", "~> 5.0", group: :test
+gem "html-proofer", "~> 5.2", group: :test
