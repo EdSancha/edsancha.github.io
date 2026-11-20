@@ -3,8 +3,8 @@ layout: post
 title: "Building a Canasta App with Our House Rules, Day 2: From Solo Play to Playing Online"
 date: 2026-11-19
 author: "Eduardo Diaz Sancha"
-timeToRead: "5 minutes read"
-description: "On day two the Canasta app got computer players, a web version running the same Rust rules engine, online tables with a lobby, and its first real game, which I lost."
+timeToRead: "8 minutes read"
+description: "On day two the Canasta app got computer players, a web version running the same Rust rules engine, online tables with a lobby, saved games, and its first real game, which I lost."
 categories: development
 ---
 
@@ -56,14 +56,41 @@ With five or six agents working at once, I lost track of what was waiting for me
 
 The one slip of the day was mine and GitHub's together. Two stacked pull requests, the invite defences and the lobby on top of them, were merged ten seconds apart, before GitHub had moved the second one onto `main`. The lobby landed on a branch that no longer led anywhere. Nothing was lost, it just needed a new pull request, and now stacked pull requests are opened against `main` from the start.
 
+Later I played a full game against the computer. I lost. It was still a good day, and it wasn't over.
+
+## The evening shift
+
+In the evening the agents kept going, and I kept merging in between other things.
+
+**Saving games.** A solo game now saves after every move, on iPhone, Android and the web, and "Continue game" brings back the same table. The same means the computer players too: their memory of what was discarded and their random state are in the save. A test proves, on all three platforms, that a game saved, loaded and played on ends exactly like one that was never interrupted. Online tables use the same format, so a table restored after the server restarts carries on as if nothing happened.
+
+**Online, the small things.** Players choose the name the table shows. There's a "Your tables" list, a way to withdraw a request to join, and online you now see your own meld points and can sort your hand. Both stay private to you; nobody else at the table receives them.
+
+**Security reviews, again.** Every one found something:
+- A save file edited by hand could crash the app at launch. Loading a save now checks that the game it describes is possible, starting with the right number of cards. A quick fuzz of altered saves found two more crashes, and those are fixed too.
+- A name made of invisible characters showed as blank, and "Abuela" with a zero-width space in it could pass for Abuela at the table. Names now have to contain something you can see.
+- A leaked Apple sign-in code could have attached someone's Apple account to the wrong player. The server now keeps the Apple token only if Apple confirms it belongs to the person signing in.
+
+**My mistake.** I merged the Apple sign-in pull request while its security fixes were still being made, so they missed it and needed a follow-up pull request. The rule now is that a pull request goes back to draft while it's being fixed. If it says ready, it's safe to merge.
+
+**Screenshots.** I asked for one screenshot of a game in progress on each platform. The iPhone looked right. Android cut off a long meld at the edge of the screen. The web was the roughest: the scores showed a slashed zero (the font only has that one), the two rows of my hand overlapped, and on a laptop screen the pile sat below the fold. Now every pull request that changes a screen comes with before and after screenshots, and Claude checks them before it reaches me. Two went back for another round because of what the screenshots showed.
+
+**Two small design calls.** Sorting the hand is now a dropdown on every platform instead of a row of buttons. And I removed the little green dots that marked cards you could meld, because nobody would know what they meant without being told. They might come back as part of a "beginner aids" setting.
+
+**The disk, again.** With three agents building at once, free space on the Mac fell to 150 MB at one point. The worktrees, the separate copies of the repo each agent works in, now live on an external SSD. That's now the rule for all my projects, not just this one.
+
+**A flaky test that wasn't flaky.** One online test failed now and then. It wasn't a race in the app. Every simulated player in the tests connects from the same address, so they kept hitting the server's own rate limits, the ones meant to slow down people guessing invite codes. The defences worked; my tests were the attacker.
+
 ## Where it stands
 
-After two days: around 35 merged pull requests, the rules on three platforms plus the browser, computer players, online tables with a lobby, and apps on iPhone and Android. Phase 1 has one gate left, and it's mine: a real hand from a family game, scored on paper, that the app has to score the same way.
-
-Later I played a full game against the computer. I lost. It was still a good day.
+After two days: about 50 merged pull requests. The rules run on three platforms plus the browser, with computer players, saved games, and online tables with names, invites and a lobby, on iPhone, Android and the web. Everything runs on my Mac. What's left before family can play is mostly mine: hosting and a web address, the Apple and Google developer accounts, the sign-in keys, and a real hand from a family game, scored on paper, that the app has to score the same way.
 
 ## What I learned on day 2
 
 Parallel work only pays off if the pieces don't step on each other. Most of my decisions today were about order: which pull request goes first, what waits for what.
 
 Agents found plenty of problems in each other's work. The problems I found by playing were different, and more important. There is no substitute for sitting at the table.
+
+Screenshots are the next best thing. Tests check that the app works; a screenshot shows whether it looks right.
+
+"Ready for review" has to mean safe to merge. The one time it didn't, I merged it.
