@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bundle config set --local path vendor/bundle >/dev/null 2>&1; bundle install --quiet || true"
+            "command": "make -s install >/dev/null 2>&1 || true"
           }
         ]
       }
