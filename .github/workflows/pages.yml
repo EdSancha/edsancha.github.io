@@ -82,7 +82,7 @@ jobs:
             echo "::warning::GARMIN_API_KEY is not set in the garmin environment; skipping the Garmin heatmaps."
             exit 0
           fi
-          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin --themes light,dark,auto
+          node .garmin-heatmap/bin/garmin-heatmap.js build --config _data/heatmaps.json --out-dir garmin --themes auto
           echo "fresh=true" >> "$GITHUB_OUTPUT"
       - name: Warn about stale heatmaps
         if: steps.render.outcome == 'failure'
@@ -120,13 +120,15 @@ jobs:
           name: garmin-heatmaps
           path: _includes/garmin
       - name: Publish the standalone heatmap images
-        # <name>-light.svg, <name>-dark.svg and <name>-auto.svg (reads on any
-        # background; the GitHub profile README uses it) go to /assets/garmin/
-        # for places that can only show images. Pages inline <name>.svg instead.
+        # <name>-auto.svg reads on any background, for places that can only show
+        # images (the GitHub profile README); it goes to /assets/garmin/. Pages
+        # inline <name>.svg instead. Light and dark versions left in an older
+        # cache are dropped.
         run: |
           mkdir -p assets/garmin
           if [ -d _includes/garmin ]; then
-            find _includes/garmin \( -name '*-light.svg' -o -name '*-dark.svg' -o -name '*-auto.svg' \) -exec mv -t assets/garmin/ {} +
+            find _includes/garmin -name '*-auto.svg' -exec mv -t assets/garmin/ {} +
+            find _includes/garmin \( -name '*-light.svg' -o -name '*-dark.svg' \) -delete
           fi
           ls assets/garmin
       - name: List the Garmin heatmaps for Jekyll
