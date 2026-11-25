@@ -5,10 +5,12 @@ Personal site of Eduardo Diaz Sancha, built with [Jekyll](https://jekyllrb.com) 
 ## Local development
 
 ```sh
-make install   # bundle install
+make install   # gems into vendor/bundle
 make serve     # http://localhost:4000
 make check     # build + link check (what CI runs)
 ```
+
+Needs Ruby 3 or later. macOS ships 2.6, so run `brew install ruby` first; the Makefile uses Homebrew's Ruby automatically when it is installed.
 
 Project conventions for people and coding agents are in [`AGENTS.md`](AGENTS.md). Adding a post: [`.agents/skills/new-post/SKILL.md`](.agents/skills/new-post/SKILL.md).
 

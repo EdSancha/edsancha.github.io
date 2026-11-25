@@ -14,7 +14,7 @@ Plain Jekyll, no theme, no JavaScript framework. Hosted on GitHub Pages.
 ## Commands
 
 ```sh
-make install   # bundle install (first time)
+make install   # gems into vendor/bundle (first time). macOS: brew install ruby; make finds it
 make build     # bundle exec jekyll build --strict_front_matter
 make serve     # local preview at http://localhost:4000 with live reload
 make check     # build + htmlproofer on _site (internal links, images, alt text)
